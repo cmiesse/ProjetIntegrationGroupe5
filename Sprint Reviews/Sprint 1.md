@@ -2,9 +2,9 @@
 
 ## Technique : 
 
-Nous n’avons actuellement pas d’Arduino ( électronique) pour le réveil. 
-Nous devons acheter un serveur ovh pour héberger notre site web.
-Nous avons tenté la création du site web mais celui-ci n’est pas fonctionnel actuellement. 
+- Nous n’avons actuellement pas d’Arduino ( électronique) pour le réveil. 
+- Nous devons acheter un serveur ovh pour héberger notre site web.
+- Nous avons tenté la création du site web mais celui-ci n’est pas fonctionnel actuellement. 
 
 ## Méthodologie : 
 
