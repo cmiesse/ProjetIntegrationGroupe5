@@ -1,0 +1,92 @@
+body{
+  background-color: #121212;
+}
+header{
+  width: auto;
+  background-color: red;
+  text-align: center;
+  height: 50px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+h1, h2, p{
+  color: white;
+}
+
+h2{
+  margin: 20px 0px 20px 75px;
+}
+
+#reveil{
+  width: 20em;
+}
+
+#download{
+  width: 20em;
+}
+
+#panier{
+  width: 20em;
+}
+
+.nos_membres{
+  display: flex;
+  flex-wrap: wrap;
+}
+.membre{
+  border: 1px solid white;
+  margin: 0px 10px 0px 10px;
+  background-color: #121212;
+}
+.membre p{
+  padding: 0px 0px 0px 10px;
+}
+.photo_membre{
+  width: 10em;
+}
+
+footer{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+
+form{
+}
+
+form input, form textarea{
+  margin: 5px 5px 5px 5px;
+  width: 200px;
+}
