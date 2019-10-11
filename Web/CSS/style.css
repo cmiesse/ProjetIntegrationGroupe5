@@ -1,6 +1,17 @@
 body{
   background-color: #121212;
+  min-width: 215px;
 }
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
 header{
   width: auto;
   background-color: red;
@@ -75,18 +86,38 @@ h2{
 
 footer{
   position: absolute;
-  right: 0;
   bottom: 0;
-  left: 0;
-  padding: 1rem;
+  width:100%;
+  height: 3.5rem;
   background-color: #efefef;
   text-align: center;
 }
 
-form{
-}
-
 form input, form textarea{
   margin: 5px 5px 5px 5px;
-  width: 200px;
+  width: 300px;
+}
+
+@media screen and (max-width: 640px){
+  form{
+    text-align: center;
+  }
+
+  li{
+    float: none;
+    width: 100%;
+  }
+
+  #content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+    text-align: center;
+  }
+
+  h2{
+    margin: 20px 0px 20px 0px;
+  }
+
+  .nos_membres{
+    text-align: center;
+  }
 }

@@ -23,18 +23,24 @@ header("Location: contact.php?mailsend");
     <link rel="stylesheet" href="CSS/style.css">
   </head>
   <body>
-    <?php
-     echo getTop();
-    ?>
+    <div id="page-container">
+      <div id="content-wrap">
+        <?php
+         echo getTop();
+        ?>
 
-    <h2>Contact</h2>
-    <form class="contact-form" action="contact.php" method="post">
-      <input type="text" name="name" placeholder="Nom complet"><br>
-      <input type="text" name="sujet" placeholder="Sujet"><br>
-      <input type="email" name="mail" placeholder="Votre adresse e-mail"><br>
-      <textarea name="message" placeholder="Message"></textarea><br>
-      <input type="submit" name="submit" value="Envoyer un mail"></input>
-    </form>
-    <?= getFooter() ?>
+        <h2>Contact</h2>
+        <form class="contact-form" action="contact.php" method="post">
+          <input type="text" name="name" placeholder="Nom complet"><br>
+          <input type="text" name="sujet" placeholder="Sujet"><br>
+          <input type="email" name="mail" placeholder="Votre adresse e-mail"><br>
+          <textarea name="message" placeholder="Message"></textarea><br>
+          <input type="submit" name="submit" value="Envoyer un mail"></input>
+        </form>
+      </div>
+      <?= getFooter() ?>
+    </div>
+
+
   </body>
 </html>
