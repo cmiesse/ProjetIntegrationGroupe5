@@ -1,10 +1,10 @@
 Enquête participative : Happy dawn
 
-Notre projet consiste en la réalisation d’un simulateur d’aube. La base de ce projet sera un réveil doté d’un haut-parleurainsi
+Notre projet consiste en la réalisation d’un simulateur d’aube. La base de ce projet sera un réveil doté d’un haut-parleur ainsi
 que de leds. 
 
 Ce réveil sera relié à une application mobile où il y sera possible de :
-- Paramétrer les leds
+- Paramétrer les leds (couleurs,intensité)
 - Paramétrer l’heure de fonctionnement du réveil
 - Choisir le son ou la musique que l’on désire passer lors du fonctionnement du réveil
 - Synchroniser son agenda (Outlook, par exemple) afin que le réveil adapte son fonctionnement si l’utilisateur a des rendez-vous prévus
@@ -27,6 +27,8 @@ Autre
 Combien seriez vous prêts à payer pour un réveil de ce type?
 Ecrire une valeur
 
+Qu'attendez vous d'un reveil de ce type ?
+Ecrire commentaire
 
 Commentaires :
 Ecrire commentaire
