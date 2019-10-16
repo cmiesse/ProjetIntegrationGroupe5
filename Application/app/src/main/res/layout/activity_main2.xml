@@ -2,13 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="@drawable/mainactivity_background"
     android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/alarm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:src="@drawable/button_alarm"
         />
 
@@ -16,7 +17,8 @@
         android:id="@+id/sound"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:src="@drawable/button_sound"
         />
 
@@ -24,7 +26,9 @@
         android:id="@+id/luminosity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:src="@drawable/button_luminosity"
         />
+
+
 </LinearLayout>
