@@ -31,8 +31,7 @@
         android:textColor="#F43678"
         android:textColorLink="#FFFFFF"
         android:textSize="30dp"
-        tools:layout_editor_absoluteX="3dp"
-        tools:layout_editor_absoluteY="-4dp" />
+        />
 
     <SeekBar
         android:id="@+id/seekBar2"
