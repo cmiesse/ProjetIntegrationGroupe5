@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton luminosity;
     private ImageButton alarm;
     private ImageButton sound;
+    private ImageButton agenda;
+    private ImageButton reveil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,28 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent otherActivity = new Intent(getApplicationContext(),SoundActivity.class);
+                startActivity(otherActivity);
+                finish();
+            }
+        });
+
+        this.agenda = findViewById(R.id.agenda);
+
+        agenda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent otherActivity = new Intent(getApplicationContext(),CalendrierActivity.class);
+                startActivity(otherActivity);
+                finish();
+            }
+        });
+
+        this.reveil = findViewById(R.id.reveil);
+
+        reveil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent otherActivity = new Intent(getApplicationContext(),AlarmActivity.class);
                 startActivity(otherActivity);
                 finish();
             }
