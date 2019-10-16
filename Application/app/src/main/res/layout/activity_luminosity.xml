@@ -36,10 +36,7 @@
         android:text="Luminosité : "
         android:textColor="#F43678"
         android:textColorLink="#FFFFFF"
-        android:textSize="30dp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="3dp" />
-
+        android:textSize="30dp" />
     <SeekBar
         android:id="@+id/seekBar2"
         android:layout_width="match_parent"
