@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Spinner Example</string>
+    <string name="app_name2">Spinner Example</string>
 
     <string-array name="numbers">
         <item>5 min</item>
