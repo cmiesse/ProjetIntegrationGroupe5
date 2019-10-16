@@ -4,22 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LuminosityActivity">
+    tools:context=".LuminosityActivity"
+    android:padding="16dp">
+
+    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0%"
+        android:textSize="32sp"
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="-11dp" />
 
     <SeekBar
-        android:id="@+id/seekBar2"
-        android:layout_width="343dp"
-        android:layout_height="150dp"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="47dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="174dp"
-        android:layout_height="55dp"
-        android:text="Couleurs"
-        android:textColor="#F10707"
-        android:textSize="36sp"
-        tools:layout_editor_absoluteX="118dp"
-        tools:layout_editor_absoluteY="34dp" />
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
