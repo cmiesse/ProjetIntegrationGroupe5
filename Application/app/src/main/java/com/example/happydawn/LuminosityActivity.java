@@ -11,8 +11,6 @@ public class LuminosityActivity extends AppCompatActivity {
     private TextView textview;
     private SeekBar seekbar;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +22,7 @@ public class LuminosityActivity extends AppCompatActivity {
         seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                textview.setText("" + progress + "%");
+                textview.setText(progress);
             }
 
             @Override
