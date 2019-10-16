@@ -10,7 +10,7 @@
 
 
     <ImageButton
-        android:id="@+id/alarm"
+        android:id="@+id/reveil"
         style="@style/Widget.AppCompat.ImageButton"
         android:layout_width="182dp"
         android:layout_height="182dp"
@@ -29,7 +29,7 @@
         app:srcCompat="@drawable/button_reveil" />
 
     <ImageButton
-        android:id="@+id/diary"
+        android:id="@+id/agenda"
         android:layout_width="182dp"
         android:layout_height="182dp"
         android:layout_marginStart="100dp"
