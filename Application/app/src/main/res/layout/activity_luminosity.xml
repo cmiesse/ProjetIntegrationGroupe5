@@ -7,7 +7,7 @@
     tools:context=".LuminosityActivity"
     android:padding="16dp">
 
-    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+    <TextView
         android:id="@+id/textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,11 +21,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+    <TextView
         android:id="@+id/textview5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="14dp"
         android:layout_marginEnd="135dp"
         android:layout_marginRight="135dp"
         android:layout_marginBottom="50dp"
