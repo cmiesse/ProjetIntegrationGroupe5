@@ -26,7 +26,7 @@ public class LuminosityActivity extends AppCompatActivity {
         seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-             //   textview.setText(progress);
+                textview.setText(getString(R.string.luminosite, progress));
             }
 
             @Override
