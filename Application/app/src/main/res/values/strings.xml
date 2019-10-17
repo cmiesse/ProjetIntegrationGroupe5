@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HappyDawn</string>
+    <string name="luminosite">%d</string>
 </resources>
