@@ -28,7 +28,7 @@
 <div class="w3-top">
  <div class="w3-bar w3-theme-d2 w3-left-align">
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-  <a href="index.html" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Happy Dawn</a>
+  <a href="index.php" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Happy Dawn</a>
   <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Notre équipe</a>
   <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Notre projet</a>
   <a href="#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Nos produits</a>
@@ -46,7 +46,7 @@
 
 <!-- Image Header -->
 <div class="w3-display-container w3-animate-opacity">
-  <img src="IMG/aubelogo.png" alt="Aube" style="width:100%;min-height:350px;max-height:600px;">
+  <img src="IMG/dawn.jpg" alt="Aube" style="width:100%;min-height:350px;max-height:600px;">
 </div>
 
 <!-- Team Container -->
