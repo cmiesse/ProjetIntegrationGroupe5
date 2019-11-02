@@ -1,5 +1,6 @@
+<?php require_once 'INC/FormHandler.php' ?>
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <title>Happy Dawn</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,7 +44,7 @@
 
 <!-- Image Header -->
 <div class="w3-display-container w3-animate-opacity">
-  <img src="IMG/dawn.jpg" alt="Aube" style="width:100%;min-height:350px;max-height:600px;">
+  <img src="IMG/aubelogo.png" alt="Aube" style="width:100%;min-height:350px;max-height:600px;">
 </div>
 
 <!-- Team Container -->
@@ -154,20 +155,31 @@
       <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>&nbsp;&nbsp;contact@happydawn.be</p>
     </div>
     <div class="w3-col m7">
-      <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="" target="_blank">
+      <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="" method="post">
       <div class="w3-section">
         <label for="name">Nom</label>
-        <input class="w3-input" type="text" name="Name" id="name" required>
+        <input class="w3-input" type="text" name="name" id="name" required>
       </div>
       <div class="w3-section">
         <label for="mail">Email</label>
-        <input class="w3-input" type="text" name="Email" id="mail" required>
+        <input class="w3-input" type="text" name="mail" id="mail" required>
       </div>
       <div class="w3-section">
         <label for="message">Message</label>
-        <input class="w3-input" type="text" name="Message" id="message" required>
+        <input class="w3-input" type="text" name="message" id="message" required>
       </div>
-      <button type="submit" class="w3-button w3-right w3-theme">Envoyer</button>
+      <button type="submit" class="w3-button w3-right w3-theme" name="submit">Envoyer</button>
+      <?php
+        $myForm = new FormHandler;
+        if(isset($_POST['submit'])){
+            if($myForm->validateForm($_POST['name'], $_POST['mail'], $_POST['message'])){
+                echo 'formulaire valide';
+            }
+            else{
+                echo 'formulaire non valide';
+            }
+        }
+      ?>
       </form>
     </div>
   </div>
