@@ -1,4 +1,6 @@
-<?php require_once 'INC/FormHandler.php' ?>
+<?php
+    require_once 'INC/formHandler.php';
+?>
 <!DOCTYPE html>
 <html>
 <title>Happy Dawn</title>
