@@ -28,7 +28,7 @@ public class SoundActivity extends AppCompatActivity {
             }
         });
 
-        this.son = findViewById(R.id.son);
+        this.son= findViewById(R.id.son);
 
         son.setOnClickListener(new View.OnClickListener() {
             @Override
