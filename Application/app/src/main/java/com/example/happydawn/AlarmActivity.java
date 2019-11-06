@@ -83,7 +83,7 @@ public class AlarmActivity extends AppCompatActivity {
                     minute_string = String.valueOf("0" + minute);
                 }
 
-                set_alarm_text(" -> Alarme ON" +"\n           "+ hour_string + ":" + minute_string);
+                set_alarm_text(" -> Alarme ON" +"\n          "+ hour_string + ":" + minute_string);
 
                 //pending intent
                 pending_intent = PendingIntent.getBroadcast(AlarmActivity.this, 0, my_intent
