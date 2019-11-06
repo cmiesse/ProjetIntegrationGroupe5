@@ -16,6 +16,57 @@
         tools:layout_editor_absoluteY="5dp"
         tools:ignore="MissingConstraints" />
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="260dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="375dp"
+        android:text="Debut Alarme H -"
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="146dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="640dp"
+        android:layout_marginLeft="640dp"
+        android:layout_marginTop="356dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="270dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="17dp"
+        android:text="Alarme Activation  "
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:ignore="MissingConstraints" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="41dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginRight="75dp"
+        android:text=""
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1" />
+
     <Button
         android:id="@+id/retour"
         android:layout_width="wrap_content"
