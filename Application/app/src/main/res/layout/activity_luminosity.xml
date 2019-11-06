@@ -57,6 +57,7 @@
         android:id="@+id/textView2"
         android:layout_width="180dp"
         android:layout_height="74dp"
+        android:layout_marginTop="110dp"
         android:text="Couleurs : "
         android:textSize="30dp"
         app:layout_constraintTop_toBottomOf="@+id/seekBar"
@@ -66,31 +67,39 @@
         android:id="@+id/textView3"
         android:layout_width="180dp"
         android:layout_height="74dp"
+        android:layout_marginTop="170dp"
         android:text="Durée : "
         android:textSize="30dp"
+        app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="6dp" />
 
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="181dp"
         android:layout_height="56dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
+        android:layout_marginTop="272dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
     <Spinner
         android:id="@+id/spinner2"
         android:layout_width="181dp"
         android:layout_height="56dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="237dp"
         android:layout_height="68dp"
+        android:layout_marginTop="150dp"
         android:text="Mode Hardcode : "
         android:textSize="30dp"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
@@ -100,9 +109,9 @@
         android:id="@+id/checkBox"
         android:layout_width="41dp"
         android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="75dp"
-        android:layout_marginRight="75dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
         android:text=""
         android:textSize="8sp"
         app:layout_constraintEnd_toEndOf="parent"
