@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -23,6 +24,7 @@ public class AlarmActivity extends AppCompatActivity {
     TimePicker alarm_timepicker;
     TextView updateText;
     Context context;
+    PendingIntent pending_intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,9 @@ public class AlarmActivity extends AppCompatActivity {
 
         final Calendar calendar = Calendar.getInstance();
 
+        //intent pour le alarm receiver
+        final Intent my_intent = new Intent(this.context, AlarmReceiver.class);
+
         //initialise button start
         Button startAlarm = (Button) findViewById(R.id.startAlarm);
 
@@ -64,7 +69,28 @@ public class AlarmActivity extends AppCompatActivity {
                 calendar.set(Calendar.HOUR_OF_DAY, alarm_timepicker.getHour());
                 calendar.set(Calendar.HOUR_OF_DAY, alarm_timepicker.getMinute());
 
-                set_alarm_text(" -> Alarme ON");
+                //string de l hour et minute
+                int hour = alarm_timepicker.getHour();
+                int minute = alarm_timepicker.getMinute();
+                String hour_string = String.valueOf(hour);
+                String minute_string = String.valueOf(minute);
+
+                if(hour>12){
+                    hour_string = String.valueOf(hour - 12);
+                }
+
+                if(minute < 10){
+                    minute_string = String.valueOf("0" + minute);
+                }
+
+                set_alarm_text(" -> Alarme ON" +"\n           "+ hour_string + ":" + minute_string);
+
+                //pending intent
+                pending_intent = PendingIntent.getBroadcast(AlarmActivity.this, 0, my_intent
+                , PendingIntent.FLAG_UPDATE_CURRENT);
+
+                //set alarm manager
+                alarm_manager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),pending_intent);
             }
         });
         //initialise button stop
@@ -75,6 +101,9 @@ public class AlarmActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 set_alarm_text(" -> Alarm OFF");
+
+                //anuler l'alarme
+                alarm_manager.cancel(pending_intent);
             }
         });
     }
