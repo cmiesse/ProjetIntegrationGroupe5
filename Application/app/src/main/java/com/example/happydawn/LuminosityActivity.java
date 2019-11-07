@@ -30,8 +30,8 @@ public class LuminosityActivity extends AppCompatActivity {
 
         Spinner spinner2 = findViewById(R.id.spinner2);
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.minute2, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner2.setAdapter(adapter2);
 
         textview = (TextView) findViewById(R.id.textview);
         seekbar = (SeekBar) findViewById(R.id.seekBar);
