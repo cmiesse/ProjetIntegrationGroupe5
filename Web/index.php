@@ -159,11 +159,11 @@
     <div class="w3-col m7">
       <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="" method="post">
       <div class="w3-section">
-        <label for="name">Nom</label>
+        <label for="name">Nom*</label>
         <input class="w3-input" type="text" name="name" id="name" required>
       </div>
       <div class="w3-section">
-        <label for="mail">Email</label>
+        <label for="mail">Email*</label>
         <input class="w3-input" type="text" name="mail" id="mail" required>
       </div>
       <div class="w3-section">
@@ -171,19 +171,23 @@
         <input class="w3-input" type="text" name="message" id="message" required>
       </div>
       <button type="submit" class="w3-button w3-right w3-theme" name="submit">Envoyer</button>
+      <p style="font-size:10px;">(*)Votre nom et adresse email sont seulement utiles pour pouvoir vous répondre. Ces données seront ensuite supprimées après l'envoi de la réponse.</p>
       <?php
         $myForm = new FormHandler;
         if(isset($_POST['submit'])){
             if($myForm->validateForm($_POST['name'], $_POST['mail'], $_POST['message'])){
                 echo 'formulaire valide';
+
             }
             else{
                 echo 'formulaire non valide';
             }
         }
       ?>
+
       </form>
     </div>
+
   </div>
 </div>
 
