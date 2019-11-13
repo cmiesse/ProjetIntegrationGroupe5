@@ -17,6 +17,9 @@ public class LuminosityActivity extends AppCompatActivity {
     private TextView textview;
     private SeekBar seekbar;
     private Button retour;
+    private int luminosite;
+    private String couleur;
+    private String duree;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +30,13 @@ public class LuminosityActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.couleur, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+        couleur = spinner.getSelectedItem().toString();
 
         Spinner spinner2 = findViewById(R.id.spinner2);
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.minute2, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(adapter2);
+        duree = spinner2.getSelectedItem().toString();
 
         textview = (TextView) findViewById(R.id.textview);
         seekbar = (SeekBar) findViewById(R.id.seekBar);
@@ -40,6 +45,7 @@ public class LuminosityActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 textview.setText(getString(R.string.luminosite, progress));
+                luminosite = progress;
             }
 
             @Override
