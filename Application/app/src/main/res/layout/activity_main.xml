@@ -13,7 +13,6 @@
         android:layout_marginTop="15dp"
         android:src="@drawable/button_alarm"
         />
-
     <ImageButton
         android:id="@+id/sound"
         android:layout_width="180dp"
