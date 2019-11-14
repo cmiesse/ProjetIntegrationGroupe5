@@ -23,34 +23,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-
-        if(bluetoothAdapter == null){
-            Toast.makeText(getApplicationContext(),"Device doesn't Support Bluetooth",Toast.LENGTH_SHORT).show();
-        }
-        if(!bluetoothAdapter.isEnabled()){
-            Intent enableAdapter = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-
-            startActivityForResult(enableAdapter,0);
-        }
-
-        Set bondedDevices = bluetoothAdapter.getBondedDevices();
-        if(bondedDevices.isEmpty()){
-            Toast.makeText(getApplicationContext(),"Please pair the devices first",Toast.LENGTH_SHORT).show();
-        }else{
-            for (BluetoothDevice iterator : bondedDevices) {
-
-            if(iterator.getAddress().equals(DEVICE_ADDRESS)) //Replace with iterator.getName() if comparing Device names.
-
-            {
-
-                device=iterator; //device is an object of type BluetoothDevice
-
-                found=true;
-
-                break;
-
-            } } }
 
         this.luminosity = findViewById(R.id.luminosity);
 
@@ -86,5 +58,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public void onClickStart(View view) {
+
+    }
+
+    public void onClickSend(View view) {
+    }
+
+    public void onClickStop(View view) {
+    }
+
+    public void onClickClear(View view) {
     }
 }
