@@ -59,4 +59,17 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    public void onClickStart(View view) {
+
+    }
+
+    public void onClickSend(View view) {
+    }
+
+    public void onClickStop(View view) {
+    }
+
+    public void onClickClear(View view) {
+    }
 }
