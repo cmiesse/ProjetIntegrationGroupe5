@@ -176,18 +176,22 @@
         $myForm = new FormHandler;
         if(isset($_POST['submit'])){
             if($myForm->validateForm($_POST['name'], $_POST['mail'], $_POST['message'])){
-                echo 'formulaire valide';
-
+              $to = "contact@happydawn.be"; // this is your Email address
+              $from = $_POST['mail']; // this is the sender's Email address
+              $nameFrom = $_POST['name'];
+              $subject = "Formulaire de contact";
+              $message = $nameFrom . " a écrit le message suivant:" . "\n\n" . $_POST['message'];
+              $headers = "From: " . $from;
+              mail($to,$subject,$message,$headers);
+              echo 'formulaire valide et mail envoyé';
             }
             else{
                 echo 'formulaire non valide';
             }
         }
       ?>
-
       </form>
     </div>
-
   </div>
 </div>
 
