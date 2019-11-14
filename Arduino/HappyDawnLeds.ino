@@ -18,5 +18,5 @@ void loop() {
     leds[z] =  CRGB::White ;;
   }
   FastLED.show();
-  delay(3000); 
+  delay(3000); // yes
 }
