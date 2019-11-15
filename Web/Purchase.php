@@ -13,7 +13,7 @@
            Son adresse mail est ' . $_POST['mail'];
           $headers = "From: " . $from."\n";
           $headers .="Content-type: text/html; charset=utf8\n";
-          //mail($to,$subject,$message,$headers);
+          mail($to,$subject,$message,$headers);
           $info = '<span style="background-color:green;color:black">Formulaire valide <i class="fa fa-check"></i> Mail envoyé</span>';
         }
         else{
