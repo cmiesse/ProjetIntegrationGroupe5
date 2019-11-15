@@ -1,0 +1,2 @@
+include ':app', ':appv2'
+rootProject.name='HappyDawn'
