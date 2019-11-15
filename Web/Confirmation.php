@@ -10,7 +10,7 @@
     <title>HappyDawn - Confirmation Mail</title>
   </head>
   <body style="background-color:gray">
-    <a class="w3-button w3-teal w3-padding-large" href="www.happydawn.be">Retour à l'accueil</a><br>
+    <a class="w3-button w3-teal w3-padding-large" href="javascript:history.back()">Retour à l'accueil</a><br>
     <?php
       echo '<p id="conf">Mail envoyé</p>';
     ?>
