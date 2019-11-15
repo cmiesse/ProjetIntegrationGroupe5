@@ -9,7 +9,7 @@
         android:id="@+id/imgLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/splashscreen"
+        android:background="@drawable/splashscreen2"
         tools:ignore="MissingConstraints" />
 
 
