@@ -1,8 +1,9 @@
 <?php
-    require_once 'INC/formHandler.php';
+    require_once 'INC/FormHandler.php';
     $myForm = new FormHandler;
+    $info = null;
     if(isset($_POST['submit'])){
-        if($myForm->validateForm($_POST['name'], $_POST['mail'], $_POST['message'])){
+        if($myForm->validateContactForm($_POST['name'], $_POST['mail'], $_POST['message'])){
           $to = "contact@happydawn.be"; // this is your Email address
           $from = $_POST['mail']; // this is the sender's Email address
           $nameFrom = utf8_decode($_POST['name']);
@@ -14,7 +15,7 @@
           header('Location: Confirmation.php');
         }
         else{
-            echo 'formulaire non valide';
+            $info='<span style="background-color:red;color:black">Formulaire non valide</span>';
         }
     }
 ?>
@@ -145,7 +146,7 @@
         </li>
           <li class="w3-padding-16"><img src="IMG/reveil.png" alt="Réveil" style="width:28%"> </li>
         <li class="w3-theme-l5 w3-padding-24">
-          <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Acheter</button>
+          <a class="w3-button w3-teal w3-padding-large" href="Purchase.php"><i class="fa fa-check"></i> Acheter</a>
         </li>
       </ul>
     </div>
@@ -158,7 +159,7 @@
         <li class="w3-padding-16"><img src="IMG/download.png" alt="Android" style="width:72%"> </li>
 
         <li class="w3-theme-l5 w3-padding-24">
-          <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Télécharger</button>
+          <a class="w3-button w3-teal w3-padding-large" href="https://github.com/cmiesse/ProjetIntegrationGroupe5/tree/master/Application/app/release"><i class="fa fa-check"></i> Télécharger</a>
         </li>
       </ul>
     </div>
@@ -181,7 +182,7 @@
       </div>
       <div class="w3-section">
         <label for="mail">Email*</label>
-        <input class="w3-input" type="text" name="mail" id="mail" required>
+        <input class="w3-input" type="text" name="mail" id="mail">
       </div>
       <div class="w3-section">
         <label for="message">Message</label>
@@ -189,6 +190,7 @@
       </div>
       <button type="submit" class="w3-button w3-right w3-theme" name="submit">Envoyer</button>
       <p style="font-size:10px;">(*)Votre nom et adresse email sont seulement utiles pour pouvoir vous répondre. Ces données seront ensuite supprimées après l'envoi de la réponse.</p>
+      <?= $info ?>
       </form>
     </div>
   </div>
