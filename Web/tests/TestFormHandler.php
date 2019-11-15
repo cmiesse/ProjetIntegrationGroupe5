@@ -15,9 +15,9 @@ class TestFormHandler extends TestCase
      * @return void
      */
     public function testvalidateContactFormAllParametersAndValidEmail(){
-        $object = new formHandler; //  setUp
+        $newForm = new FormHandler; //  setUp
 
-        $functionResult = $object->validateContactForm('test', 'test@test.be', 'Ceci est un test');  // Exercice
+        $functionResult = $newForm->validateContactForm('test', 'test@test.be', 'Ceci est un test');  // Exercice
 
         $this->assertSame(true, $functionResult );   // Assert
     }
@@ -30,9 +30,9 @@ class TestFormHandler extends TestCase
      * @return void
      */
     public function testvalidateContactFormNoParameters(){
-        $object = new formHandler; //  setUp
+        $newForm = new FormHandler; //  setUp
 
-        $functionResult = $object->validateContactForm(null,null,null);  // Exercice
+        $functionResult = $newForm->validateContactForm(null,null,null);  // Exercice
 
         $this->assertSame(false, $functionResult );   // Assert
     }
@@ -45,9 +45,9 @@ class TestFormHandler extends TestCase
      * @return void
      */
     public function testvalidateContactFormAllParametersButNameMissing(){
-        $object = new formHandler; //  setUp
+        $newForm = new FormHandler; //  setUp
 
-        $functionResult = $object->validateContactForm(null, 'test@test.be', 'Ceci est un test');  // Exercice
+        $functionResult = $newForm->validateContactForm(null, 'test@test.be', 'Ceci est un test');  // Exercice
 
         $this->assertSame(false, $functionResult );   // Assert
     }
@@ -60,9 +60,9 @@ class TestFormHandler extends TestCase
      * @return void
      */
     public function testvalidateContactFormAllParametersButEmailMissing(){
-        $object = new formHandler; //  setUp
+        $newForm = new FormHandler; //  setUp
 
-        $functionResult = $object->validateContactForm('test', null, 'Ceci est un test');  // Exercice
+        $functionResult = $newForm->validateContactForm('test', null, 'Ceci est un test');  // Exercice
 
         $this->assertSame(false, $functionResult );   // Assert
     }
@@ -75,9 +75,9 @@ class TestFormHandler extends TestCase
      * @return void
      */
     public function testvalidateContactFormAllParametersButMessageMissing(){
-        $object = new formHandler; //  setUp
+        $newForm = new FormHandler; //  setUp
 
-        $functionResult = $object->validateContactForm('test', 'test@test.be', null);  // Exercice
+        $functionResult = $newForm->validateContactForm('test', 'test@test.be', null);  // Exercice
 
         $this->assertSame(false, $functionResult );   // Assert
     }
@@ -90,11 +90,84 @@ class TestFormHandler extends TestCase
      * @return void
      */
     public function testvalidateContactFormAllParametersAndWrongEmailFormat(){
-        $object = new formHandler; //  setUp
+        $newForm = new FormHandler; //  setUp
 
-        $functionResult = $object->validateContactForm('test', 'test+test.be','Ceci est un test');  // Exercice
+        $functionResult = $newForm->validateContactForm('test', 'test+test.be','Ceci est un test');  // Exercice
 
         $this->assertSame(false, $functionResult );   // Assert
     }
 
+    public function testValidatePurchaseFormAllParametersAndAllValid(){
+      $newForm = new FormHandler;
+      $functionResult = $newForm->validatePurchaseForm('test', 'test@test.be', 1, 'test', 'test', 'test');
+      $this->assertSame(true, $functionResult);
+    }
+
+    public function testValidatePurchaseFormNoParameters(){
+        $newForm = new FormHandler;
+        $functionResult = $newForm->validatePurchaseForm(null, null, null, null, null, null);
+        $this->assertSame(false, $functionResult);
+    }
+
+    public function testValidatePurchaseFormAllParametersButNameMissing(){
+        $newForm = new FormHandler;
+        $functionResult = $newForm->validatePurchaseForm(null, 'test@test.be', 1, 'test', 'test', 'test');
+        $this->assertSame(false, $functionResult);
+    }
+
+    public function testValidatePurchaseFormAllParametersButEmailMissing()
+    {
+        $newForm = new FormHandler;
+        $functionResult = $newForm->validatePurchaseForm('test', null, 1, 'test', 'test', 'test');
+        $this->assertSame(false, $functionResult);
+    }
+
+    public function testValidatePurchaseFormAllParametersButQuantityMissing()
+    {
+        $newForm = new FormHandler;
+        $functionResult = $newForm->validatePurchaseForm('test', 'test@test.be', null, 'test', 'test', 'test');
+        $this->assertSame(false, $functionResult);
+    }
+
+    public function testValidatePurchaseFormAllParametersButAddressMissing()
+    {
+        $newForm = new FormHandler;
+        $functionResult = $newForm->validatePurchaseForm('test', 'test@test.be', 1, null, 'test', 'test');
+        $this->assertSame(false, $functionResult);
+    }
+
+    public function testValidatePurchaseFormAllParametersButCityMissing()
+    {
+        $newForm = new FormHandler;
+        $functionResult = $newForm->validatePurchaseForm('test', 'test@test.be', 1, 'test', null, 'test');
+        $this->assertSame(false, $functionResult);
+    }
+
+    public function testValidatePurchaseFormAllParametersButCountryMissing()
+    {
+        $newForm = new FormHandler;
+        $functionResult = $newForm->validatePurchaseForm('test', 'test@test.be', 1, 'test', 'test', null);
+        $this->assertSame(false, $functionResult);
+    }
+
+    public function testValidatePurchaseFormAllParametersButInvalidQuantityLow()
+    {
+        $newForm = new FormHandler;
+        $functionResult = $newForm->validatePurchaseForm('test', 'test@test.be', 0, 'test', 'test', 'test');
+        $this->assertSame(false, $functionResult);
+    }
+
+    public function testValidatePurchaseFormAllParametersButInvalidQuantityHigh()
+    {
+        $newForm = new FormHandler;
+        $functionResult = $newForm->validatePurchaseForm('test', 'test@test.be', 15, 'test', 'test', 'test');
+        $this->assertSame(false, $functionResult);
+    }
+
+    public function testValidatePurchaseFormAllParametersButInvalidEmail()
+    {
+        $newForm = new FormHandler;
+        $functionResult = $newForm->validatePurchaseForm('test', 'test+test.be', 1, 'test', 'test', 'test');
+        $this->assertSame(false, $functionResult);
+    }
 }
