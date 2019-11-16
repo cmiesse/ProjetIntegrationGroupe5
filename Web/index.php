@@ -1,5 +1,23 @@
 <?php
-    require_once 'INC/formHandler.php';
+    require_once 'INC/FormHandler.php';
+    $myForm = new FormHandler;
+    $info = null;
+    if(isset($_POST['submit'])){
+        if($myForm->validateContactForm($_POST['name'], $_POST['mail'], $_POST['message'])){
+          $to = "contact@happydawn.be"; // this is your Email address
+          $from = $_POST['mail']; // this is the sender's Email address
+          $nameFrom = utf8_decode($_POST['name']);
+          $subject = "Formulaire de contact";
+          $message = $nameFrom . " a écrit le message suivant:" . "\n\n" . utf8_decode($_POST['message']);
+          $headers = "From: " . $from."\n";
+          $headers .="Content-type: text/html; charset=utf8\n";
+          mail($to,$subject,$message,$headers);
+          header('Location: Confirmation.php');
+        }
+        else{
+            $info='<span style="background-color:red;color:black">Formulaire non valide</span>';
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,7 +67,7 @@
   <img src="IMG/dawn.jpg" alt="Aube" style="width:100%;min-height:350px;max-height:600px;">
 </div>
 
-<!-- Team Container -->
+<!-- Partie Equipe -->
 <div class="w3-container w3-padding-64 w3-center" id="team">
 <h2>Notre équipe</h2>
 <p>Voici les membres de notre équipe</p>
@@ -104,7 +122,7 @@
 
 </div>
 
-<!-- Work Row -->
+<!-- Partie Projet -->
 <div class="w3-row-padding w3-padding-64 w3-theme-l1 w3-center" id="work">
   <div class="w3">
     <h2>Notre projet</h2>
@@ -117,7 +135,7 @@
 </div>
 
 
-<!-- Pricing Row -->
+<!-- Partie Produits -->
 <div class="w3-row-padding w3-center w3-padding-64" id="pricing">
     <h2>Nos produits</h2>
     <p>Acheter et télécharger nos produits</p><br>
@@ -128,7 +146,7 @@
         </li>
           <li class="w3-padding-16"><img src="IMG/reveil.png" alt="Réveil" style="width:28%"> </li>
         <li class="w3-theme-l5 w3-padding-24">
-          <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Acheter</button>
+          <a class="w3-button w3-teal w3-padding-large" href="Purchase.php"><i class="fa fa-check"></i> Acheter</a>
         </li>
       </ul>
     </div>
@@ -141,13 +159,13 @@
         <li class="w3-padding-16"><img src="IMG/download.png" alt="Android" style="width:72%"> </li>
 
         <li class="w3-theme-l5 w3-padding-24">
-          <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Télécharger</button>
+          <a class="w3-button w3-teal w3-padding-large" href="https://github.com/cmiesse/ProjetIntegrationGroupe5/tree/master/Application/app/release"><i class="fa fa-check"></i> Télécharger</a>
         </li>
       </ul>
     </div>
 </div>
 
-<!-- Contact Container -->
+<!-- Partie Contact -->
 <div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
   <div class="w3-row">
     <div class="w3-col m5">
@@ -164,7 +182,7 @@
       </div>
       <div class="w3-section">
         <label for="mail">Email*</label>
-        <input class="w3-input" type="text" name="mail" id="mail" required>
+        <input class="w3-input" type="text" name="mail" id="mail">
       </div>
       <div class="w3-section">
         <label for="message">Message</label>
@@ -172,35 +190,18 @@
       </div>
       <button type="submit" class="w3-button w3-right w3-theme" name="submit">Envoyer</button>
       <p style="font-size:10px;">(*)Votre nom et adresse email sont seulement utiles pour pouvoir vous répondre. Ces données seront ensuite supprimées après l'envoi de la réponse.</p>
-      <?php
-        $myForm = new FormHandler;
-        if(isset($_POST['submit'])){
-            if($myForm->validateForm($_POST['name'], $_POST['mail'], $_POST['message'])){
-              $to = "contact@happydawn.be"; // this is your Email address
-              $from = $_POST['mail']; // this is the sender's Email address
-              $nameFrom = $_POST['name'];
-              $subject = "Formulaire de contact";
-              $message = $nameFrom . " a écrit le message suivant:" . "\n\n" . $_POST['message'];
-              $headers = "From: " . $from;
-              mail($to,$subject,$message,$headers);
-              echo 'formulaire valide et mail envoyé';
-            }
-            else{
-                echo 'formulaire non valide';
-            }
-        }
-      ?>
+      <?= $info ?>
       </form>
     </div>
   </div>
 </div>
 
-<!-- Image of location/map -->
+<!-- Partie Carte/Localisation -->
 <div class="w3-display-container w3-animate-opacity">
   <img src="IMG/lln.JPG" alt="Ephec" style="width:100%;min-height:350px;max-height:600px;">
 </div>
 
-<!-- Footer -->
+<!-- Pied de page -->
 <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
   <div style="position:relative;bottom:25px;z-index:1;" class="w3-tooltip w3-right">
     <span class="w3-text w3-padding w3-teal w3-hide-small">Revenir en haut</span>

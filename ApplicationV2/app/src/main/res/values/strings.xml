@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">HappyDawn</string>
+    <string name="luminosite">%d</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string-array name="minute">
+        <item>60 min</item>
+        <item>45 min</item>
+        <item>30 min</item>
+        <item>20 min</item>
+        <item>15 min</item>
+        <item>10 min</item>
+    </string-array>
+    <string-array name="couleur">
+        <item><p><font color="blue">Bleu</font></p></item>
+        <item><p><font color="green">Vert</font></p></item>
+        <item><p><font color="red">rouge</font></p></item>
+    </string-array>
+    <string-array name="minute2">
+        <item>60 min</item>
+        <item>45 min</item>
+        <item>30 min</item>
+        <item>20 min</item>
+        <item>15 min</item>
+        <item>10 min</item>
+    </string-array>
+</resources>

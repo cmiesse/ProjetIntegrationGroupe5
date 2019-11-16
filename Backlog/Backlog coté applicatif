@@ -1,0 +1,33 @@
+Version google docs : https://docs.google.com/document/d/1jV_zha3pvPQju0vkE-dQZUmthQTMCOwGYngQDoQCw7g/edit#
+
+Backlog - Happy Dawn - Groupe 5-Application 
+Team application : Mathias Gassmann, Lefèvre Alexandre et Gilles Timothy
+
+Priorité Importante : 
+En tant qu’utilisateur, je veux pouvoir créer plusieurs alarmes en fonction de mes besoins.
+
+ Critère de réussite : Possibilité de créer différentes alarmes dans l’application et de les activer à la demande de l’utilisateur.
+
+En tant qu’utilisateur, je veux pouvoir paramétrer mon réveil depuis l’application (interface).
+ Critère de réussite : L’interface de paramétrage stocke les valeurs des différents paramètres en interne.
+
+En tant qu’utilisateur, je veux que les informations que j’entre dans l’application se transmettent au  réveil physique.
+ Critère de réussite : L’application transmet à l’arduino les données importantes via bluetooth.
+Priorité Moyenne: 
+
+En tant qu’utilisateur, je veux voir la météo du jour quand j’ouvre l’application.
+ Critère de réussite : Affichage de la météo en fonction du jour sur la page d’accueil de l’application.
+
+En tant qu’utilisateur, je veux savoir facilement si une alarme est enclenchée et l’heure à laquelle elle est va sonner.
+Critère de réussite : Affichage de la prochaine alarme sur la page d’accueil de l’application.
+
+En tant qu'utilisateur, je veux avoir une app facile d'utilisation donc intuitive afin de ne pas m’y perdre.
+Critère de réussite : L’application doit être user-friendly, elle doit être utilisable par n’importe qui, sans prérequis.
+
+En tant qu’utilisateur, je veux pouvoir avoir accès à une page d’aide qui me renseignera sur comment utiliser l’application et que font les différents paramètres du réveil.
+ Critère de réussite : Il y la possibilité d’aller sur une page d’aide ou il est écrit comment utiliser l’application et l’explication des différents paramètres.
+
+Priorité Faible : 
+
+En tant qu’utilisateur, je veux que l’application se synchronise avec mon agenda afin de me créer des alarmes personnalisées en fonction de mon emploi du temps.
+ Critère de réussite :L’application se synchronise avec l’agenda de l’utilisateur et lui propose des alarmes en fonction de ce qu’il a encodé dans son agenda.
