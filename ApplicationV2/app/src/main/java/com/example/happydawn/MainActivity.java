@@ -14,6 +14,13 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Set;
@@ -35,12 +42,30 @@ public class MainActivity extends AppCompatActivity {
         findwethear();
     }
 
-    public void findwethear(){
-        String url = "";
-        
+    public void findwethear() {
+        String url = "http://api.openweathermap.org/data/2.5/weather?q=Louvain-la-Neuve,BE&appid=208bd97770984e2f933ee407ae1493b6&units=imperial";
+
+        JsonObjectRequest jor = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    JSONObject main_object = response.getJSONObject("main");
+                    JSONArray array = response.getJSONArray("weather");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+            }, new Response.ErrorListener(){
+                @Override
+                public void onErrorResponse (VolleyError error){
+
+            }
+            }
+        );
     }
 
-    public void onClickStart(View view) {
+
+        public void onClickStart(View view) {
 
     }
 
