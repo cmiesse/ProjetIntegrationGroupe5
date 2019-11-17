@@ -15,9 +15,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -51,6 +53,20 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     JSONObject main_object = response.getJSONObject("main");
                     JSONArray array = response.getJSONArray("weather");
+                    JSONObject object = array.getJSONObject(0);
+                    String degree = String.valueOf(main_object.getDouble("degree"));
+                    String temp = object.getString("temp");
+
+                    t1_degree.setText(degree);
+                    t2_temps.setText(temp);
+
+                    double degree_int =  Double.parseDouble(degree);
+                    double centi = (degree_int - 32)/1.8000;
+                    centi = Math.round(centi);
+                    int i = (int)centi;
+                    t1_degree.setText(String.valueOf(i));
+
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -62,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
             }
             }
         );
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+        queue.add(jor);
     }
 
 
