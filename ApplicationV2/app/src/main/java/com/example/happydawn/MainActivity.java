@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
         t2_temps = (TextView)findViewById(R.id.temps);
 
         findwethear();
+
+        ImageView image = (ImageView)findViewById(R.id.imageview);
+        image.setImageResource(R.drawable.meteo);
     }
 
     public void findwethear() {
