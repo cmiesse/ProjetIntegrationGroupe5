@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         WebView webView = (WebView)findViewById(R.id.webView);
         webView.loadUrl("file:///android_asset/horloge/horloge.html");
+        webView.setWebChromeClient(new WebChromeClient());
         webView.getSettings().setJavaScriptEnabled(true);
 
         t1_degree = (TextView)findViewById(R.id.degre);
