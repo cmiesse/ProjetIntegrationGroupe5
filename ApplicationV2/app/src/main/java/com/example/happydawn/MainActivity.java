@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebView;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+
+        WebView webView = (WebView)findViewById(R.id.webView);
+        webView.loadUrl("file:///android_asset/horloge/horloge.html");
+        webView.getSettings().setJavaScriptEnabled(true);
 
         t1_degree = (TextView)findViewById(R.id.degre);
         t2_temps = (TextView)findViewById(R.id.temps);
@@ -84,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-        public void onClickStart(View view) {
+    public void onClickStart(View view) {
 
     }
 
