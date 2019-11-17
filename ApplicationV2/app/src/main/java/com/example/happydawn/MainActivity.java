@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
                     JSONObject main_object = response.getJSONObject("main");
                     JSONArray array = response.getJSONArray("weather");
                     JSONObject object = array.getJSONObject(0);
-                    String degree = String.valueOf(main_object.getDouble("degree"));
-                    String temp = object.getString("temp");
+                    String degree = String.valueOf(main_object.getDouble("temp"));
+                    String temp = object.getString("description");
 
                     t1_degree.setText(degree);
                     t2_temps.setText(temp);
