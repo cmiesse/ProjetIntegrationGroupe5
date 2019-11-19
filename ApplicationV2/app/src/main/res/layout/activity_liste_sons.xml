@@ -23,7 +23,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="5dp"
-            android:text="Réglages"
+            android:text="Son"
             android:textSize="@android:dimen/app_icon_size" />
 
     </LinearLayout>
@@ -33,21 +33,13 @@
         android:layout_height="567dp"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/son"
+        <ListView
+            android:id="@+id/listeSons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="#6370A2"
-            android:text="Son"
-            android:textColor="@android:color/background_dark"
-            android:textColorLink="#FFFFFF"
-            android:textSize="30dp" />
 
-        <SeekBar
-            android:id="@+id/seekBar2"
-            android:layout_width="match_parent"
-            android:layout_height="87dp" />
+            ></ListView>
+
 
     </RelativeLayout>
 
