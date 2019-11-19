@@ -31,7 +31,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="5dp"
             android:id="@+id/aide"
             android:background="@drawable/help" />
 
@@ -40,14 +40,14 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="567dp"
+        android:layout_height="510dp"
         android:orientation="horizontal">
 
         <WebView
             android:id="@+id/webView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp" />
 
         <TextView
@@ -64,7 +64,7 @@
             android:layout_height="60dp"
             android:background="@drawable/alarme"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="470dp" />
+            android:layout_marginTop="420dp" />
 
     </RelativeLayout>
 
