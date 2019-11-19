@@ -2,6 +2,7 @@ package com.example.happydawn;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -27,6 +28,8 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity {
 
     TextView t1_degree,t2_temps;
+    private ImageView aide;
+    private ImageView alarme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,28 @@ public class MainActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+
+        this.aide = findViewById(R.id.aide);
+
+        aide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent otherActivity = new Intent(getApplicationContext(),Aide.class);
+                startActivity(otherActivity);
+                finish();
+            }
+        });
+
+        this.alarme = findViewById(R.id.alarme);
+
+        alarme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent otherActivity = new Intent(getApplicationContext(),Alarme.class);
+                startActivity(otherActivity);
+                finish();
+            }
+        });
 
         WebView webView = (WebView)findViewById(R.id.webView);
         webView.loadUrl("file:///android_asset/horloge/horloge.html");

@@ -18,10 +18,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Aide"></activity>
-        <activity android:name=".Sonds" />
-        <activity android:name=".Reglage" />
+        <activity android:name=".Reglage"></activity>
         <activity android:name=".Alarme" />
+        <activity android:name=".Aide" />
+        <activity android:name=".Sonds" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
