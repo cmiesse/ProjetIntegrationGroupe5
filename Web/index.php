@@ -188,7 +188,7 @@
         <label for="message">Message</label>
         <input class="w3-input" type="text" name="message" id="message" required>
       </div>
-      <button type="submit" class="w3-button w3-right w3-theme" name="submit">Envoyer</button>
+      <button type="submit" class="w3-button w3-right w3-theme" name="submit" id="envoyer">Envoyer</button>
       <p style="font-size:10px;">(*)Votre nom et adresse email sont seulement utiles pour pouvoir vous répondre. Ces données seront ensuite supprimées après l'envoi de la réponse.</p>
       <?= $info ?>
       </form>
