@@ -38,7 +38,45 @@
             android:layout_height="510dp"
             android:orientation="horizontal">
 
-            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="1)Comment Ajouter une Alarme : "
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#000000"
+                android:layout_marginTop="10dp"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="104dp"
+                android:text="- Pour ajouter une alarme, il faut appuer sur l'icone en forme de cloche. Ensuite appuyer sur l'icone +. Vous pouvez désormais paramétrer votre réveil."
+                android:textColor="#F3000000"
+                android:layout_marginTop="60dp"
+                android:textSize="21sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:text="2)Explication des paramètres :"
+                android:textColor="#000000"
+                android:layout_marginTop="180dp"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="387dp"
+                android:layout_marginTop="230dp"
+                android:text="- L'heure de l'alarme : L'heure à laquelle le réveil sonnera.                                                                                       - Le son : Le son que jouera la réveil.
+                                                                                                      -L'intensité du volume : La puissance sonore du son.
+                                                                                    - L'intensité de la lumière : l'intensité de la lumière qu'émettera le réveil.
+                                                               - La couleur de la lumière : La couleure que la lumière prendra.
+                                                  - Durée de l'alarme : Le temps que durera le réveil.
+                                                   - L'augmentation de la luminosité : L'augmentation de la puissance de la lumière en fonction du temps
+                        -Le libélle : Le nom qu'aura votre alarme. "
+                android:textColor="#FC000000"
+                android:textSize="21dp" />
 
         </RelativeLayout>
 
