@@ -9,5 +9,10 @@ ENGINE = MyISAM;
 Insertion de valeurs dans la table personne
 
 
-INSERT INTO `personne` (`nom`, `prenom`, `mail`, `sexe`, `dateNaissance`, `adresse`, `ville`) 
-VALUES ('bon', 'jean', 'coucou@mail', '1', '2019-11-13', 'rue bonjour', 'bruxelles');
+	1) INSERT INTO `personne` (`nom`, `prenom`, `mail`, `sexe`, `dateNaissance`, `adresse`, `ville`) 
+		VALUES ('bon', 'jean', 'coucou@mail', '1', '2019-11-13', 'rue bonjour', 'bruxelles');
+
+	2) INSERT INTO `personne` (`nom`, `prenom`, `mail`, `sexe`, `dateNaissance`, `adresse`, `ville`) 
+		VALUES ('test', 'test', 'test@mail', '1', '2019-11-13', 'rue test', 'test')
+
+
