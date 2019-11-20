@@ -19,12 +19,20 @@
             android:background="@drawable/fleche"/>
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="208dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:text="Réglages"
             android:textSize="@android:dimen/app_icon_size" />
+
+        <ImageView
+            android:id="@+id/valide"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/check"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="1dp" />
 
     </LinearLayout>
 
@@ -33,21 +41,33 @@
         android:layout_height="510dp"
         android:orientation="horizontal">
 
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:timePickerMode="spinner" />
+
+        <TextView
+            android:id="@+id/updateText"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="210dp"
+            android:text="alarme activée ?"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
         <Button
             android:id="@+id/son"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="270dp"
             android:background="#6370A2"
             android:text="Son"
             android:textColor="@android:color/background_dark"
             android:textColorLink="#FFFFFF"
             android:textSize="30dp" />
 
-        <SeekBar
-            android:id="@+id/seekBar2"
-            android:layout_width="match_parent"
-            android:layout_height="87dp" />
 
     </RelativeLayout>
 
