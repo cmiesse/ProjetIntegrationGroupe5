@@ -74,22 +74,53 @@
             android:textColorLink="#FFFFFF"
             android:textSize="30dp" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="350dp"
-            android:background="#6370A2"
-            android:text="Son"
+        <TextView
+            android:id="@+id/textVolume"
+            android:layout_width="180dp"
+            android:layout_height="74dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="340dp"
+            android:text="Volume : "
             android:textColor="@android:color/background_dark"
             android:textColorLink="#FFFFFF"
             android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/textvolume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="340dp"
+            android:layout_marginLeft="145dp"
+            android:textColor="@android:color/background_dark"
+            android:text="0"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/textpourcent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="340dp"
+            android:layout_marginLeft="185dp"
+            android:textColor="@android:color/background_dark"
+            android:text="%"
+            android:textSize="32sp" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="380dp"
+            tools:layout_editor_absoluteX="12dp"
+            android:progressTint="@android:color/background_dark"
+            android:thumbTint="@android:color/background_dark"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="430dp"
             android:background="#6370A2"
-            android:text="Son"
+            android:text="Luminosite"
+            android:id="@+id/luminosite"
             android:textColor="@android:color/background_dark"
             android:textColorLink="#FFFFFF"
             android:textSize="30dp" />
@@ -99,7 +130,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="510dp"
             android:background="#6370A2"
-            android:text="Son"
+            android:text="Couleurs"
+            android:id="@+id/couleurs"
             android:textColor="@android:color/background_dark"
             android:textColorLink="#FFFFFF"
             android:textSize="30dp" />
@@ -109,7 +141,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="590dp"
             android:background="#6370A2"
-            android:text="Son"
+            android:text="Duree"
+            android:id="@+id/duree"
             android:textColor="@android:color/background_dark"
             android:textColorLink="#FFFFFF"
             android:textSize="30dp" />
@@ -117,9 +150,10 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="680dp"
+            android:layout_marginTop="670dp"
             android:background="#6370A2"
-            android:text="Son"
+            android:text="Augmentation"
+            android:id="@+id/augmentation"
             android:textColor="@android:color/background_dark"
             android:textColorLink="#FFFFFF"
             android:textSize="30dp" />
@@ -127,9 +161,10 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="770dp"
+            android:layout_marginTop="760dp"
             android:background="#6370A2"
-            android:text="Son"
+            android:text="libelle"
+            android:id="@+id/libelle"
             android:textColor="@android:color/background_dark"
             android:textColorLink="#FFFFFF"
             android:textSize="30dp" />
