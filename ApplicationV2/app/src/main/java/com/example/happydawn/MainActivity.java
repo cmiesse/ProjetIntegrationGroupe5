@@ -87,15 +87,17 @@ public class MainActivity extends AppCompatActivity {
                     String degree = String.valueOf(main_object.getDouble("temp"));
                     String temp = object.getString("description");
 
-                    t1_degree.setText(degree);
-                    t2_temps.setText(temp);
+                    t1_degree = (TextView)findViewById(R.id.degre);
+                    t2_temps = (TextView)findViewById(R.id.temps);
+
+                    t1_degree.setText(degree+"");
+                    t2_temps.setText(temp+"");
 
                     double degree_int =  Double.parseDouble(degree);
                     double centi = (degree_int - 32)/1.8000;
                     centi = Math.round(centi);
                     int i = (int)centi;
                     t1_degree.setText(String.valueOf(i));
-
 
                 } catch (JSONException e) {
                     e.printStackTrace();
