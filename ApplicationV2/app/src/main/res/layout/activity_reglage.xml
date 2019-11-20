@@ -161,7 +161,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="760dp"
+            android:layout_marginTop="750dp"
             android:background="#6370A2"
             android:text="libelle"
             android:id="@+id/libelle"
@@ -169,16 +169,16 @@
             android:textColorLink="#FFFFFF"
             android:textSize="30dp" />
 
-        <EditText
-            android:id="@+id/sujet"
+        <TextView
+            android:id="@+id/nomalarme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            android:layout_marginBottom="4dp"
-            android:hint="android"
-            android:inputType="text" />
+            android:layout_marginTop="810dp"
+            android:text="nom de l'alarme"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:inputType="text"
+            android:layout_marginBottom="10dp" />
 
 
     </RelativeLayout>
