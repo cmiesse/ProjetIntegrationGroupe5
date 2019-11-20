@@ -15,7 +15,7 @@
           header('Location: Confirmation.php');
         }
         else{
-            $info='<span style="background-color:red;color:black">Formulaire non valide</span>';
+            $info='<span style="background-color:red;color:black" id="conf">Formulaire non valide</span>';
         }
     }
 ?>
