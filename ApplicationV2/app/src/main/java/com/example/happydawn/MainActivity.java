@@ -80,18 +80,17 @@ public class MainActivity extends AppCompatActivity {
         JsonObjectRequest jor = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                try {
+              try {
                     JSONObject main_object = response.getJSONObject("main");
                     JSONArray array = response.getJSONArray("weather");
                     JSONObject object = array.getJSONObject(0);
                     String degree = String.valueOf(main_object.getDouble("temp"));
                     String temp = object.getString("description");
 
-                    t1_degree = (TextView)findViewById(R.id.degre);
-                    t2_temps = (TextView)findViewById(R.id.temps);
+                    t1_degree = findViewById(R.id.degre);
+                    t2_temps = findViewById(R.id.temps);
 
-                    t1_degree.setText(degree+"");
-                    t2_temps.setText(temp+"");
+                    t2_temps.setText(temp);
 
                     double degree_int =  Double.parseDouble(degree);
                     double centi = (degree_int - 32)/1.8000;
