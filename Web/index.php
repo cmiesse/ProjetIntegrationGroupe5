@@ -159,7 +159,7 @@
         <li class="w3-padding-16"><img src="IMG/download.png" alt="Android" style="width:72%"> </li>
 
         <li class="w3-theme-l5 w3-padding-24">
-          <a class="w3-button w3-teal w3-padding-large" href="https://github.com/cmiesse/ProjetIntegrationGroupe5/tree/master/Application/app/release"><i class="fa fa-check"></i> Télécharger</a>
+          <a class="w3-button w3-teal w3-padding-large" href="https://github.com/cmiesse/ProjetIntegrationGroupe5/tree/master/ApplicationV2"><i class="fa fa-check"></i> Télécharger</a>
         </li>
       </ul>
     </div>

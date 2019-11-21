@@ -10,10 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cd10fee-eccf-4c51-8e5b-2786028405c3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/edit_text.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_aide.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_aide.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/happydawn/Reglage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/happydawn/Reglage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_reglage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_reglage.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/menu/popup_libelle.xml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,18 +38,18 @@
         <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_reglage.xml">
           <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="44" column="8" lean-forward="true" selection-start-line="44" selection-start-column="8" selection-end-line="46" selection-end-column="40" />
+            <state relative-caret-position="833">
+              <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_alarme.xml">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/res/layout/edit_text.xml">
           <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="57" column="38" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
+            <state relative-caret-position="68">
+              <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -57,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/happydawn/Reglage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="201" column="68" lean-forward="true" selection-start-line="201" selection-start-column="68" selection-end-line="201" selection-end-column="68" />
+            <state relative-caret-position="-57">
+              <caret line="231" column="57" selection-start-line="231" selection-start-column="57" selection-end-line="231" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4171#4207#0" expanded="true" />
@@ -74,21 +74,17 @@
                 <element signature="e#6526#6845#0" expanded="true" />
                 <element signature="e#6844#6845#0" expanded="true" />
                 <element signature="e#6907#6908#0" expanded="true" />
+                <element signature="e#6987#7691#0" expanded="true" />
                 <element signature="e#7363#7682#0" expanded="true" />
                 <element signature="e#7681#7682#0" expanded="true" />
                 <element signature="e#7690#7691#0" expanded="true" />
-                <element signature="e#7853#7854#0" expanded="true" />
+                <element signature="e#8204#9224#0" expanded="true" />
+                <element signature="e#8836#9161#0" expanded="true" />
+                <element signature="e#9160#9161#0" expanded="true" />
+                <element signature="e#9223#9224#0" expanded="true" />
+                <element signature="e#9274#9275#0" expanded="true" />
+                <element signature="e#9316#9317#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_aide.xml">
-          <provider editor-type-id="android-designer2" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="69" column="44" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -100,6 +96,7 @@
       <list>
         <option value="Class" />
         <option value="resourceFile" />
+        <option value="layoutResourceFile_vertical" />
       </list>
     </option>
   </component>
@@ -133,10 +130,11 @@
         <option value="$PROJECT_DIR$/src/main/res/menu/popup_couleur.xml" />
         <option value="$PROJECT_DIR$/src/main/res/menu/popup_duree.xml" />
         <option value="$PROJECT_DIR$/src/main/res/menu/popup_augmentation.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/happydawn/Reglage.java" />
         <option value="$PROJECT_DIR$/src/main/res/menu/popup_libelle.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/activity_reglage.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_aide.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_reglage.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/happydawn/Reglage.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/edit_text.xml" />
       </list>
     </option>
   </component>
@@ -409,6 +407,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.27181208" />
@@ -667,33 +666,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/happydawn/Reglage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="201" column="68" lean-forward="true" selection-start-line="201" selection-start-column="68" selection-end-line="201" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4171#4207#0" expanded="true" />
-            <element signature="e#4574#5313#0" expanded="true" />
-            <element signature="e#4926#5245#0" expanded="true" />
-            <element signature="e#5244#5245#0" expanded="true" />
-            <element signature="e#5312#5313#0" expanded="true" />
-            <element signature="e#5401#6125#0" expanded="true" />
-            <element signature="e#5740#6059#0" expanded="true" />
-            <element signature="e#6058#6059#0" expanded="true" />
-            <element signature="e#6124#6125#0" expanded="true" />
-            <element signature="e#6204#6908#0" expanded="true" />
-            <element signature="e#6526#6845#0" expanded="true" />
-            <element signature="e#6844#6845#0" expanded="true" />
-            <element signature="e#6907#6908#0" expanded="true" />
-            <element signature="e#7363#7682#0" expanded="true" />
-            <element signature="e#7681#7682#0" expanded="true" />
-            <element signature="e#7690#7691#0" expanded="true" />
-            <element signature="e#7853#7854#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/menu/popup_couleur.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
@@ -714,27 +686,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_aide.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-130">
+          <caret line="69" column="44" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_alarme.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="57" column="38" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
+        <state relative-caret-position="139">
+          <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/happydawn/Reglage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57">
+          <caret line="231" column="57" selection-start-line="231" selection-start-column="57" selection-end-line="231" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4171#4207#0" expanded="true" />
+            <element signature="e#4574#5313#0" expanded="true" />
+            <element signature="e#4926#5245#0" expanded="true" />
+            <element signature="e#5244#5245#0" expanded="true" />
+            <element signature="e#5312#5313#0" expanded="true" />
+            <element signature="e#5401#6125#0" expanded="true" />
+            <element signature="e#5740#6059#0" expanded="true" />
+            <element signature="e#6058#6059#0" expanded="true" />
+            <element signature="e#6124#6125#0" expanded="true" />
+            <element signature="e#6204#6908#0" expanded="true" />
+            <element signature="e#6526#6845#0" expanded="true" />
+            <element signature="e#6844#6845#0" expanded="true" />
+            <element signature="e#6907#6908#0" expanded="true" />
+            <element signature="e#6987#7691#0" expanded="true" />
+            <element signature="e#7363#7682#0" expanded="true" />
+            <element signature="e#7681#7682#0" expanded="true" />
+            <element signature="e#7690#7691#0" expanded="true" />
+            <element signature="e#8204#9224#0" expanded="true" />
+            <element signature="e#8836#9161#0" expanded="true" />
+            <element signature="e#9160#9161#0" expanded="true" />
+            <element signature="e#9223#9224#0" expanded="true" />
+            <element signature="e#9274#9275#0" expanded="true" />
+            <element signature="e#9316#9317#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_reglage.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="44" column="8" lean-forward="true" selection-start-line="44" selection-start-column="8" selection-end-line="46" selection-end-column="40" />
+        <state relative-caret-position="833">
+          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_aide.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/edit_text.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="69" column="44" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
+        <state relative-caret-position="68">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
         </state>
       </provider>
     </entry>

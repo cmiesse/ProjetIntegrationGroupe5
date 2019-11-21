@@ -1,14 +1,17 @@
 package com.example.happydawn;
 
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.SeekBar;
@@ -33,6 +36,14 @@ public class Reglage extends AppCompatActivity {
     private TextView textvolume;
     int volume;
     SeekBar seekbar;
+
+    TextView nomalarme;
+    Button button,Submit;
+    AlertDialog.Builder builder;
+    LayoutInflater layoutinflater;
+    EditText edittext;
+    AlertDialog alertdialog;
+    String EditTextValue;
 
     AlarmManager alarm_manager;
     TimePicker timePicker;
@@ -217,6 +228,44 @@ public class Reglage extends AppCompatActivity {
             }
         });
 
+
+        nomalarme = (TextView)findViewById(R.id.nomalarme);
+        button = (Button)findViewById(R.id.libelle);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                builder = new AlertDialog.Builder(Reglage.this);
+
+                layoutinflater = getLayoutInflater();
+
+                View Dview = layoutinflater.inflate(R.layout.edit_text,null);
+
+                builder.setCancelable(false);
+
+                builder.setView(Dview);
+
+                edittext = (EditText) Dview.findViewById(R.id.editText1);
+                Submit = (Button) Dview.findViewById(R.id.button1);
+
+                alertdialog = builder.create();
+
+                Submit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        alertdialog.cancel();
+
+                        EditTextValue = edittext.getText().toString();
+
+                        nomalarme.setText(EditTextValue);
+                    }
+                });
+
+                alertdialog.show();
+            }
+        });
 
     }
 
