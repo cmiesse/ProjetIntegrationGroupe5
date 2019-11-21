@@ -12,7 +12,7 @@
           $headers = "From: " . $from."\n";
           $headers .="Content-type: text/html; charset=utf8\n";
           mail($to,$subject,$message,$headers);
-          $info='<span style="background-color:red;color:black" id="conf">Mail envoyé</span>';
+          $info='<span style="background-color:green;color:black" id="conf">Mail envoyé</span>';
           //header('Location: Confirmation.php');
         }
         else{
