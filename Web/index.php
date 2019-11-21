@@ -12,7 +12,8 @@
           $headers = "From: " . $from."\n";
           $headers .="Content-type: text/html; charset=utf8\n";
           mail($to,$subject,$message,$headers);
-          header('Location: Confirmation.php');
+          $info='<span style="background-color:red;color:black" id="conf">Mail envoyé</span>';
+          //header('Location: Confirmation.php');
         }
         else{
             $info='<span style="background-color:red;color:black" id="conf">Formulaire non valide</span>';
