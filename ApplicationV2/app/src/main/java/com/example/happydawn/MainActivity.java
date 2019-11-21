@@ -74,13 +74,14 @@ public class MainActivity extends AppCompatActivity {
         image.setImageResource(R.drawable.meteo);
     }
 
+
     public void findwethear() {
         String url = "http://api.openweathermap.org/data/2.5/weather?q=Louvain-la-Neuve,BE&appid=208bd97770984e2f933ee407ae1493b6&units=imperial";
 
         JsonObjectRequest jor = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-              try {
+                try {
                     JSONObject main_object = response.getJSONObject("main");
                     JSONArray array = response.getJSONArray("weather");
                     JSONObject object = array.getJSONObject(0);
@@ -102,18 +103,17 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-            }, new Response.ErrorListener(){
-                @Override
-                public void onErrorResponse (VolleyError error){
+        }, new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse (VolleyError error){
 
             }
-            }
+        }
         );
 
         RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(jor);
     }
-
 
     public void onClickStart(View view) {
 
