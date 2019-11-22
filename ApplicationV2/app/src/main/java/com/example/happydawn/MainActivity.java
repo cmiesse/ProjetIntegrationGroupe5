@@ -60,17 +60,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        WebView webView = (WebView)findViewById(R.id.webView);
+        WebView webView = findViewById(R.id.webView);
         webView.loadUrl("file:///android_asset/horloge/horloge.html");
         webView.setWebChromeClient(new WebChromeClient());
         webView.getSettings().setJavaScriptEnabled(true);
 
-        t1_degree = (TextView)findViewById(R.id.degre);
-        t2_temps = (TextView)findViewById(R.id.temps);
+        t1_degree = findViewById(R.id.degre);
+        t2_temps = findViewById(R.id.temps);
 
         findwethear();
 
-        ImageView image = (ImageView)findViewById(R.id.imageview);
+        ImageView image = findViewById(R.id.imageview);
         image.setImageResource(R.drawable.meteo);
     }
 

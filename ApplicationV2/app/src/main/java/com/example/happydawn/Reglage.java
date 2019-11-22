@@ -10,11 +10,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.SeekBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -31,13 +33,23 @@ public class Reglage extends AppCompatActivity {
     private Button luminosite;
     private Button couleurs;
     private Button duree;
-    private Button augmentation;
-    private Button libelle;
     private TextView textvolume;
     int volume;
     SeekBar seekbar;
 
+    //augmentation de l'alarme
+    TextView txtaugmentation;
+    private Button augmentation;
+    Button button1,Submit1;
+    AlertDialog.Builder builder1;
+    LayoutInflater layoutinflater1;
+    EditText edittext1;
+    AlertDialog alertdialog1;
+    String EditTextValue1;
+
+    //nom de l'alarme
     TextView nomalarme;
+    private Button libelle;
     Button button,Submit;
     AlertDialog.Builder builder;
     LayoutInflater layoutinflater;
@@ -246,8 +258,8 @@ public class Reglage extends AppCompatActivity {
 
                 builder.setView(Dview);
 
-                edittext = (EditText) Dview.findViewById(R.id.editText1);
-                Submit = (Button) Dview.findViewById(R.id.button1);
+                edittext = (EditText) Dview.findViewById(R.id.textNom);
+                Submit = (Button) Dview.findViewById(R.id.buttonValideNom);
 
                 alertdialog = builder.create();
 
@@ -266,6 +278,16 @@ public class Reglage extends AppCompatActivity {
                 alertdialog.show();
             }
         });
+
+
+        //button1 = (Button)findViewById(R.id.augmentation);
+        //txtaugmentation = (TextView)findViewById(R.id.txtaugmentation);
+
+        //Spinner spinner = findViewById(R.id.spinnerAugmentation);
+        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.augmentation1, android.R.layout.simple_spinner_item);
+        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //spinner.setAdapter(adapter);
+        //txtaugmentation = spinner.getSelectedItem().toString();
 
     }
 
