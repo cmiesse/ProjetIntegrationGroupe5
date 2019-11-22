@@ -9,16 +9,19 @@
         android:id="@+id/buttonValideAugmentation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spinnerAugmentation"
+        android:layout_below="@+id/textAugmentation"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
         android:background="#6370A2"
+        android:onClick="displayResult"
         android:text="Valider" />
 
-    <androidx.appcompat.widget.AppCompatSpinner
+    <Spinner
+        android:id="@+id/textAugmentation"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/spinnerAugmentation" />
+        android:ems="10">
+    </Spinner>
+
 </RelativeLayout>

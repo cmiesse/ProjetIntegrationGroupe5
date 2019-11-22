@@ -10,13 +10,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.SeekBar;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -38,14 +36,12 @@ public class Reglage extends AppCompatActivity {
     SeekBar seekbar;
 
     //augmentation de l'alarme
-    TextView txtaugmentation;
     private Button augmentation;
     Button button1,Submit1;
     AlertDialog.Builder builder1;
     LayoutInflater layoutinflater1;
     EditText edittext1;
     AlertDialog alertdialog1;
-    String EditTextValue1;
 
     //nom de l'alarme
     TextView nomalarme;
@@ -221,28 +217,9 @@ public class Reglage extends AppCompatActivity {
             }
         });
 
-        augmentation = findViewById(R.id.augmentation);
-        augmentation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopupMenu popup_augmentation = new PopupMenu(Reglage.this,augmentation);
-                popup_augmentation.getMenuInflater().inflate(R.menu.popup_augmentation, popup_augmentation.getMenu());
 
-                popup_augmentation.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        Toast.makeText(Reglage.this, "" + item.getTitle(), Toast.LENGTH_SHORT).show();
-                        return true;
-                    }
-                });
-
-                popup_augmentation.show();
-            }
-        });
-
-
-        nomalarme = (TextView)findViewById(R.id.nomalarme);
-        button = (Button)findViewById(R.id.libelle);
+        nomalarme = findViewById(R.id.nomalarme);
+        button = findViewById(R.id.libelle);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -258,8 +235,8 @@ public class Reglage extends AppCompatActivity {
 
                 builder.setView(Dview);
 
-                edittext = (EditText) Dview.findViewById(R.id.textNom);
-                Submit = (Button) Dview.findViewById(R.id.buttonValideNom);
+                edittext = Dview.findViewById(R.id.textNom);
+                Submit = Dview.findViewById(R.id.buttonValideNom);
 
                 alertdialog = builder.create();
 
@@ -280,14 +257,27 @@ public class Reglage extends AppCompatActivity {
         });
 
 
-        //button1 = (Button)findViewById(R.id.augmentation);
-        //txtaugmentation = (TextView)findViewById(R.id.txtaugmentation);
+        button1 = findViewById(R.id.augmentation);
 
-        //Spinner spinner = findViewById(R.id.spinnerAugmentation);
-        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.augmentation1, android.R.layout.simple_spinner_item);
-        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //spinner.setAdapter(adapter);
-        //txtaugmentation = spinner.getSelectedItem().toString();
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                builder1 = new AlertDialog.Builder(Reglage.this);
+
+                layoutinflater1 = getLayoutInflater();
+
+                View Dview = layoutinflater1.inflate(R.layout.activity_edit_text_2,null);
+
+                builder1.setCancelable(false);
+
+                builder1.setView(Dview);
+
+                alertdialog1 = builder1.create();
+
+                alertdialog1.show();
+            }
+        });
 
     }
 
