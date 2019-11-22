@@ -22,14 +22,14 @@
             android:id="@+id/temps"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="5°C"
+            android:text=""
             android:textAppearance="@style/TextAppearance.AppCompat.Display3" />
 
         <TextView
             android:id="@+id/degre"
             android:layout_width="79dp"
             android:layout_height="match_parent"
-            android:text="Broken    Clouds"
+            android:text=""
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textSize="24sp" />
 
