@@ -1,0 +1,61 @@
+https://docs.google.com/document/d/1VYHgN2HeGx9G9A1xDZPwjMnVt2l_Uzq-c1z36Q_PbWU/edit?fbclid=IwAR1_E6OHhJ88zCrAjK6wyJIwGwlLDnAn441rWUxOFpAKRqNbd856rm5Eyu8#
+
+20 novembre 2019
+Backlog - Happy Dawn - Groupe 5
+Miesse Clément, Riat Nicky, Mathias Gassmann, Lefèvre Alexandre, Gilles Timothy, Godart Arno, Quirynen Gilles
+User Stories du Sprint en cours (général)(Us : 7)
+Priorité Importante I(5) : 
+
+En tant qu’utilisateur, je veux que les informations que j’entre dans l’application se transmettent au  réveil physique.(I1)
+
+ Critère de réussite : L’application transmet à l’arduino les données importantes via bluetooth.
+En tant qu’utilisateur, je veux pouvoir créer plusieurs alarmes en fonction de mes besoins. (I2)
+
+ Critère de réussite : Possibilité de créer différentes alarmes dans l’application et de les activer à la demande de l’utilisateur.
+
+En tant qu’utilisateur, je veux pouvoir paramétrer mon réveil depuis l’application (interface).(I3)
+
+ Critère de réussite : L’interface de paramétrage stocke les valeurs des différents paramètres en interne. Dans un format envoyable à l’arduino.
+
+En tant qu’utilisateur, je veux que le réveil simule une aube artificielle afin de me réveiller tranquillement. (I4)
+
+Critère de réussite : la luminosité de la led est augmentée graduellement sur une durée déterminée.
+
+En tant qu’utilisateur, je veux que le réveil utilise un son progressif afin de me réveiller tranquillement.(I5)
+
+Critère de réussite : le son  du réveil est augmenté graduellement sur une durée déterminée.
+Priorité Moyenne M(1): 
+
+En tant qu’utilisateur, je veux savoir facilement si une alarme est enclenchée et l’heure à laquelle elle est va sonner.(M1)
+Critère de réussite : Affichage de la prochaine alarme sur la page d’accueil de l’application.
+
+En tant qu'utilisateur, je veux pouvoir choisir la couleur de la lumière afin d’avoir la lumière que je veux pour me réveiller.(M2)
+Priorité Faible F(1): 
+
+En tant qu’utilisateur, je veux que l’application se synchronise avec mon agenda afin de me créer des alarmes personnalisées en fonction de mon emploi du temps.(F1)
+ Critère de réussite :L’application se synchronise avec l’agenda de l’utilisateur et lui propose des alarmes en fonction de ce qu’il a encodé dans son agenda.
+
+User Stories réalisées
+Priorité importante : 
+Priorité moyenne :
+En tant qu'utilisateur, je veux pouvoir accéder au site Web d'Happy Dawn afin de connaître leurs produits et fonctionnalités de leur réveil (Sprint 3)
+Critères de réussite : Un site web est accessible et on peut y voir des informations utiles sur le réveil.
+
+En tant qu’utilisateur, je veux pouvoir avoir accès à une page d’aide qui me renseignera sur comment utiliser l’application et que font les différents paramètres du réveil(Sprint 4).
+ Critère de réussite : Il y la possibilité d’aller sur une page d’aide ou il est écrit comment utiliser l’application et l’explication des différents paramètres.
+
+En tant qu'utilisateur, je veux pouvoir envoyer un message à Happy Dawn depuis le site Web afin de les contacter (Sprint 4)
+Critère de réussite : Sur le site Web, dans la partie Contact, je peux envoyer un message avec mon nom et mon adresse email à HappyDawn via contact@happydawn.be
+ 
+En tant qu'utilisateur, je veux pouvoir utiliser le site web vitrine afin d'acheter le réveil/télécharger l'application(Sprint 4)
+Critères de réussite : Sur le site web, nous implémentons une page de formulaire pour l’achat de réveil. Ainsi que de télécharger l’apk de l’application.
+
+En tant qu'utilisateur, je veux avoir une app facile d'utilisation donc intuitive afin de ne pas m’y perdre. (Sprint 4)
+Critère de réussite : L’application doit être user-friendly, elle doit être utilisable par n’importe qui, sans prérequis.
+Description : Nous sommes en train de faire un changement de design car dans l'ancien on c'est rendu compte que nous ne pourront pas créer différentes alarmes vu que nos paramètres sont divisé en plusieurs pages. Nous avons donc créé une prévisualisation du design grâce au logiciel invision et durant cette US nous allons essayer de la coder au mieux.
+
+En tant qu’utilisateur, je veux voir la météo du jour quand j’ouvre l’application. (Sprint 4)
+ Critère de réussite : Affichage de la météo en fonction du jour sur la page d’accueil de l’application.
+Description : L'objectif de cette US est d'aller chercher les infos de la météo via une api. Ensuite d'afficher la température et le type de météo de la journée sur la page principale de l'application. Malgré que cet ajout n'est pas forcément utile, nous trouvons que cette information à tout a fait sa place sur une application de réveil.
+Priorité basse :
+En tant qu'utilisateur, je veux avoir une réponse visuelle lors de la complétion du formulaire de contact afin de savoir si je l'ai rempli correctement (Sprint 3)
