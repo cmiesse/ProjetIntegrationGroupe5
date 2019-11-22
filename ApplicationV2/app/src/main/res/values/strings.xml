@@ -19,6 +19,11 @@
         <item><p><font color="green">Vert</font></p></item>
         <item><p><font color="red">rouge</font></p></item>
     </string-array>
+    <string-array name="augmentation1">
+        <item>toutes les 5 minutes</item>
+        <item>toutes les 10 minutes</item>
+        <item>toutes les 15 minutes</item>
+    </string-array>
     <string-array name="minute2">
         <item>60 min</item>
         <item>45 min</item>

@@ -27,9 +27,10 @@ Critère de réussite : le son  du réveil est augmenté graduellement sur une d
 Priorité Moyenne M(1): 
 
 En tant qu’utilisateur, je veux savoir facilement si une alarme est enclenchée et l’heure à laquelle elle est va sonner.(M1)
-Critère de réussite : Affichage de la prochaine alarme sur la page d’accueil de l’application.
+Critère de réussite : Affichage de la prochaine alarme sur la page d’accueil de l’application. Ainsi que sa validation et la possibilité de changer les paramètres existants.
 
 En tant qu'utilisateur, je veux pouvoir choisir la couleur de la lumière afin d’avoir la lumière que je veux pour me réveiller.(M2)
+Critères de réussite : Il est possible de changer la couleur ainsi que l’intensité des leds utilisées pour le réveil.
 Priorité Faible F(1): 
 
 En tant qu’utilisateur, je veux que l’application se synchronise avec mon agenda afin de me créer des alarmes personnalisées en fonction de mon emploi du temps.(F1)
@@ -38,7 +39,7 @@ En tant qu’utilisateur, je veux que l’application se synchronise avec mon ag
 User Stories réalisées
 Priorité importante : 
 Priorité moyenne :
-En tant qu'utilisateur, je veux pouvoir accéder au site Web d'Happy Dawn afin de connaître leurs produits et fonctionnalités de leur réveil (Sprint 3)
+En tant qu'utilisateur, je veux pouvoir accéder au site Web d'Happy Dawn afin de connaître leurs produits et fonctionnalités de leur réveil (Sprint 2)
 Critères de réussite : Un site web est accessible et on peut y voir des informations utiles sur le réveil.
 
 En tant qu’utilisateur, je veux pouvoir avoir accès à une page d’aide qui me renseignera sur comment utiliser l’application et que font les différents paramètres du réveil(Sprint 4).
@@ -52,10 +53,11 @@ Critères de réussite : Sur le site web, nous implémentons une page de formula
 
 En tant qu'utilisateur, je veux avoir une app facile d'utilisation donc intuitive afin de ne pas m’y perdre. (Sprint 4)
 Critère de réussite : L’application doit être user-friendly, elle doit être utilisable par n’importe qui, sans prérequis.
-Description : Nous sommes en train de faire un changement de design car dans l'ancien on c'est rendu compte que nous ne pourront pas créer différentes alarmes vu que nos paramètres sont divisé en plusieurs pages. Nous avons donc créé une prévisualisation du design grâce au logiciel invision et durant cette US nous allons essayer de la coder au mieux.
+Description : Nous sommes en train de faire un changement de design car dans l'ancien on c'est rendu compte que nous ne pourrons pas créer différentes alarmes vu que nos paramètres sont divisé en plusieurs pages. Nous avons donc créé une prévisualisation du design grâce au logiciel invision et durant cette US nous allons essayer de la coder au mieux.
 
 En tant qu’utilisateur, je veux voir la météo du jour quand j’ouvre l’application. (Sprint 4)
  Critère de réussite : Affichage de la météo en fonction du jour sur la page d’accueil de l’application.
 Description : L'objectif de cette US est d'aller chercher les infos de la météo via une api. Ensuite d'afficher la température et le type de météo de la journée sur la page principale de l'application. Malgré que cet ajout n'est pas forcément utile, nous trouvons que cette information à tout a fait sa place sur une application de réveil.
 Priorité basse :
 En tant qu'utilisateur, je veux avoir une réponse visuelle lors de la complétion du formulaire de contact afin de savoir si je l'ai rempli correctement (Sprint 3)
+Critères de réussite : Le formulaire de contact doit retourner une erreur si il y en à une et valider l’envoi si il n’y en a pas.

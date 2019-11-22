@@ -6,25 +6,22 @@
     android:orientation="horizontal" >
 
     <Button
-        android:id="@+id/buttonValideNom"
+        android:id="@+id/buttonValideAugmentation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textNom"
+        android:layout_below="@+id/textAugmentation"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
         android:background="#6370A2"
+        android:onClick="displayResult"
         android:text="Valider" />
 
-    <EditText
-        android:id="@+id/textNom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+    <Spinner
+        android:id="@+id/textAugmentation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:hint="Nom de votre alarme" >
-
-        <requestFocus />
-    </EditText>
+        android:ems="10">
+    </Spinner>
 
 </RelativeLayout>

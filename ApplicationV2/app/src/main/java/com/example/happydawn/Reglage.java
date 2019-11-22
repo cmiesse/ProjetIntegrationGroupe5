@@ -31,13 +31,21 @@ public class Reglage extends AppCompatActivity {
     private Button luminosite;
     private Button couleurs;
     private Button duree;
-    private Button augmentation;
-    private Button libelle;
     private TextView textvolume;
     int volume;
     SeekBar seekbar;
 
+    //augmentation de l'alarme
+    private Button augmentation;
+    Button button1,Submit1;
+    AlertDialog.Builder builder1;
+    LayoutInflater layoutinflater1;
+    EditText edittext1;
+    AlertDialog alertdialog1;
+
+    //nom de l'alarme
     TextView nomalarme;
+    private Button libelle;
     Button button,Submit;
     AlertDialog.Builder builder;
     LayoutInflater layoutinflater;
@@ -209,28 +217,9 @@ public class Reglage extends AppCompatActivity {
             }
         });
 
-        augmentation = findViewById(R.id.augmentation);
-        augmentation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopupMenu popup_augmentation = new PopupMenu(Reglage.this,augmentation);
-                popup_augmentation.getMenuInflater().inflate(R.menu.popup_augmentation, popup_augmentation.getMenu());
 
-                popup_augmentation.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        Toast.makeText(Reglage.this, "" + item.getTitle(), Toast.LENGTH_SHORT).show();
-                        return true;
-                    }
-                });
-
-                popup_augmentation.show();
-            }
-        });
-
-
-        nomalarme = (TextView)findViewById(R.id.nomalarme);
-        button = (Button)findViewById(R.id.libelle);
+        nomalarme = findViewById(R.id.nomalarme);
+        button = findViewById(R.id.libelle);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -246,8 +235,8 @@ public class Reglage extends AppCompatActivity {
 
                 builder.setView(Dview);
 
-                edittext = (EditText) Dview.findViewById(R.id.editText1);
-                Submit = (Button) Dview.findViewById(R.id.button1);
+                edittext = Dview.findViewById(R.id.textNom);
+                Submit = Dview.findViewById(R.id.buttonValideNom);
 
                 alertdialog = builder.create();
 
@@ -264,6 +253,29 @@ public class Reglage extends AppCompatActivity {
                 });
 
                 alertdialog.show();
+            }
+        });
+
+
+        button1 = findViewById(R.id.augmentation);
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                builder1 = new AlertDialog.Builder(Reglage.this);
+
+                layoutinflater1 = getLayoutInflater();
+
+                View Dview = layoutinflater1.inflate(R.layout.activity_edit_text_2,null);
+
+                builder1.setCancelable(false);
+
+                builder1.setView(Dview);
+
+                alertdialog1 = builder1.create();
+
+                alertdialog1.show();
             }
         });
 
