@@ -256,34 +256,59 @@ public class Reglage extends AppCompatActivity {
             }
         });
 
+        this.augmentation = findViewById(R.id.augmentation);
 
-        button1 = findViewById(R.id.augmentation);
-
-        button1.setOnClickListener(new View.OnClickListener() {
+        augmentation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                builder1 = new AlertDialog.Builder(Reglage.this);
-
-                layoutinflater1 = getLayoutInflater();
-
-                View Dview = layoutinflater1.inflate(R.layout.activity_edit_text_2,null);
-
-                builder1.setCancelable(false);
-
-                builder1.setView(Dview);
-
-                alertdialog1 = builder1.create();
-
-                alertdialog1.show();
+                Intent otherActivity = new Intent(getApplicationContext(), edit_text_2.class);
+                startActivity(otherActivity);
+                finish();
             }
         });
+
+        Intent intent = getIntent();
+        if(intent != null){
+            String str ="";
+            if(intent.hasExtra("edittext")){
+                str = intent.getStringExtra("edittext");
+            }
+
+            TextView textView = findViewById(R.id.txtaugmentation);
+            textView.setText(str);
+
+        }
+
+
+        //button1 = findViewById(R.id.augmentation);
+
+        //button1.setOnClickListener(new View.OnClickListener() {
+            //@Override
+            //public void onClick(View v) {
+
+               // builder1 = new AlertDialog.Builder(Reglage.this);
+
+               // layoutinflater1 = getLayoutInflater();
+
+               // View Dview1 = layoutinflater1.inflate(R.layout.activity_edit_text_2,null);
+
+              //  builder1.setCancelable(false);
+
+               // builder1.setView(Dview1);
+
+               // alertdialog1 = builder1.create();
+
+               // alertdialog1.show();
+           // }
+        //});
 
     }
 
     private void set_alarm_text(String output) {
         updateText.setText(output);
     }
+
+
 
 
 

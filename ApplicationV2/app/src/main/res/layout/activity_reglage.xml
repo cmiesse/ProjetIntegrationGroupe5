@@ -125,10 +125,20 @@
             android:textColorLink="#FFFFFF"
             android:textSize="30dp" />
 
+        <TextView
+            android:id="@+id/txtluminosite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="490dp"
+            android:text="augmentation de l'alarme"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:inputType="text" />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="510dp"
+            android:layout_marginTop="550dp"
             android:background="#6370A2"
             android:text="Couleurs"
             android:id="@+id/couleurs"
@@ -136,10 +146,20 @@
             android:textColorLink="#FFFFFF"
             android:textSize="30dp" />
 
+        <TextView
+            android:id="@+id/txtcouleur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="610dp"
+            android:text="augmentation de l'alarme"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:inputType="text" />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="590dp"
+            android:layout_marginTop="670dp"
             android:background="#6370A2"
             android:text="Duree"
             android:id="@+id/duree"
@@ -147,19 +167,8 @@
             android:textColorLink="#FFFFFF"
             android:textSize="30dp" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="670dp"
-            android:background="#6370A2"
-            android:text="Augmentation"
-            android:id="@+id/augmentation"
-            android:textColor="@android:color/background_dark"
-            android:textColorLink="#FFFFFF"
-            android:textSize="30dp" />
-
         <TextView
-            android:id="@+id/txtaugmentation"
+            android:id="@+id/txtduree"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="730dp"
@@ -173,6 +182,27 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="790dp"
             android:background="#6370A2"
+            android:text="Augmentation"
+            android:id="@+id/augmentation"
+            android:textColor="@android:color/background_dark"
+            android:textColorLink="#FFFFFF"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/txtaugmentation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="850dp"
+            android:text="augmentation de l'alarme"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:inputType="text" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="910dp"
+            android:background="#6370A2"
             android:text="libelle"
             android:id="@+id/libelle"
             android:textColor="@android:color/background_dark"
@@ -183,7 +213,7 @@
             android:id="@+id/nomalarme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="850dp"
+            android:layout_marginTop="970dp"
             android:text="nom de l'alarme"
             android:textAlignment="center"
             android:textSize="30dp"
