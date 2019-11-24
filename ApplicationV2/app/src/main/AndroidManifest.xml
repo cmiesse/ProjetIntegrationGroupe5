@@ -19,9 +19,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".edit_text_5"></activity>
-        <activity android:name=".edit_text_4" />
-        <activity android:name=".edit_text_3" />
-        <activity android:name=".edit_text_2" />
         <activity android:name=".ListeSons" />
         <activity android:name=".Reglage" />
         <activity android:name=".Alarme" />

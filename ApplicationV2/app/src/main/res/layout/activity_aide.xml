@@ -70,6 +70,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="67dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="220dp"
                 android:text="- L'heure de l'alarme : L'heure à laquelle le réveil sonnera.  "
                 android:textColor="#FD000000"
@@ -79,6 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="67dp"
                 android:layout_marginTop="270dp"
+                android:layout_marginLeft="10dp"
                 android:text="-L'intensité du volume : La puissance sonore du son."
                 android:textColor="#000000"
                 android:textSize="21sp" />
@@ -87,6 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="67dp"
                 android:layout_marginTop="320dp"
+                android:layout_marginLeft="10dp"
                 android:text="- L'intensité de la lumière : l'intensité de la lumière qu'émettera le réveil."
                 android:textColor="#F8000000"
                 android:textSize="21sp" />
@@ -95,6 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="67dp"
                 android:layout_marginTop="370dp"
+                android:layout_marginLeft="10dp"
                 android:text="- La couleur de la lumière : La couleur que la lumière prendra."
                 android:textColor="#FA000000"
                 android:textSize="21sp" />
@@ -103,6 +107,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="420dp"
+                android:layout_marginLeft="10dp"
                 android:text="- Durée de l'alarme : Le temps que durera le réveil."
                 android:textColor="#F2000000"
                 android:textSize="21sp" />
@@ -111,6 +116,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 android:layout_marginTop="470dp"
+                android:layout_marginLeft="10dp"
                 android:text="- L'augmentation de la luminosité : L'augmentation de la puissance de la lumière en fonction du temps"
                 android:textColor="#FC000000"
                 android:textSize="21sp" />
@@ -119,6 +125,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="67dp"
                 android:layout_marginTop="540dp"
+                android:layout_marginLeft="10dp"
                 android:text="-Le libélle : Le nom qu'aura votre alarme"
                 android:textColor="#F0000000"
                 android:textSize="21sp" />

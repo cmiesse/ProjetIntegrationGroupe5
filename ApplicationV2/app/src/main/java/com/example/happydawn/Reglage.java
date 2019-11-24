@@ -4,6 +4,7 @@ import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,18 +25,34 @@ public class Reglage extends AppCompatActivity {
 
     private ImageView retour;
     private Button son;
-    private Button luminosite;
-    private Button augmentation;
-    private Button couleurs;
-    private Button duree;
     private TextView textvolume;
     int volume;
     SeekBar seekbar;
 
 
+    //augmentation
+    private Button augmentation;
+    String[] listItem1;
+    TextView textAugmentation;
+
+    //luminosite
+    private Button luminosite;
+    String[] listItem2;
+    TextView textLuminosite;
+
+    //couleur
+    private Button couleur;
+    String[] listItem3;
+    TextView textCouleur;
+
+    //duree
+    private Button duree;
+    String[] listItem4;
+    TextView textDuree;
+
+
     //nom de l'alarme
     TextView nomalarme;
-    private Button libelle;
     Button button,Submit;
     AlertDialog.Builder builder;
     LayoutInflater layoutinflater;
@@ -188,101 +205,125 @@ public class Reglage extends AppCompatActivity {
             }
         });
 
-        this.augmentation = findViewById(R.id.augmentation);
 
+
+        augmentation = findViewById(R.id.augmentation);
+        textAugmentation = findViewById(R.id.txtaugmentation);
         augmentation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent otherActivity = new Intent(getApplicationContext(), edit_text_2.class);
-                startActivity(otherActivity);
-                finish();
+                listItem1 = new String[]{"toutes les 5 minutes", "toutes les 10 minutes", "toutes les 15 minutes"};
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(Reglage.this);
+                builder1.setTitle("augmentation");
+                builder1.setIcon(R.drawable.icon);
+                builder1.setSingleChoiceItems(listItem1, -1, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i) {
+                        textAugmentation.setText(listItem1[i]);
+                        dialog.dismiss();
+                    }
+                });
+                builder1.setNeutralButton("cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
+                    }
+                });
+                AlertDialog alertdialog1 = builder1.create();
+                alertdialog1.show();
             }
         });
 
-        Intent intent = getIntent();
-        if(intent != null){
-            String str ="augmentation";
-            if(intent.hasExtra("texteaugmentation")){
-                str = intent.getStringExtra("texteaugmentation");
-            }
 
-            TextView textView = findViewById(R.id.txtaugmentation);
-            textView.setText(str);
 
-        }
-
-        this.luminosite = findViewById(R.id.luminosite);
-
+        luminosite = findViewById(R.id.luminosite);
+        textLuminosite = findViewById(R.id.txtluminosite);
         luminosite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent otherActivity = new Intent(getApplicationContext(), edit_text_3.class);
-                startActivity(otherActivity);
-                finish();
+                listItem2 = new String[]{"25 %", "50 %", "75 %", "100 %"};
+                AlertDialog.Builder builder2 = new AlertDialog.Builder(Reglage.this);
+                builder2.setTitle("luminosité");
+                builder2.setIcon(R.drawable.icon);
+                builder2.setSingleChoiceItems(listItem2, -1, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i) {
+                        textLuminosite.setText(listItem2[i]);
+                        dialog.dismiss();
+                    }
+                });
+                builder2.setNeutralButton("cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
+                    }
+                });
+                AlertDialog alertdialog2 = builder2.create();
+                alertdialog2.show();
             }
         });
 
-        Intent intent2 = getIntent();
-        if(intent2 != null){
-            String str ="luminosité";
-            if(intent.hasExtra("texteluminosite")){
-                str = intent.getStringExtra("texteluminosite");
-            }
 
-            TextView textView = findViewById(R.id.txtluminosite);
-            textView.setText(str);
-
-        }
-
-        this.couleurs = findViewById(R.id.couleurs);
-
-        couleurs.setOnClickListener(new View.OnClickListener() {
+        couleur = findViewById(R.id.couleurs);
+        textCouleur = findViewById(R.id.txtcouleur);
+        couleur.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent otherActivity = new Intent(getApplicationContext(), edit_text_4.class);
-                startActivity(otherActivity);
-                finish();
+                listItem3 = new String[]{"Bleu", "Vert", "Rouge", "Jaune"};
+                AlertDialog.Builder builder3 = new AlertDialog.Builder(Reglage.this);
+                builder3.setTitle("couleurs");
+                builder3.setIcon(R.drawable.icon);
+                builder3.setSingleChoiceItems(listItem3, -1, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i) {
+                        textCouleur.setText(listItem3[i]);
+                        dialog.dismiss();
+                    }
+                });
+                builder3.setNeutralButton("cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
+                    }
+                });
+                AlertDialog alertdialog3 = builder3.create();
+                alertdialog3.show();
             }
         });
 
-        Intent intent3 = getIntent();
-        if(intent3 != null){
-            String str ="couleur";
-            if(intent.hasExtra("textecouleur")){
-                str = intent.getStringExtra("textecouleur");
-            }
 
-            TextView textView = findViewById(R.id.txtcouleur);
-            textView.setText(str);
-
-        }
-
-        this.duree = findViewById(R.id.duree);
-
+        duree = findViewById(R.id.duree);
+        textDuree = findViewById(R.id.txtduree);
         duree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent otherActivity = new Intent(getApplicationContext(), edit_text_5.class);
-                startActivity(otherActivity);
-                finish();
+                listItem4 = new String[]{"15 minutes", "20 minutes", "30 minutes", "45 minutes"};
+                AlertDialog.Builder builder4 = new AlertDialog.Builder(Reglage.this);
+                builder4.setTitle("couleurs");
+                builder4.setIcon(R.drawable.icon);
+                builder4.setSingleChoiceItems(listItem4, -1, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i) {
+                        textDuree.setText(listItem4[i]);
+                        dialog.dismiss();
+                    }
+                });
+                builder4.setNeutralButton("cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
+                    }
+                });
+                AlertDialog alertdialog4 = builder4.create();
+                alertdialog4.show();
             }
         });
 
-        Intent intent4 = getIntent();
-        if(intent4 != null){
-            String str ="durée";
-            if(intent.hasExtra("texteduree")){
-                str = intent.getStringExtra("texteduree");
-            }
 
-            TextView textView = findViewById(R.id.txtduree);
-            textView.setText(str);
 
-        }
+
+
+
 
     }
 
