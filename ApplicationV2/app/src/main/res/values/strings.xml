@@ -24,6 +24,18 @@
         <item>toutes les 10 minutes</item>
         <item>toutes les 15 minutes</item>
     </string-array>
+    <string-array name="duree">
+        <item> 1 heure </item>
+        <item> 45 minutes </item>
+        <item> 30 minutes </item>
+        <item> 15 minutes </item>
+    </string-array>
+    <string-array name="luminosite">
+        <item>25 %</item>
+        <item>50 %</item>
+        <item>75 %</item>
+        <item>100 %</item>
+    </string-array>
     <string-array name="minute2">
         <item>60 min</item>
         <item>45 min</item>
