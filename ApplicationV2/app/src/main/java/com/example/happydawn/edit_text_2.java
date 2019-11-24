@@ -3,10 +3,7 @@ package com.example.happydawn;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-<<<<<<< HEAD
 import android.widget.AdapterView;
-=======
->>>>>>> 51482580657787e42871e1f3e4b72282b6f4cd94
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -34,14 +31,12 @@ public class edit_text_2 extends AppCompatActivity {
         Spinner editText = findViewById(R.id.textAugmentation);
         String str = editText.getSelectedItem().toString();
 
-<<<<<<< HEAD
-=======
         Intent intent = new Intent(this, Reglage.class);
 
         intent.putExtra("texteaugmentation", str);
 
         startActivity(intent);
->>>>>>> 51482580657787e42871e1f3e4b72282b6f4cd94
+
     }
 
 }
