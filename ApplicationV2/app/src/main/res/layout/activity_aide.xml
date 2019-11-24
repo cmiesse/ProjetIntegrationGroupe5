@@ -69,18 +69,60 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="387dp"
-                android:layout_marginTop="230dp"
-                android:layout_marginLeft="10dp"
-                android:text="- L'heure de l'alarme : L'heure à laquelle le réveil sonnera.                                                                                       - Le son : Le son que jouera la réveil.
-                                                                                                      -L'intensité du volume : La puissance sonore du son.
-                                                                                    - L'intensité de la lumière : l'intensité de la lumière qu'émettera le réveil.
-                                                               - La couleur de la lumière : La couleure que la lumière prendra.
-                                                  - Durée de l'alarme : Le temps que durera le réveil.
-                                                   - L'augmentation de la luminosité : L'augmentation de la puissance de la lumière en fonction du temps
-                        -Le libélle : Le nom qu'aura votre alarme. "
+                android:layout_height="67dp"
+                android:layout_marginTop="220dp"
+                android:text="- L'heure de l'alarme : L'heure à laquelle le réveil sonnera.  "
+                android:textColor="#FD000000"
+                android:textSize="21sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:layout_marginTop="270dp"
+                android:text="-L'intensité du volume : La puissance sonore du son."
+                android:textColor="#000000"
+                android:textSize="21sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:layout_marginTop="320dp"
+                android:text="- L'intensité de la lumière : l'intensité de la lumière qu'émettera le réveil."
+                android:textColor="#F8000000"
+                android:textSize="21sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:layout_marginTop="370dp"
+                android:text="- La couleur de la lumière : La couleur que la lumière prendra."
+                android:textColor="#FA000000"
+                android:textSize="21sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="420dp"
+                android:text="- Durée de l'alarme : Le temps que durera le réveil."
+                android:textColor="#F2000000"
+                android:textSize="21sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="470dp"
+                android:text="- L'augmentation de la luminosité : L'augmentation de la puissance de la lumière en fonction du temps"
                 android:textColor="#FC000000"
-                android:textSize="21dp" />
+                android:textSize="21sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:layout_marginTop="540dp"
+                android:text="-Le libélle : Le nom qu'aura votre alarme"
+                android:textColor="#F0000000"
+                android:textSize="21sp" />
+
 
         </RelativeLayout>
 
