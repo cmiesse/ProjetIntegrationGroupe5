@@ -1,5 +1,6 @@
 <?php
     require_once 'INC/FormHandler.php';
+    require_once 'Lang/' . $_COOKIE['lang'] . '-lang.php';
     $myForm = new FormHandler;
     $info = null;
     if(isset($_POST['submit'])){
@@ -14,10 +15,10 @@
           $headers = "From: " . $from."\n";
           $headers .="Content-type: text/html; charset=utf8\n";
           mail($to,$subject,$message,$headers);
-          $info = '<span style="background-color:green;color:black">Formulaire valide <i class="fa fa-check"></i> Mail envoyé</span>';
+          $info = '<span style="background-color:green;color:black">Formulaire valide <i class="fa fa-check"></i> ' . TXT_MAIL_SENT .'</span>';
         }
         else{
-            $info ='<span style="background-color:red;color:black">Formulaire non valide</span>';
+            $info ='<span style="background-color:red;color:black">' . TXT_FORM_INVALID .'</span>';
         }
     }
 ?>
@@ -30,15 +31,15 @@
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="soleil.ico" />
-    <title>HappyDawn - Achat</title>
+    <title><?php echo TXT_TITLE_BUY ?></title>
   </head>
   <body style="background-color:gray">
-    <a class="w3-button w3-teal w3-padding-large" href="index.php">Retour à l'accueil</a><br>
-    <h1 style="margin-left:20px;">Acheter notre réveil</h1>
+    <a class="w3-button w3-teal w3-padding-large" href="index.php"><?php echo TXT_HOME_BUTTON ?></a><br>
+    <h1 style="margin-left:20px;"><?php echo TXT_BUY_CLOCK ?></h1>
     <div class="w3-col m7">
       <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="" method="post" style="margin-left:20px;">
         <div class="w3-section">
-          <label for="name">Nom</label>
+          <label for="name"><?php echo TXT_NAME ?></label>
           <input class="w3-input" type="text" name="name" id="name" required>
         </div>
         <div class="w3-section">
@@ -46,22 +47,22 @@
           <input class="w3-input" type="text" name="mail" id="mail">
         </div>
         <div class="w3-section">
-          <label for="quantity">Nombre de réveils (1-10)</label>
+          <label for="quantity"><?php echo TXT_NUMBER_CLOCK ?></label>
           <input class="w3-input" type="number" name="quantity" id="quantity">
         </div>
         <div class="w3-section">
-          <label for="address">Adresse (Rue, n°)</label>
+          <label for="address"><?php echo TXT_ADDRESS ?></label>
           <input class="w3-input" type="text" name="address" id="address" required>
         </div>
         <div class="w3-section">
-          <label for="city">Ville</label>
+          <label for="city"><?php echo TXT_CITY ?></label>
           <input class="w3-input" type="text" name="city" id="city" required>
         </div>
         <div class="w3-section">
-          <label for="country">Pays</label>
+          <label for="country"><?php echo TXT_COUNTRY ?></label>
           <input class="w3-input" type="text" name="country" id="country" required>
         </div>
-        <button type="submit" class="w3-button w3-right w3-theme" name="submit">Envoyer</button>
+        <button type="submit" class="w3-button w3-right w3-theme" name="submit"><?php echo TXT_SEND ?></button>
         <?= $info ?>
       </form>
     </div>
