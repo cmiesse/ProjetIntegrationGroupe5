@@ -43,10 +43,14 @@
 <title>HappyDawn</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="CSS/w3.css">
+<link rel="stylesheet" href="CSS/w3-min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="JS/w3-min.js">
+
+</script>
 <link rel="icon" href="soleil.ico" />
 <body id="myPage">
-
+<h1>Page principale - HappyDawn</h1>
 <!-- Sidebar on click -->
 <nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
@@ -88,7 +92,7 @@
 </div>
 
 <!-- Image Header -->
-<div class="w3-display-container w3-animate-opacity">
+<div class="w3-display-container w3-animate-opacity" id="imageLogo">
   <img src="IMG/dawn.jpg" alt="Aube" style="width:100%;min-height:350px;max-height:600px;">
 </div>
 
@@ -222,43 +226,20 @@
 </div>
 
 <!-- Partie Carte/Localisation -->
-<div class="w3-display-container w3-animate-opacity">
+<div class="w3-display-container w3-animate-opacity" id="carte">
   <img src="IMG/lln.JPG" alt="Ephec" style="width:100%;min-height:350px;max-height:600px;">
 </div>
 
 <!-- Pied de page -->
 <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
-
-
-  <span><?php echo TXT_FOOTER ?></span>
-
+  <div style="position:relative;bottom:25px;z-index:1;" class="w3-tooltip w3-right">
+   <span class="w3-text w3-padding w3-teal w3-hide-small">Revenir en haut</span>
+   <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
+   <i class="fa fa-chevron-circle-up"></i></span></a>
+ </div>
+  <span class="w3"><?php echo TXT_FOOTER ?></span>
 
 </footer>
-
-<script>
-// Script for side navigation
-function w3_open() {
-  var x = document.getElementById("mySidebar");
-  x.style.width = "300px";
-  x.style.paddingTop = "10%";
-  x.style.display = "block";
-}
-
-// Close side navigation
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
-
-// Used to toggle the menu on smaller screens when clicking on the menu button
-function openNav() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-</script>
 
 </body>
 </html>
