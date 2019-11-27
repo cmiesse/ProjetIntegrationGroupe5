@@ -32,6 +32,7 @@
             android:layout_height="45dp"
             android:background="@drawable/check"
             android:layout_marginTop="10dp"
+            android:onClick="ValideActivity"
             android:layout_marginLeft="1dp" />
 
     </LinearLayout>

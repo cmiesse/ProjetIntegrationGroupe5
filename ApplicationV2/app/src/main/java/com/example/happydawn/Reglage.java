@@ -331,6 +331,14 @@ public class Reglage extends AppCompatActivity {
         updateText.setText(output);
     }
 
+    public void ValideActivity(){
+
+        Intent otherActivity = new Intent(getApplicationContext(), Alarme.class);
+        startActivity(otherActivity);
+        finish();
+
+    }
+
 
 
 
