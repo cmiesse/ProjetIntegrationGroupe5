@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -28,6 +29,9 @@ public class Reglage extends AppCompatActivity {
     private TextView textvolume;
     int volume;
     SeekBar seekbar;
+
+    //button valide
+    //private LinearLayout parentLinearLayout;
 
 
     //augmentation
@@ -102,7 +106,7 @@ public class Reglage extends AppCompatActivity {
         timePicker = findViewById(R.id.timePicker);
 
         //initialise text update
-        //updateText = findViewById(R.id.updateText);
+        //updateText = findViewById(R.id.number_edit_text);
 
         final Calendar calendar = Calendar.getInstance();
 
@@ -331,13 +335,17 @@ public class Reglage extends AppCompatActivity {
         updateText.setText(output);
     }
 
-    public void ValideActivity(){
 
-        Intent otherActivity = new Intent(getApplicationContext(), Alarme.class);
-        startActivity(otherActivity);
-        finish();
+    //public void ValideActivity(View v) {
 
-    }
+        //Intent intent1 = new Intent(this, Alarme.class);
+
+        //intent1.putExtra(String.valueOf(parentLinearLayout), "LinearL");
+
+
+        //startActivity(intent1);
+    //}
+
 
 
 
