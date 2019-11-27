@@ -31,21 +31,238 @@
         android:layout_width="match_parent"
         android:layout_height="410dp">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:background="@drawable/background"
             android:layout_height="410dp"
             android:orientation="horizontal" >
 
-            <ListView
+    <!--        <ListView
                 android:id="@+id/list_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
 
-                ></ListView>
+                ></ListView> -->
 
+            <TextView
+                android:layout_width="171dp"
+                android:layout_height="52dp"
+                android:layout_marginLeft="0dp"
+                android:text="Foret matinale"
+                android:textColor="#000000"
+                android:textSize="24sp" />
 
-        </LinearLayout>
+            <Button
+                android:id="@+id/playforet"
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:text="PLAY"
+                android:textColor="#ED000000"
+                android:textSize="21sp"
+                android:layout_marginLeft="171dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:text="Pause"
+                android:textColor="#ED000000"
+                android:textSize="21sp"
+                android:id="@+id/pauseforet"
+                android:layout_marginLeft="258dp"/>
+
+            <RadioButton
+                android:layout_width="62dp"
+                android:layout_height="52dp"
+                android:id="@+id/radioforet"
+                android:layout_marginLeft="350dp"/>
+            <TextView
+                android:layout_width="171dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="53dp"
+                android:text="Oiseaux 1"
+                android:textColor="#000000"
+                android:textSize="24sp" />
+            <Button
+                android:id="@+id/playoiseau1"
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:text="PLAY"
+                android:textColor="#ED000000"
+                android:textSize="21sp"
+                android:layout_marginLeft="171dp"
+                android:layout_marginTop="53dp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:text="Pause"
+                android:textColor="#ED000000"
+                android:textSize="21sp"
+                android:id="@+id/pauseoiseaux1"
+                android:layout_marginTop="53dp"
+                android:layout_marginLeft="258dp"/>
+            <RadioButton
+                android:layout_width="62dp"
+                android:layout_height="52dp"
+                android:id="@+id/radioOiseaux1"
+                android:layout_marginLeft="350dp"
+                android:layout_marginTop="53dp"/>
+            <TextView
+                android:layout_width="171dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="106dp"
+                android:text="Oiseaux 2"
+                android:textColor="#000000"
+                android:textSize="24sp" />
+            <Button
+                android:id="@+id/playoiseau2"
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:text="PLAY"
+                android:textColor="#ED000000"
+                android:textSize="21sp"
+                android:layout_marginLeft="171dp"
+                android:layout_marginTop="106dp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:text="Pause"
+                android:textColor="#ED000000"
+                android:textSize="21sp"
+                android:id="@+id/pauseoiseaux2"
+                android:layout_marginTop="106dp"
+                android:layout_marginLeft="258dp"/>
+            <RadioButton
+                android:layout_width="62dp"
+                android:layout_height="52dp"
+                android:id="@+id/radioOiseaux2"
+                android:layout_marginLeft="350dp"
+                android:layout_marginTop="106dp"/>
+            <TextView
+            android:layout_width="171dp"
+            android:layout_height="52dp"
+            android:text="Petit Ruisseaux"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:layout_marginTop="159dp"/>
+            <Button
+                android:id="@+id/playpetitruisseau"
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:text="PLAY"
+                android:textColor="#ED000000"
+                android:textSize="21sp"
+                android:layout_marginLeft="171dp"
+                android:layout_marginTop="159dp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:text="Pause"
+                android:textColor="#ED000000"
+                android:textSize="21sp"
+                android:id="@+id/pausepetitruisseau"
+                android:layout_marginTop="159dp"
+                android:layout_marginLeft="258dp"/>
+            <RadioButton
+                android:layout_width="62dp"
+                android:layout_height="52dp"
+                android:id="@+id/radiopetitruisseau"
+                android:layout_marginLeft="350dp"
+                android:layout_marginTop="159dp"/>
+            <TextView
+                android:layout_width="171dp"
+                android:layout_height="52dp"
+                android:text="Vague Ocean"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:layout_marginTop="212dp"/>
+            <Button
+                android:id="@+id/playvaguedosocean"
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:text="PLAY"
+                android:textColor="#ED000000"
+                android:textSize="21sp"
+                android:layout_marginLeft="171dp"
+                android:layout_marginTop="212dp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:text="Pause"
+                android:textColor="#ED000000"
+                android:textSize="21sp"
+                android:id="@+id/pausevagueoceandos"
+                android:layout_marginTop="212dp"
+                android:layout_marginLeft="258dp"/>
+            <RadioButton
+                android:layout_width="62dp"
+                android:layout_height="52dp"
+                android:id="@+id/radiovagueoceandos"
+                android:layout_marginLeft="350dp"
+                android:layout_marginTop="212dp"/>
+            <TextView
+                android:layout_width="171dp"
+                android:layout_height="52dp"
+                android:text="Pluie/Orage"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:layout_marginTop="265dp"/>
+            <Button
+                android:id="@+id/playpluiorage"
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:text="PLAY"
+                android:textColor="#ED000000"
+                android:textSize="21sp"
+                android:layout_marginLeft="171dp"
+                android:layout_marginTop="265dp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:text="Pause"
+                android:textColor="#ED000000"
+                android:textSize="21sp"
+                android:id="@+id/pausepluieorage"
+                android:layout_marginTop="265dp"
+                android:layout_marginLeft="258dp"/>
+            <RadioButton
+                android:layout_width="62dp"
+                android:layout_height="52dp"
+                android:id="@+id/radiopluieorage"
+                android:layout_marginLeft="350dp"
+                android:layout_marginTop="265dp"/>
+            <TextView
+                android:layout_width="171dp"
+                android:layout_height="52dp"
+                android:text="Mouettes Mer"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:layout_marginTop="318dp"/>
+            <Button
+                android:id="@+id/playmouettemer"
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:text="PLAY"
+                android:textColor="#ED000000"
+                android:textSize="21sp"
+                android:layout_marginLeft="171dp"
+                android:layout_marginTop="318dp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:text="Pause"
+                android:textColor="#ED000000"
+                android:textSize="21sp"
+                android:id="@+id/pausemouettemer"
+                android:layout_marginTop="318dp"
+                android:layout_marginLeft="258dp"/>
+            <RadioButton
+                android:layout_width="62dp"
+                android:layout_height="52dp"
+                android:id="@+id/radiomouettemer"
+                android:layout_marginLeft="350dp"
+                android:layout_marginTop="318dp"/>
+
+        </RelativeLayout>
 
     </ScrollView>
 

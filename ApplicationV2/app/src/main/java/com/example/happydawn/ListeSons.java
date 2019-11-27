@@ -53,11 +53,11 @@ public class ListeSons extends AppCompatActivity {
         pluieOrage = MediaPlayer.create(getApplicationContext(),R.raw.pluie_orage);
         vaguesMouettes = MediaPlayer.create(getApplicationContext(),R.raw.vagues_mouettes);
 
-        String[] items = {"foret","oiseaux1","oiseaux2","oiseaux3","petitRuisseau","petitesVaguesDosOcean","petitesVaguesFaceOcean","pluieOrage","vaguesMouettes"};
-        ListView listv = (ListView) findViewById(R.id.list_view);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.activity_list_item,R.id.txt,items);
-        listv.setAdapter(adapter);
-        listv.setOnItemClickListener(new ItemList());
+    //    String[] items = {"foret","oiseaux1","oiseaux2","oiseaux3","petitRuisseau","petitesVaguesDosOcean","petitesVaguesFaceOcean","pluieOrage","vaguesMouettes"};
+    //    ListView listv = (ListView) findViewById(R.id.list_view);
+    //    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.activity_list_item,R.id.txt,items);
+    //    listv.setAdapter(adapter);
+     //   listv.setOnItemClickListener(new ItemList());
 
     }
 
