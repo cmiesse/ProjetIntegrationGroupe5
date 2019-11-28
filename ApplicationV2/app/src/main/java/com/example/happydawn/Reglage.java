@@ -106,7 +106,7 @@ public class Reglage extends AppCompatActivity {
         timePicker = findViewById(R.id.timePicker);
 
         //initialise text update
-        //updateText = findViewById(R.id.number_edit_text);
+        updateText = findViewById(R.id.number_edit_text);
 
         final Calendar calendar = Calendar.getInstance();
 
@@ -146,6 +146,8 @@ public class Reglage extends AppCompatActivity {
 
                 //set alarm manager
                 alarm_manager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
+
+
             }
         });
 
@@ -336,15 +338,25 @@ public class Reglage extends AppCompatActivity {
     }
 
 
-    //public void ValideActivity(View v) {
+    public void ValideActivity(View v) {
 
-        //Intent intent1 = new Intent(this, Alarme.class);
+        TextView textview0 = findViewById(R.id.nomalarme);
+        TextView textview1 = findViewById(R.id.txtson);
+        TextView textview2 = findViewById(R.id.textvolume);
+        TextView textview3 = findViewById(R.id.txtluminosite);
+        TextView textview4 = findViewById(R.id.txtcouleur);
+        TextView textview5 = findViewById(R.id.txtduree);
+        TextView textview6 = findViewById(R.id.txtaugmentation);
 
-        //intent1.putExtra(String.valueOf(parentLinearLayout), "LinearL");
+        String str = textview0.getText().toString();
 
+        Intent intent = new Intent(this, Alarme.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("edittext ", str);
+        intent.putExtras(bundle);
+        startActivity(intent);
 
-        //startActivity(intent1);
-    //}
+    }
 
 
 
