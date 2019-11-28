@@ -27,7 +27,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="CSS/w3.css">
+    <link rel="stylesheet" href="CSS/w3-min.css">
     <link rel="icon" href="soleil.ico" />
     <title><?php echo TXT_TITLE_BUY ?></title>
   </head>

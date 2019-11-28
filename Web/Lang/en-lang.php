@@ -4,7 +4,7 @@
   define('TXT_PROJECT', 'Our Project');
   define('TXT_PRODUCTS', 'Our Products');
   define('TXT_PRESENTATION_TEAM', 'Here are our team members');
-  define('TXT_PROJECT_FIRST', 'We produce an alarm clock with that wake you up using an artificial dawn and sounds / music as alarm.');
+  define('TXT_PROJECT_FIRST', 'We produce an alarm clock that wake you up using an artificial dawn and sounds / music as alarm.');
   define('TXT_PROJECT_SECOND', 'In addition to the alarm clock, our team produces a mobile application to connect and set up the device.');
   define('TXT_PROJECT_THIRD', 'The users of the application can choose the intensity of the waking light, the music used, their intensities, etc.');
   define('TXT_PROJECT_FOURTH', 'The alarm clock can also synchronize to your calendar for an automated alarm clock based on your activities.');
