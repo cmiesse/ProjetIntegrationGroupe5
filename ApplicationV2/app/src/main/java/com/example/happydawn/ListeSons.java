@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -46,12 +47,122 @@ public class ListeSons extends AppCompatActivity {
         foret = MediaPlayer.create(getApplicationContext(),R.raw.foret);
         oiseaux1 = MediaPlayer.create(getApplicationContext(),R.raw.oiseaux1);
         oiseaux2 = MediaPlayer.create(getApplicationContext(),R.raw.oiseaux2);
-        oiseaux3 = MediaPlayer.create(getApplicationContext(),R.raw.oiseaux3);
+ //       oiseaux3 = MediaPlayer.create(getApplicationContext(),R.raw.oiseaux3);
         petitRuisseau = MediaPlayer.create(getApplicationContext(),R.raw.petit_ruisseau);
         petitesVaguesDosOcean = MediaPlayer.create(getApplicationContext(),R.raw.petites_vagues_dos_ocean);
-        petitesVaguesFaceOcean = MediaPlayer.create(getApplicationContext(),R.raw.petites_vagues_face_ocean);
+ //       petitesVaguesFaceOcean = MediaPlayer.create(getApplicationContext(),R.raw.petites_vagues_face_ocean);
         pluieOrage = MediaPlayer.create(getApplicationContext(),R.raw.pluie_orage);
         vaguesMouettes = MediaPlayer.create(getApplicationContext(),R.raw.vagues_mouettes);
+
+        Button playforet = (Button) findViewById(R.id.playforet);
+        Button pauseforet = (Button) findViewById(R.id.pauseforet);
+        Button playoiseaux1 = (Button) findViewById(R.id.playoiseau1);
+        Button pauseoiseaux1 = (Button) findViewById(R.id.pauseoiseaux1);
+        Button playoiseaux2 = (Button) findViewById(R.id.playoiseau2);
+        Button pauseoiseaux2 = (Button) findViewById(R.id.pauseoiseaux2);
+        Button playPetitRuisseau = (Button) findViewById(R.id.playpetitruisseau);
+        Button pausePetitRuisseau = (Button) findViewById(R.id.pausepetitruisseau);
+        Button playVagueOcean = (Button) findViewById(R.id.playvaguedosocean);
+        Button pauseVagueOcean = (Button) findViewById(R.id.pausevagueoceandos);
+        Button playpluieorage = (Button) findViewById(R.id.playpluiorage);
+        Button pausepluieorage = (Button) findViewById(R.id.pausepluieorage);
+        Button playvaguesMouettes = (Button) findViewById(R.id.playmouettemer);
+        Button pausevaguesMouettes = (Button) findViewById(R.id.pausemouettemer);
+
+        playforet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              foret.start();
+            }
+        });
+        pauseforet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                foret.pause();
+            }
+        });
+
+        playoiseaux1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                oiseaux1.start();
+
+            }
+        });
+
+        pauseoiseaux1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                oiseaux1.pause();
+            }
+        });
+
+        playoiseaux2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                oiseaux2.start();
+            }
+        });
+        pauseoiseaux2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                oiseaux2.pause();
+            }
+        });
+        playPetitRuisseau.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                petitRuisseau.start();
+            }
+        });
+        pausePetitRuisseau.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                petitRuisseau.pause();
+            }
+        });
+
+        playVagueOcean.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                petitesVaguesDosOcean.start();
+            }
+        });
+
+        pauseVagueOcean.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                petitesVaguesDosOcean.pause();
+            }
+        });
+
+        playpluieorage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pluieOrage.start();
+            }
+        });
+
+        pausepluieorage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pluieOrage.pause();
+            }
+        });
+
+        playvaguesMouettes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vaguesMouettes.start();
+            }
+        });
+
+        pausevaguesMouettes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vaguesMouettes.pause();
+            }
+        });
 
     //    String[] items = {"foret","oiseaux1","oiseaux2","oiseaux3","petitRuisseau","petitesVaguesDosOcean","petitesVaguesFaceOcean","pluieOrage","vaguesMouettes"};
     //    ListView listv = (ListView) findViewById(R.id.list_view);
@@ -65,9 +176,8 @@ public class ListeSons extends AppCompatActivity {
     private class ItemList implements AdapterView.OnItemClickListener {
 
 
-
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            ViewGroup viewg = (ViewGroup) view;
+       public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+           ViewGroup viewg = (ViewGroup) view;
             TextView textv = (TextView) viewg.findViewById(R.id.txt);
             switch (textv.getText().toString()) {
                 case "foret":
