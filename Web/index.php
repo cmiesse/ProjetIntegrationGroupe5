@@ -61,6 +61,7 @@
   <a href="#" class="w3-bar-item w3-button">Link 3</a>
   <a href="#" class="w3-bar-item w3-button">Link 4</a>
   <a href="#" class="w3-bar-item w3-button">Link 5</a>
+  <a href="#" class="w3-bar-item w3-button">Link 6</a>
 </nav>
 
 <!-- Navbar -->
@@ -73,6 +74,8 @@
     <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white"><?php echo TXT_PROJECT ?></a>
     <a href="#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white"><?php echo TXT_PRODUCTS ?></a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
+	<a href="conditionsUtilisations.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Conditions d'Utilisations</a>
+	
     <form style="text-align:right;margin-right:20px"action="index.php" method="get">
       <select name="l">
         <option value="fr" <?php if($_COOKIE['lang'] == 'fr'){ echo "selected";}?>>Français</option>
