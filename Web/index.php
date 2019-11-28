@@ -61,6 +61,7 @@
   <a href="#" class="w3-bar-item w3-button">Link 3</a>
   <a href="#" class="w3-bar-item w3-button">Link 4</a>
   <a href="#" class="w3-bar-item w3-button">Link 5</a>
+  <a href="#" class="w3-bar-item w3-button">Link 6</a>
 </nav>
 
 <!-- Navbar -->
