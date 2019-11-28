@@ -2,19 +2,18 @@
 <html lang="fr">
 	<head>
 		<meta charset="utf-8">
-		<title>Happy Dawn - Conditions générales</title>
+		<title>Conditions générales du site Happy Dawn</title>
 		<link rel="stylesheet" href="CSS/w3-min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		</head>
 	<body>
-		<div id="entete">
-		</div>
+		
 		<div>
 			<nav id="titre">
 				<h2>Conditions Générales</h2>
 			</nav>
 		</div>
-		<div id="blabla">
+		<div id="explications">
 			<p>
 				En naviguant sur notre site, l’internaute reconnaît avoir pris connaissance et accepté nos conditions générales d’utilisation <br>
 					<h4>Données personnelles :</h4>
