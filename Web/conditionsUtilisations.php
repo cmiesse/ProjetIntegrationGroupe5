@@ -3,6 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Happy Dawn - Conditions générales</title>
+		<link rel="stylesheet" href="CSS/w3-min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		</head>
 	<body>
 		<div id="entete">
