@@ -22,6 +22,7 @@
   define('TXT_FOOTER', 'EPHEC - 2019-2020 - Group 5 - Integration Project');
   define('TXT_MAIL_SENT', 'Email sent');
   define('TXT_FORM_INVALID', 'Invalid form');
+  define('TXT_TERMS_USE', 'Terms of use');
   //Purchase.php
   define('TXT_TITLE_BUY','HappyDawn - Purchase');
   define('TXT_HOME_BUTTON', 'Back to homepage');
