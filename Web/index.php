@@ -161,6 +161,12 @@
     <p><?php echo TXT_PROJECT_THIRD ?></p>
     <p><?php echo TXT_PROJECT_FOURTH ?></p>
     <p><?php echo TXT_PROJECT_FIFTH ?></p>
+    <h3><?php echo TXT_SDG_TITLE ?></h3>
+    <h4><?php echo TXT_SDG3 ?></h4>
+    <p><?php echo TXT_SDG3_P1 ?></p>
+    <p><?php echo TXT_SDG3_P2 ?></p>
+    <h4><?php echo TXT_SDG7 ?></h4>
+    <p><?php echo TXT_SDG7_P ?></p>
   </div>
 </div>
 
@@ -174,7 +180,7 @@
         <li class="w3-theme">
           <p class="w3-xlarge"><?php echo TXT_ALARM ?></p>
         </li>
-          <li class="w3-padding-16"><img src="IMG/reveil.png" alt="Réveil" style="width:28%"> </li>
+          <li class="w3-padding-16"><img src="IMG/panier.png" alt="Buy" style="width:28%"> </li>
         <li class="w3-theme-l5 w3-padding-24">
           <a class="w3-button w3-teal w3-padding-large" href="Purchase.php"><i class="fa fa-check"></i> <?php echo TXT_BUY ?></a>
         </li>
@@ -186,10 +192,10 @@
         <li class="w3-theme">
           <p class="w3-xlarge"><?php echo TXT_APP ?></p>
         </li>
-        <li class="w3-padding-16"><img src="IMG/download.png" alt="Android" style="width:72%"> </li>
+        <li class="w3-padding-16"><img src="IMG/downloadIcon.png" alt="Download" style="width:28%"> </li>
 
         <li class="w3-theme-l5 w3-padding-24">
-          <a class="w3-button w3-teal w3-padding-large" href="https://github.com/cmiesse/ProjetIntegrationGroupe5/tree/master/ApplicationV2"><i class="fa fa-check"></i> <?php echo TXT_DOWNLOAD ?></a>
+          <a class="w3-button w3-teal w3-padding-large" href="https://github.com/cmiesse/ProjetIntegrationGroupe5/tree/master/Bluetooth_Appv2/Bluetooth_App"><i class="fa fa-check"></i> <?php echo TXT_DOWNLOAD ?></a>
         </li>
       </ul>
     </div>

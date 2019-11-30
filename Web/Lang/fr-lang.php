@@ -23,6 +23,12 @@
   define('TXT_MAIL_SENT', 'Mail envoyé');
   define('TXT_FORM_INVALID', 'Formulaire non valide');
   define('TXT_TERMS_USE', 'Conditions d\'utilisation');
+  define('TXT_SDG_TITLE', 'Objectifs de développement durable');
+  define('TXT_SDG3', 'Accès à la santé (ODD n°3)');
+  define('TXT_SDG3_P1', 'Nous tentons de vous aider à vous réveiller confortablement, sans endommager vos cycles de sommeil.');
+  define('TXT_SDG3_P2', 'Notre réveil tente également d\'aider le réveil aux personnes aveugles, sourdes, malentendantes.');
+  define('TXT_SDG7', 'Energies fiables, durables et modernes, à un coût abordable (ODD n°7)');
+  define('TXT_SDG7_P', 'Nous visons à consommer au minimum et à utiliser par exemple des LEDs plutôt d\'autres sources lumineuses plus polluantes.');
   //Purchase.php
   define('TXT_TITLE_BUY','HappyDawn - Achat');
   define('TXT_HOME_BUTTON', 'Retour à l\'accueil');
