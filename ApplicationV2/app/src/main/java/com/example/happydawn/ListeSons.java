@@ -10,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +29,10 @@ public class ListeSons extends AppCompatActivity {
     protected MediaPlayer petitesVaguesFaceOcean;
     protected MediaPlayer pluieOrage;
     protected MediaPlayer vaguesMouettes;
+
+    private RadioGroup radioGroup;
+    private RadioButton radioButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -163,6 +169,7 @@ public class ListeSons extends AppCompatActivity {
                 vaguesMouettes.pause();
             }
         });
+
 
     //    String[] items = {"foret","oiseaux1","oiseaux2","oiseaux3","petitRuisseau","petitesVaguesDosOcean","petitesVaguesFaceOcean","pluieOrage","vaguesMouettes"};
     //    ListView listv = (ListView) findViewById(R.id.list_view);

@@ -221,9 +221,53 @@
                 android:layout_marginTop="318dp"
                 android:layout_marginLeft="258dp"/>
             <RadioGroup
-                android:layout_width="52dp"
-                android:layout_height="364dp"
+                android:layout_width="60dp"
+                android:layout_height="371dp"
+                android:layout_marginLeft="380dp"
+                android:id="@+id/radiogroup">
+            <RadioButton
+                android:layout_width="60dp"
+                android:layout_height="53dp"
+                android:text="Foret matinale"
+                android:id="@+id/checkforet"
                 />
+                <RadioButton
+                    android:layout_width="60dp"
+                    android:layout_height="53dp"
+                    android:text="Oiseaux 1"
+                    android:id="@+id/checkoiseaux1"
+                    />
+                <RadioButton
+                    android:layout_width="60dp"
+                    android:layout_height="53dp"
+                    android:text="Oiseaux 2"
+                    android:id="@+id/checkoiseaux2"
+                    />
+                <RadioButton
+                    android:layout_width="60dp"
+                    android:layout_height="53dp"
+                    android:text="Petit Ruisseaux"
+                    android:id="@+id/checkpetitruisseaux"
+                    />
+                <RadioButton
+                    android:layout_width="60dp"
+                    android:layout_height="53dp"
+                    android:text="Vague Ocean"
+                    android:id="@+id/checkvagueocean"
+                    />
+                <RadioButton
+                    android:layout_width="60dp"
+                    android:layout_height="53dp"
+                    android:text="Pluie/Orage"
+                    android:id="@+id/checkpluieorage"
+                    />
+                <RadioButton
+                    android:layout_width="60dp"
+                    android:layout_height="53dp"
+                    android:text="Mouetted Mer"
+                    android:id="@+id/checkmouettemer"
+                    />
+            </RadioGroup>
         </RelativeLayout>
 
     </ScrollView>
