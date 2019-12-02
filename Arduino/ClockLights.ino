@@ -17,6 +17,7 @@
 #include "Adafruit_BLE.h"
 #include "Adafruit_BluefruitLE_SPI.h"
 #include "Adafruit_BluefruitLE_UART.h"
+#include <ArduinoJson.h>
 
 #include "BluefruitConfig.h"
 
@@ -89,18 +90,26 @@ void error(const __FlashStringHelper*err) {
 // Global variables
 char state;
 long alarmDelay;
-const int MAXLIGHTS = 30;  // normal value = 255
+ long colorHSV ;
+ int maxLights;  // Max value = 255
 const int SCHEDULE = 6; //normal value = 60
+String msg ;
+  
 
 
 void setup(void)
 {
+
+  
   turnOffLights();
   state = 'z';
   strip.begin();
   strip.show();
   while (!Serial);  // required for Flora & Micro
   delay(500);
+
+
+  
 
   Serial.begin(115200);
   Serial.println(F("Adafruit Bluefruit Command Mode Example"));
@@ -151,6 +160,56 @@ void setup(void)
     ble.sendCommandCheckOK("AT+HWModeLED=" MODE_LED_BEHAVIOUR);
     Serial.println(F("******************************"));
   }
+
+
+/*
+    StaticJsonDocument<256> doc;
+  char sampleMsg[] = "{\"Key1\":30,\"Key2\":\"subKey21\":\"a\",\"subKey21\":61000}}";
+  DeserializationError errorD = deserializeJson(doc, sampleMsg);
+
+  // Test if parsing succeeds.
+  if (errorD) {
+    Serial.print(F("deserializeJson() failed: "));
+    Serial.println(errorD.c_str());
+    return;
+  }
+// JsonObject root = doc.as<JsonObject>(); 
+String key1 = doc["Key1"];
+Serial.println(key1);
+*/
+
+  
+
+}
+
+void parseJson(String json) {
+  //  Serial.begin(115200);
+
+  
+   StaticJsonDocument<400> doc;
+
+  
+  DeserializationError error = deserializeJson(doc, json);
+
+  // Test if parsing succeeds.
+  if (error) {
+    Serial.print(F("deserializeJson() failed: "));
+    Serial.println(error.c_str());
+    return;
+  }
+
+  // Fetch values.
+  //
+  // Most of the time, you can rely on the implicit casts.
+  // In other case, you can do doc["time"].as<long>();
+  colorHSV = doc["l"]["c"];
+  alarmDelay = doc["t"];
+  Serial.print("alarmDelay");
+  Serial.println(alarmDelay);
+  maxLights = doc["l"]["M"];
+
+  
+  
 }
 
 /**************************************************************************/
@@ -189,14 +248,16 @@ void loop(void)
   }
   // Some data was found, its in the buffer
   String msgFromApp = ble.buffer;
+   Serial.print(F("[Recv] ")); Serial.println(ble.buffer);
+    msg = msg+msgFromApp;
+  if(msgFromApp.endsWith(".")){
+    parseJson(msg);
+    msg="";
+  }
   
-  Serial.print(F("[Recv] ")); Serial.println(ble.buffer);
   
 //Serial.print(F("[leds] "));  Serial.println(leds);
-  alarmDelay = msgFromApp.toInt();
-  if(alarmDelay == 0){
-  Serial.println("Bad message");
-}
+ 
  state = 's';
   
   ble.waitForOK();
@@ -211,8 +272,9 @@ void loop(void)
       
       
     }
-    else{
+    if((alarmDelay<=SCHEDULE) && (alarmDelay >= 0)){
       state = 'r';
+      alarmDelay = -1;
     }
   }
   if(state == 'r'){
@@ -230,14 +292,14 @@ void brighten() {
    c= 0;
   
  // for (j = 0; j < 255; j++) {
-   for(c ; c<MAXLIGHTS; c++){
-    uint32_t rgbcolor = strip.ColorHSV(a, b, c);
+   for(c ; c<maxLights; c++){
+    uint32_t rgbcolor = strip.ColorHSV(colorHSV, b, c);
     for (i = 0; i < strip.numPixels(); i++) {
       
       strip.fill(rgbcolor);
     }
     strip.show();
-    delay(1000);
+    delay(30); // to put 1000
   }
   }
   //
