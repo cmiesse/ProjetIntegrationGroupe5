@@ -1,0 +1,3 @@
+{"delaySec":30,"lights":{"colorHSV":15000,"maxValue":170},"sound":{"fileName":"birds.mp3","maxValue":100}}
+
+
