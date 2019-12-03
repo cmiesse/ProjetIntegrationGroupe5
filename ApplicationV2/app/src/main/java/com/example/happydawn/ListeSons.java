@@ -49,6 +49,17 @@ public class ListeSons extends AppCompatActivity {
                 finish();
             }
         });
+        radioGroup = findViewById(R.id.radiogroup);
+        Button valideson = findViewById(R.id.valideSon);
+        valideson.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int radioID = radioGroup.getCheckedRadioButtonId();
+
+                radioButton = findViewById(radioID);
+
+            }
+        });
 
         foret = MediaPlayer.create(getApplicationContext(),R.raw.foret);
         oiseaux1 = MediaPlayer.create(getApplicationContext(),R.raw.oiseaux1);
@@ -178,6 +189,9 @@ public class ListeSons extends AppCompatActivity {
      //   listv.setOnItemClickListener(new ItemList());
 
     }
+
+
+
 
 
     private class ItemList implements AdapterView.OnItemClickListener {

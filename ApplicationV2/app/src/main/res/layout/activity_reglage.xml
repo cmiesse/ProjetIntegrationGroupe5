@@ -52,24 +52,25 @@
             android:id="@+id/timePicker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:timePickerMode="spinner" />
+            android:timePickerMode="spinner"
+            android:layout_marginTop="180dp"/>
 
         <Button
         android:id="@+id/son"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="230dp"
         android:background="#6370A2"
         android:text="Son"
         android:textColor="@android:color/background_dark"
         android:textColorLink="#FFFFFF"
-        android:textSize="30dp" />
+        android:textSize="30dp"
+            android:layout_marginTop="10dp"/>
 
         <TextView
             android:id="@+id/txtson"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="290dp"
+            android:layout_marginTop="60dp"
             android:textAlignment="center"
             android:text="son"
             android:textSize="30dp"
@@ -80,7 +81,7 @@
             android:layout_width="180dp"
             android:layout_height="74dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="340dp"
+            android:layout_marginTop="100dp"
             android:text="Volume : "
             android:textColor="@android:color/background_dark"
             android:textColorLink="#FFFFFF"
@@ -90,7 +91,7 @@
             android:id="@+id/textvolume"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="340dp"
+            android:layout_marginTop="100dp"
             android:layout_marginLeft="145dp"
             android:textColor="@android:color/background_dark"
             android:text="0"
@@ -100,7 +101,7 @@
             android:id="@+id/textpourcent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="340dp"
+            android:layout_marginTop="100dp"
             android:layout_marginLeft="185dp"
             android:textColor="@android:color/background_dark"
             android:text="%"
@@ -110,7 +111,7 @@
             android:id="@+id/seekBar"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_marginTop="380dp"
+            android:layout_marginTop="150dp"
             tools:layout_editor_absoluteX="12dp"
             android:progressTint="@android:color/background_dark"
             android:thumbTint="@android:color/background_dark"/>

@@ -229,43 +229,44 @@
                 android:layout_width="60dp"
                 android:layout_height="53dp"
                 android:text="Foret matinale"
-                android:id="@+id/checkforet"
+                android:id="@+id/radio_one"
+                android:checked="true"
                 />
                 <RadioButton
                     android:layout_width="60dp"
                     android:layout_height="53dp"
                     android:text="Oiseaux 1"
-                    android:id="@+id/checkoiseaux1"
+                    android:id="@+id/radio_two"
                     />
                 <RadioButton
                     android:layout_width="60dp"
                     android:layout_height="53dp"
                     android:text="Oiseaux 2"
-                    android:id="@+id/checkoiseaux2"
+                    android:id="@+id/radio_three"
                     />
                 <RadioButton
                     android:layout_width="60dp"
                     android:layout_height="53dp"
                     android:text="Petit Ruisseaux"
-                    android:id="@+id/checkpetitruisseaux"
+                    android:id="@+id/radio_four"
                     />
                 <RadioButton
                     android:layout_width="60dp"
                     android:layout_height="53dp"
                     android:text="Vague Ocean"
-                    android:id="@+id/checkvagueocean"
+                    android:id="@+id/radio_five"
                     />
                 <RadioButton
                     android:layout_width="60dp"
                     android:layout_height="53dp"
                     android:text="Pluie/Orage"
-                    android:id="@+id/checkpluieorage"
+                    android:id="@+id/radio_six"
                     />
                 <RadioButton
                     android:layout_width="60dp"
                     android:layout_height="53dp"
                     android:text="Mouetted Mer"
-                    android:id="@+id/checkmouettemer"
+                    android:id="@+id/radio_seven"
                     />
             </RadioGroup>
         </RelativeLayout>
