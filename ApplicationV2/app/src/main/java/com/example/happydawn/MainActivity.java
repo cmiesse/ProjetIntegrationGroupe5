@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -12,6 +13,7 @@ import android.webkit.WebView;
 
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -23,6 +25,9 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -37,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+
+
 
         this.aide = findViewById(R.id.aide);
 
@@ -60,10 +67,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        WebView webView = findViewById(R.id.webView);
-        webView.loadUrl("file:///android_asset/horloge/horloge.html");
-        webView.setWebChromeClient(new WebChromeClient());
-        webView.getSettings().setJavaScriptEnabled(true);
+        //WebView webView = findViewById(R.id.webView);
+        //webView.loadUrl("file:///android_asset/horloge/horloge.html");
+        //webView.setWebChromeClient(new WebChromeClient());
+        //webView.getSettings().setJavaScriptEnabled(true);
 
         t1_degree = findViewById(R.id.degre);
         t2_temps = findViewById(R.id.temps);
