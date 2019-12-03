@@ -58,6 +58,9 @@ public class ListeSons extends AppCompatActivity {
 
                 radioButton = findViewById(radioID);
 
+                TextView textView = findViewById(R.id.foretMatinale);
+                String text = textView.getText().toString();
+
             }
         });
 
