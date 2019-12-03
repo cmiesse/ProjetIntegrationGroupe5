@@ -45,6 +45,7 @@
                 ></ListView> -->
 
             <TextView
+                android:id="@+id/foretMatinale"
                 android:layout_width="171dp"
                 android:layout_height="52dp"
                 android:layout_marginLeft="0dp"
@@ -225,13 +226,13 @@
                 android:layout_height="371dp"
                 android:layout_marginLeft="380dp"
                 android:id="@+id/radiogroup">
-            <RadioButton
-                android:layout_width="60dp"
-                android:layout_height="53dp"
-                android:text="Foret matinale"
-                android:id="@+id/radio_one"
-                android:checked="true"
-                />
+
+                <RadioButton
+                    android:id="@+id/radio_one"
+                    android:layout_width="50dp"
+                    android:layout_height="53dp"
+                    android:checked="true"
+                    android:text="Foret matinale" />
                 <RadioButton
                     android:layout_width="60dp"
                     android:layout_height="53dp"
