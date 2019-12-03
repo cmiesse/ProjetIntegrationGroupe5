@@ -50,7 +50,7 @@ public class ListeSons extends AppCompatActivity {
             }
         });
         radioGroup = findViewById(R.id.radiogroup);
-        Button valideson = findViewById(R.id.valideSon);
+        final Button valideson = findViewById(R.id.valideSon);
         valideson.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,8 +58,12 @@ public class ListeSons extends AppCompatActivity {
 
                 radioButton = findViewById(radioID);
 
-                TextView textView = findViewById(R.id.foretMatinale);
-                String text = textView.getText().toString();
+                // Récupération du texte du titre Foret Matinale
+                TextView textForet = (TextView) findViewById(R.id.foretMatinale);
+                String textForetus = textForet.getText().toString();
+
+                //Ajoute le texte du son choisi dans le champ "son"
+                valideson.setText(textForetus);
 
             }
         });
