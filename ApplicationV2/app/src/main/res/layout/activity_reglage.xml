@@ -55,15 +55,15 @@
             android:timePickerMode="spinner" />
 
         <Button
-            android:id="@+id/son"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="230dp"
-            android:background="#6370A2"
-            android:text="Son"
-            android:textColor="@android:color/background_dark"
-            android:textColorLink="#FFFFFF"
-            android:textSize="30dp" />
+        android:id="@+id/son"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="230dp"
+        android:background="#6370A2"
+        android:text="Son"
+        android:textColor="@android:color/background_dark"
+        android:textColorLink="#FFFFFF"
+        android:textSize="30dp" />
 
         <TextView
             android:id="@+id/txtson"
