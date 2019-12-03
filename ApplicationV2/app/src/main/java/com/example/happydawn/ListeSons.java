@@ -51,12 +51,11 @@ public class ListeSons extends AppCompatActivity {
                 finish();
             }
         });
+
         radioGroup = findViewById(R.id.radiogroup);
 
-<<<<<<< HEAD
         final Intent intent22 = new Intent(this, Reglage.class);
-=======
->>>>>>> 2889e92a522cc5b0f575ed93fb33217b73b91839
+
         final Button valideson = findViewById(R.id.valideSon);
 
         valideson.setOnClickListener(new View.OnClickListener() {
@@ -67,7 +66,6 @@ public class ListeSons extends AppCompatActivity {
                 radioButton = findViewById(radioID);
 
                 // Récupération du texte du titre Foret Matinale
-<<<<<<< HEAD
                 //TextView textForet = (TextView) findViewById(R.id.foretMatinale);
                 //String textForetus = textForet.getText().toString();
 
@@ -79,15 +77,6 @@ public class ListeSons extends AppCompatActivity {
 
                 intent22.putExtra("edittext", strson);
                 startActivity(intent22);
-=======
-                TextView textForet = (TextView) findViewById(R.id.foretMatinale);
-                String textForetus = textForet.getText().toString();
-                TextView texteSon = (TextView) findViewById(R.id.txtson);
-                texteSon.setText(textForetus);
-
-
-
->>>>>>> 2889e92a522cc5b0f575ed93fb33217b73b91839
 
             }
         }
