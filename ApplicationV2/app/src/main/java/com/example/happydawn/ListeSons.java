@@ -61,22 +61,18 @@ public class ListeSons extends AppCompatActivity {
 
                 radioButton = findViewById(radioID);
 
+                // Récupération du texte du titre Foret Matinale
+                TextView textForet = (TextView) findViewById(R.id.foretMatinale);
+                String textForetus = textForet.getText().toString();
+                TextView texteSon = (TextView) findViewById(R.id.txtson);
+                texteSon.setText(textForetus);
+
 
 
 
             }
         }
         );
-
-        //action de récupération
-        valideson.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Récupération du texte du titre Foret Matinale
-                TextView textForet = (TextView) findViewById(R.id.foretMatinale);
-                String textForetus = textForet.getText().toString();
-            }
-        });
 
         foret = MediaPlayer.create(getApplicationContext(),R.raw.foret);
         oiseaux1 = MediaPlayer.create(getApplicationContext(),R.raw.oiseaux1);
