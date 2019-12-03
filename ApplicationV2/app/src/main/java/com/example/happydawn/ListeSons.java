@@ -16,6 +16,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.w3c.dom.Text;
+
 public class ListeSons extends AppCompatActivity {
 
     private ImageView retour;
@@ -50,6 +52,7 @@ public class ListeSons extends AppCompatActivity {
             }
         });
         radioGroup = findViewById(R.id.radiogroup);
+
         final Button valideson = findViewById(R.id.valideSon);
         valideson.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +60,20 @@ public class ListeSons extends AppCompatActivity {
                 int radioID = radioGroup.getCheckedRadioButtonId();
 
                 radioButton = findViewById(radioID);
+
+
+                    // Récupération du texte du titre Foret Matinale
+                    TextView textForet = (TextView) findViewById(R.id.foretMatinale);
+                    String textForetus = textForet.getText().toString();
+
+                    TextView textus = (TextView) findViewById(R.id.txtson);
+                    textus.setText(textForetus);
+
+                    //Ajoute le texte du son choisi dans le champ "son"
+
+
+
+
 
 
 
