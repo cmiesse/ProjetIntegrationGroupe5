@@ -35,12 +35,26 @@
         android:layout_margin="5dp"
         android:orientation="vertical" >
 
+        <Button
+            android:id="@+id/add_field_button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#555"
+            android:layout_gravity="center"
+            android:onClick="onAddField"
+            android:textColor="#FFF"
+            android:text="Add Field"
+            android:paddingLeft="5dp"/>
+
 
         <TextView
             android:id="@+id/txtupdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="250dp"
             android:textAlignment="center"
             android:text="alarme"
             android:textSize="30dp"
