@@ -1,4 +1,4 @@
-{"t":30000,"l":{"c":15000,"M":170},"s":{"f":"birds.mp3","M":100}}
+{"t":30000,"l":{"c":15000,"M":170},"s":{"f":"birds.mp3","M":100}}.
 
 
 
@@ -10,7 +10,6 @@
 "s" pour la partie son
 "f" pour le fichier son choisi par l'user
 "M" pour le volume max choisi par l'user
-
-
+ . pour signaler la fin de transmission
 
 
