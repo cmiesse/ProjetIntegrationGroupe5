@@ -94,6 +94,7 @@ public class Reglage extends AppCompatActivity {
                 Intent otherActivity = new Intent(getApplicationContext(), ListeSons.class);
                 startActivity(otherActivity);
                 finish();
+
             }
         });
 
