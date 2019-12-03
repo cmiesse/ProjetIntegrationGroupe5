@@ -95,8 +95,12 @@ public class Reglage extends AppCompatActivity {
                 startActivity(otherActivity);
                 finish();
 
+
             }
         });
+
+
+
 
         this.context = this;
 
