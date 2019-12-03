@@ -116,36 +116,45 @@ public class Reglage extends AppCompatActivity {
         //initialise button start
         ImageView valide = findViewById(R.id.valide);
 
+        final Intent intent11 = new Intent(this, Alarme.class);
+
         valide.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
+            //@RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
 
-                calendar.set(Calendar.HOUR_OF_DAY, timePicker.getHour());
-                calendar.set(Calendar.HOUR_OF_DAY, timePicker.getMinute());
+                TextView textview0 = findViewById(R.id.nomalarme);
+
+                String str = textview0.getText().toString();
+                intent11.putExtra("edittext", str);
+                startActivity(intent11);
+
+
+                //calendar.set(Calendar.HOUR_OF_DAY, timePicker.getHour());
+                //calendar.set(Calendar.HOUR_OF_DAY, timePicker.getMinute());
 
                 //string de l hour et minute
-                int hour = timePicker.getHour();
-                int minute = timePicker.getMinute();
-                String hour_string = String.valueOf(hour);
-                String minute_string = String.valueOf(minute);
+                //int hour = timePicker.getHour();
+                //int minute = timePicker.getMinute();
+                //String hour_string = String.valueOf(hour);
+                //String minute_string = String.valueOf(minute);
 
-                if (hour > 12) {
-                    hour_string = String.valueOf(hour - 12);
-                }
+               // if (hour > 12) {
+                    //hour_string = String.valueOf(hour - 12);
+               // }
 
-                if (minute < 10) {
-                    minute_string = "0" + minute;
-                }
+                //if (minute < 10) {
+                  //  minute_string = "0" + minute;
+                //}
 
-                set_alarm_text(" -> Alarme ON" + "\n          " + hour_string + ":" + minute_string);
+                //set_alarm_text(" -> Alarme ON" + "\n          " + hour_string + ":" + minute_string);
 
                 //pending intent
-                pending_intent = PendingIntent.getBroadcast(Reglage.this, 0, my_intent
-                        , PendingIntent.FLAG_UPDATE_CURRENT);
+                //pending_intent = PendingIntent.getBroadcast(Reglage.this, 0, my_intent
+                      //  , PendingIntent.FLAG_UPDATE_CURRENT);
 
                 //set alarm manager
-                alarm_manager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
+                //alarm_manager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
 
 
             }
@@ -338,25 +347,7 @@ public class Reglage extends AppCompatActivity {
     }
 
 
-    public void ValideActivity(View v) {
 
-        TextView textview0 = findViewById(R.id.nomalarme);
-        TextView textview1 = findViewById(R.id.txtson);
-        TextView textview2 = findViewById(R.id.textvolume);
-        TextView textview3 = findViewById(R.id.txtluminosite);
-        TextView textview4 = findViewById(R.id.txtcouleur);
-        TextView textview5 = findViewById(R.id.txtduree);
-        TextView textview6 = findViewById(R.id.txtaugmentation);
-
-        String str = textview0.getText().toString();
-
-        Intent intent = new Intent(this, Alarme.class);
-        Bundle bundle = new Bundle();
-        bundle.putString("edittext ", str);
-        intent.putExtras(bundle);
-        startActivity(intent);
-
-    }
 
 
 
