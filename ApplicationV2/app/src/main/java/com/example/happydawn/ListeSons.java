@@ -58,12 +58,7 @@ public class ListeSons extends AppCompatActivity {
 
                 radioButton = findViewById(radioID);
 
-                // Récupération du texte du titre Foret Matinale
-                TextView textForet = (TextView) findViewById(R.id.foretMatinale);
-                String textForetus = textForet.getText().toString();
 
-                //Ajoute le texte du son choisi dans le champ "son"
-                valideson.setText(textForetus);
 
             }
         });
