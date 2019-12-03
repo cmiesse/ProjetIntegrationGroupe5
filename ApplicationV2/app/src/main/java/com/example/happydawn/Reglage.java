@@ -122,19 +122,28 @@ public class Reglage extends AppCompatActivity {
         ImageView valide = findViewById(R.id.valide);
 
         final Intent intent11 = new Intent(this, Alarme.class);
+        final Intent intent12 = new Intent(this, Alarme.class);
+        final Intent intent13 = new Intent(this, Alarme.class);
+        final Intent intent14 = new Intent(this, Alarme.class);
+        final Intent intent15 = new Intent(this, Alarme.class);
+        final Intent intent16 = new Intent(this, Alarme.class);
+        final Intent intent17 = new Intent(this, Alarme.class);
+        final Intent intent18 = new Intent(this, Alarme.class);
+
 
         valide.setOnClickListener(new View.OnClickListener() {
             //@RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
 
+                //nom
                 TextView textview0 = findViewById(R.id.nomalarme);
-
                 String str = textview0.getText().toString();
-                intent11.putExtra("edittext", str);
-                startActivity(intent11);
+                intent17.putExtra("edittext", str);
+                startActivity(intent17);
 
 
+                //heure
                 //calendar.set(Calendar.HOUR_OF_DAY, timePicker.getHour());
                 //calendar.set(Calendar.HOUR_OF_DAY, timePicker.getMinute());
 
@@ -160,6 +169,47 @@ public class Reglage extends AppCompatActivity {
 
                 //set alarm manager
                 //alarm_manager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
+
+                //son
+                TextView textview1 = findViewById(R.id.txtson);
+                String str1 = textview1.getText().toString();
+                intent17.putExtra("edittext2", str1);
+
+
+                //volume
+                TextView textview2 = findViewById(R.id.textvolume);
+
+                String str2 = textview2.getText().toString();
+                intent17.putExtra("edittext3", str2);
+
+
+                //luminosite
+                TextView textview3 = findViewById(R.id.txtluminosite);
+
+                String str3 = textview3.getText().toString();
+                intent17.putExtra("edittext4", str3);
+
+
+                //couleur
+                TextView textview4 = findViewById(R.id.txtcouleur);
+
+                String str4 = textview4.getText().toString();
+                intent17.putExtra("edittext5", str4);
+
+                //duree
+
+
+                //augmentation
+                TextView textview6 = findViewById(R.id.txtaugmentation);
+
+                String str6 = textview6.getText().toString();
+                intent17.putExtra("edittext7", str6);
+
+                TextView textview5 = findViewById(R.id.txtduree);
+
+                String str5 = textview5.getText().toString();
+                intent17.putExtra("edittext6", str5);
+                startActivity(intent17);
 
 
             }

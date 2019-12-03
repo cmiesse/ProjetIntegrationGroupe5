@@ -35,15 +35,54 @@ public class Alarme extends AppCompatActivity {
             }
         });
 
-        Intent intent11 = getIntent();
-        if (intent11 != null){
+
+        Intent intent17 = getIntent();
+        if (intent17 != null){
+            String str6 = "augmentation";
+            String str5 = "durée";
+            String str4 = "couleur";
+            String str3 = "luminosite";
+            String str2 = "volume";
+            String str1 = "son";
             String str = "alarme";
-            if (intent11.hasExtra("edittext")){
-                str = intent11.getStringExtra("edittext");
+            if (intent17.hasExtra("edittext7")){
+                str6 = intent17.getStringExtra("edittext7");
             }
-            TextView textView = findViewById(R.id.txtupdate);
-            textView.setText(str);
+            if (intent17.hasExtra("edittext6")){
+                str5 = intent17.getStringExtra("edittext6");
+            }
+            if (intent17.hasExtra("edittext5")){
+                str4 = intent17.getStringExtra("edittext5");
+            }
+            if (intent17.hasExtra("edittext4")){
+                str3 = intent17.getStringExtra("edittext4");
+            }
+            if (intent17.hasExtra("edittext3")){
+                str2 = intent17.getStringExtra("edittext3");
+            }
+            if (intent17.hasExtra("edittext2")){
+                str1 = intent17.getStringExtra("edittext2");
+            }
+            if (intent17.hasExtra("edittext")){
+                str = intent17.getStringExtra("edittext");
+            }
+            TextView textView = findViewById(R.id.txtupdate7);
+            textView.setText(str6);
+            TextView textView1 = findViewById(R.id.txtupdate6);
+            textView1.setText(str5);
+            TextView textView2 = findViewById(R.id.txtupdate5);
+            textView2.setText(str4);
+            TextView textView3 = findViewById(R.id.txtupdate4);
+            textView3.setText(str3);
+            TextView textView4 = findViewById(R.id.txtupdate3);
+            textView4.setText(str2);
+            TextView textView5 = findViewById(R.id.txtupdate2);
+            textView5.setText(str1);
+            TextView textView6 = findViewById(R.id.txtupdate);
+            textView6.setText(str);
         }
+
+
 
 
         this.add = findViewById(R.id.add);

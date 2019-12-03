@@ -49,16 +49,190 @@
             android:text="Add Field"
             android:paddingLeft="5dp"/>
 
-
-        <TextView
-            android:id="@+id/txtupdate"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="250dp"
-            android:textAlignment="center"
-            android:text="alarme"
-            android:textSize="30dp"
-            android:inputType="text"/>
+            android:layout_height="40dp">
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:text="alarme :"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/txtupdate"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:layout_marginLeft="30dp"
+                android:text="alarme"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:text="heure :"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/txtupdate1"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:layout_marginLeft="30dp"
+                android:text="heure"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:text="son :"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/txtupdate2"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:layout_marginLeft="30dp"
+                android:text="alarme"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:text="volume :"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/txtupdate3"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:layout_marginLeft="30dp"
+                android:text="alarme"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:text="luminosite :"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/txtupdate4"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="30dp"
+                android:inputType="text"
+                android:text="alarme"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:text="couleur :"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/txtupdate5"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:layout_marginLeft="30dp"
+                android:text="alarme"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:text="durée :"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/txtupdate6"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:layout_marginLeft="30dp"
+                android:text="alarme"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:text="augmentat° :"
+                android:textAlignment="center"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/txtupdate7"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:inputType="text"
+                android:text="alarme"
+                android:textAlignment="center"
+                android:scrollbarAlwaysDrawHorizontalTrack="true"
+                android:textSize="30dp" />
+
+        </LinearLayout>
 
 
     </LinearLayout>
