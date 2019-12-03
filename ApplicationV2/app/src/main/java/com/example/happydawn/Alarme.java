@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -34,16 +35,16 @@ public class Alarme extends AppCompatActivity {
             }
         });
 
-        //Intent iin= getIntent();
-        //Bundle b = iin.getExtras();
+        Intent intent11 = getIntent();
+        if (intent11 != null){
+            String str = "alarme";
+            if (intent11.hasExtra("edittext")){
+                str = intent11.getStringExtra("edittext");
+            }
+            TextView textView = findViewById(R.id.txtupdate);
+            textView.setText(str);
+        }
 
-        //if(b!=null)
-        //{
-        //    LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        //    final View rowView = inflater.inflate(R.layout.field, null);
-            // Add the new row before the add field button.
-        //    parentLinearLayout.addView(rowView, parentLinearLayout.getChildCount() - 1);
-        //}
 
         this.add = findViewById(R.id.add);
 
