@@ -339,6 +339,18 @@ public class Reglage extends AppCompatActivity {
             }
         });
 
+        //son
+
+        Intent intent22 = getIntent();
+        if (intent22 != null){
+            String strson = "son";
+            if (intent22.hasExtra("edittext")){
+                strson = intent22.getStringExtra("edittext");
+            }
+            TextView textView = findViewById(R.id.txtson);
+            textView.setText(strson);
+        }
+
 
 
 

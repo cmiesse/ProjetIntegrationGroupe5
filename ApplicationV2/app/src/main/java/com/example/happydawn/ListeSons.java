@@ -50,7 +50,10 @@ public class ListeSons extends AppCompatActivity {
             }
         });
         radioGroup = findViewById(R.id.radiogroup);
+
+        final Intent intent22 = new Intent(this, Reglage.class);
         final Button valideson = findViewById(R.id.valideSon);
+
         valideson.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,11 +62,17 @@ public class ListeSons extends AppCompatActivity {
                 radioButton = findViewById(radioID);
 
                 // Récupération du texte du titre Foret Matinale
-                TextView textForet = (TextView) findViewById(R.id.foretMatinale);
-                String textForetus = textForet.getText().toString();
+                //TextView textForet = (TextView) findViewById(R.id.foretMatinale);
+                //String textForetus = textForet.getText().toString();
 
                 //Ajoute le texte du son choisi dans le champ "son"
-                valideson.setText(textForetus);
+                //valideson.setText(textForetus);
+
+                String strson = radioButton.getText().toString();
+
+
+                intent22.putExtra("edittext", strson);
+                startActivity(intent22);
 
             }
         });
@@ -187,6 +196,7 @@ public class ListeSons extends AppCompatActivity {
                 vaguesMouettes.pause();
             }
         });
+
 
 
     //    String[] items = {"foret","oiseaux1","oiseaux2","oiseaux3","petitRuisseau","petitesVaguesDosOcean","petitesVaguesFaceOcean","pluieOrage","vaguesMouettes"};

@@ -46,12 +46,12 @@
 
             <TextView
                 android:id="@+id/foretMatinale"
-                android:layout_width="171dp"
+                android:layout_width="160dp"
                 android:layout_height="52dp"
                 android:layout_marginLeft="0dp"
                 android:text="Foret matinale"
                 android:textColor="#000000"
-                android:textSize="24sp" />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/playforet"
@@ -60,7 +60,7 @@
                 android:text="PLAY"
                 android:textColor="#ED000000"
                 android:textSize="21sp"
-                android:layout_marginLeft="171dp"/>
+                android:layout_marginLeft="160dp"/>
 
             <Button
                 android:layout_width="wrap_content"
@@ -69,15 +69,15 @@
                 android:textColor="#ED000000"
                 android:textSize="21sp"
                 android:id="@+id/pauseforet"
-                android:layout_marginLeft="258dp"/>
+                android:layout_marginLeft="242dp"/>
             
             <TextView
-                android:layout_width="171dp"
+                android:layout_width="160dp"
                 android:layout_height="52dp"
                 android:layout_marginTop="53dp"
                 android:text="Oiseaux 1"
                 android:textColor="#000000"
-                android:textSize="24sp" />
+                android:textSize="22sp" />
             <Button
                 android:id="@+id/playoiseau1"
                 android:layout_width="wrap_content"
@@ -85,7 +85,7 @@
                 android:text="PLAY"
                 android:textColor="#ED000000"
                 android:textSize="21sp"
-                android:layout_marginLeft="171dp"
+                android:layout_marginLeft="160dp"
                 android:layout_marginTop="53dp"/>
             <Button
                 android:layout_width="wrap_content"
@@ -95,14 +95,14 @@
                 android:textSize="21sp"
                 android:id="@+id/pauseoiseaux1"
                 android:layout_marginTop="53dp"
-                android:layout_marginLeft="258dp"/>
+                android:layout_marginLeft="242dp"/>
             <TextView
-                android:layout_width="171dp"
+                android:layout_width="160dp"
                 android:layout_height="52dp"
                 android:layout_marginTop="106dp"
                 android:text="Oiseaux 2"
                 android:textColor="#000000"
-                android:textSize="24sp" />
+                android:textSize="22sp" />
             <Button
                 android:id="@+id/playoiseau2"
                 android:layout_width="wrap_content"
@@ -110,7 +110,7 @@
                 android:text="PLAY"
                 android:textColor="#ED000000"
                 android:textSize="21sp"
-                android:layout_marginLeft="171dp"
+                android:layout_marginLeft="160dp"
                 android:layout_marginTop="106dp"/>
             <Button
                 android:layout_width="wrap_content"
@@ -120,13 +120,13 @@
                 android:textSize="21sp"
                 android:id="@+id/pauseoiseaux2"
                 android:layout_marginTop="106dp"
-                android:layout_marginLeft="258dp"/>
+                android:layout_marginLeft="242dp"/>
             <TextView
-            android:layout_width="171dp"
+            android:layout_width="160dp"
             android:layout_height="52dp"
             android:text="Petit Ruisseaux"
             android:textColor="#000000"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:layout_marginTop="159dp"/>
             <Button
                 android:id="@+id/playpetitruisseau"
@@ -135,7 +135,7 @@
                 android:text="PLAY"
                 android:textColor="#ED000000"
                 android:textSize="21sp"
-                android:layout_marginLeft="171dp"
+                android:layout_marginLeft="160dp"
                 android:layout_marginTop="159dp"/>
             <Button
                 android:layout_width="wrap_content"
@@ -145,13 +145,13 @@
                 android:textSize="21sp"
                 android:id="@+id/pausepetitruisseau"
                 android:layout_marginTop="159dp"
-                android:layout_marginLeft="258dp"/>
+                android:layout_marginLeft="242dp"/>
             <TextView
-                android:layout_width="171dp"
+                android:layout_width="160dp"
                 android:layout_height="52dp"
                 android:text="Vague Ocean"
                 android:textColor="#000000"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 android:layout_marginTop="212dp"/>
             <Button
                 android:id="@+id/playvaguedosocean"
@@ -160,7 +160,7 @@
                 android:text="PLAY"
                 android:textColor="#ED000000"
                 android:textSize="21sp"
-                android:layout_marginLeft="171dp"
+                android:layout_marginLeft="160dp"
                 android:layout_marginTop="212dp"/>
             <Button
                 android:layout_width="wrap_content"
@@ -170,13 +170,13 @@
                 android:textSize="21sp"
                 android:id="@+id/pausevagueoceandos"
                 android:layout_marginTop="212dp"
-                android:layout_marginLeft="258dp"/>
+                android:layout_marginLeft="242dp"/>
             <TextView
-                android:layout_width="171dp"
+                android:layout_width="160dp"
                 android:layout_height="52dp"
                 android:text="Pluie/Orage"
                 android:textColor="#000000"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 android:layout_marginTop="265dp"/>
             <Button
                 android:id="@+id/playpluiorage"
@@ -185,7 +185,7 @@
                 android:text="PLAY"
                 android:textColor="#ED000000"
                 android:textSize="21sp"
-                android:layout_marginLeft="171dp"
+                android:layout_marginLeft="160dp"
                 android:layout_marginTop="265dp"/>
             <Button
                 android:layout_width="wrap_content"
@@ -195,13 +195,13 @@
                 android:textSize="21sp"
                 android:id="@+id/pausepluieorage"
                 android:layout_marginTop="265dp"
-                android:layout_marginLeft="258dp"/>
+                android:layout_marginLeft="242dp"/>
             <TextView
-                android:layout_width="171dp"
+                android:layout_width="160dp"
                 android:layout_height="52dp"
                 android:text="Mouettes Mer"
                 android:textColor="#000000"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 android:layout_marginTop="318dp"/>
             <Button
                 android:id="@+id/playmouettemer"
@@ -210,7 +210,7 @@
                 android:text="PLAY"
                 android:textColor="#ED000000"
                 android:textSize="21sp"
-                android:layout_marginLeft="171dp"
+                android:layout_marginLeft="160dp"
                 android:layout_marginTop="318dp"/>
             <Button
                 android:layout_width="wrap_content"
@@ -220,11 +220,11 @@
                 android:textSize="21sp"
                 android:id="@+id/pausemouettemer"
                 android:layout_marginTop="318dp"
-                android:layout_marginLeft="258dp"/>
+                android:layout_marginLeft="242dp"/>
             <RadioGroup
                 android:layout_width="60dp"
                 android:layout_height="371dp"
-                android:layout_marginLeft="380dp"
+                android:layout_marginLeft="330dp"
                 android:id="@+id/radiogroup">
 
                 <RadioButton

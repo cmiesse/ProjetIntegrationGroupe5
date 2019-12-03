@@ -56,7 +56,7 @@ public class ClockView extends View {
             initClock();
         }
 
-        //canvas.drawColor(Color.BLACK);
+        //canvas.drawColor(getSolidColor());
         drawCircle(canvas);
         drawCenter(canvas);
         drawNumeral(canvas);
