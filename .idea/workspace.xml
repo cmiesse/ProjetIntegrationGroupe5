@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f0ae3e20-895b-4b0b-b240-41536ac89f3a" name="Default Changelist" comment="" />
+    <list default="true" id="f0ae3e20-895b-4b0b-b240-41536ac89f3a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,15 +14,41 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ApplicationV2/app/src/main/java/com/example/happydawn/Aide.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ApplicationV2/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="24" column="41" lean-forward="true" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/ApplicationV2/app/src/main/java/com/example/happydawn/Aide.java" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectConfigurationFiles">
     <option name="files">
       <list>
-        <option value="$PROJECT_DIR$/Bluetooth_App/app/app.iml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
       </list>
     </option>
   </component>
@@ -35,7 +63,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -46,12 +73,76 @@
             <path>
               <item name="ProjetIntegrationGroupe5" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjetIntegrationGroupe5" type="462c0819:PsiDirectoryNode" />
-              <item name="Backlog" type="462c0819:PsiDirectoryNode" />
+              <item name="ApplicationV2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjetIntegrationGroupe5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjetIntegrationGroupe5" type="462c0819:PsiDirectoryNode" />
+              <item name="ApplicationV2" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjetIntegrationGroupe5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjetIntegrationGroupe5" type="462c0819:PsiDirectoryNode" />
+              <item name="ApplicationV2" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjetIntegrationGroupe5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjetIntegrationGroupe5" type="462c0819:PsiDirectoryNode" />
+              <item name="ApplicationV2" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjetIntegrationGroupe5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjetIntegrationGroupe5" type="462c0819:PsiDirectoryNode" />
+              <item name="ApplicationV2" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjetIntegrationGroupe5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjetIntegrationGroupe5" type="462c0819:PsiDirectoryNode" />
+              <item name="ApplicationV2" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjetIntegrationGroupe5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjetIntegrationGroupe5" type="462c0819:PsiDirectoryNode" />
+              <item name="ApplicationV2" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProjetIntegrationGroupe5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProjetIntegrationGroupe5" type="462c0819:PsiDirectoryNode" />
+              <item name="ApplicationV2" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="happydawn" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -88,11 +179,11 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.30072704" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19299406" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
-      <window_info id="Resources Explorer" order="5" />
+      <window_info id="Resources Explorer" order="5" weight="0.32980832" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="0" />
@@ -109,6 +200,23 @@
     <entry file="file://$PROJECT_DIR$/Application/app/src/main/res/layout/activity_alarm.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-663" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ApplicationV2/app/src/main/java/com/example/happydawn/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ApplicationV2/app/src/main/java/com/example/happydawn/Aide.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ApplicationV2/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="41" lean-forward="true" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+        </state>
       </provider>
     </entry>
   </component>
