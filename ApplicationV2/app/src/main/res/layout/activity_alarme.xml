@@ -35,23 +35,10 @@
         android:layout_margin="5dp"
         android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/add_field_button"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:background="#555"
-            android:layout_gravity="center"
-            android:onClick="onAddField"
-            android:textColor="#FFF"
-            android:text="Add Field"
-            android:paddingLeft="5dp"/>
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp">
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp">
             <TextView
                 android:layout_width="160dp"
                 android:layout_height="40dp"
@@ -68,12 +55,13 @@
                 android:layout_marginLeft="30dp"
                 android:text="alarme"
                 android:textAlignment="center"
-                android:textSize="30dp" />
+                android:textSize="20dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_height="40dp">
             <TextView
                 android:layout_width="160dp"
@@ -91,12 +79,13 @@
                 android:layout_marginLeft="30dp"
                 android:text="heure"
                 android:textAlignment="center"
-                android:textSize="30dp" />
+                android:textSize="20dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_height="40dp">
             <TextView
                 android:layout_width="160dp"
@@ -114,12 +103,13 @@
                 android:layout_marginLeft="30dp"
                 android:text="alarme"
                 android:textAlignment="center"
-                android:textSize="30dp" />
+                android:textSize="20dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_height="40dp">
             <TextView
                 android:layout_width="160dp"
@@ -137,12 +127,13 @@
                 android:layout_marginLeft="30dp"
                 android:text="alarme"
                 android:textAlignment="center"
-                android:textSize="30dp" />
+                android:textSize="20dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_height="40dp">
             <TextView
                 android:layout_width="160dp"
@@ -160,12 +151,13 @@
                 android:inputType="text"
                 android:text="alarme"
                 android:textAlignment="center"
-                android:textSize="30dp" />
+                android:textSize="20dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_height="40dp">
             <TextView
                 android:layout_width="160dp"
@@ -183,12 +175,13 @@
                 android:layout_marginLeft="30dp"
                 android:text="alarme"
                 android:textAlignment="center"
-                android:textSize="30dp" />
+                android:textSize="20dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_height="40dp">
             <TextView
                 android:layout_width="160dp"
@@ -206,12 +199,13 @@
                 android:layout_marginLeft="30dp"
                 android:text="alarme"
                 android:textAlignment="center"
-                android:textSize="30dp" />
+                android:textSize="20dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_height="40dp">
             <TextView
                 android:layout_width="180dp"
@@ -230,7 +224,7 @@
                 android:text="alarme"
                 android:textAlignment="center"
                 android:scrollbarAlwaysDrawHorizontalTrack="true"
-                android:textSize="30dp" />
+                android:textSize="20dp" />
 
         </LinearLayout>
 

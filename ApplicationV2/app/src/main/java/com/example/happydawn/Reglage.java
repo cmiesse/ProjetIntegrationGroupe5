@@ -30,9 +30,6 @@ public class Reglage extends AppCompatActivity {
     int volume;
     SeekBar seekbar;
 
-    //button valide
-    //private LinearLayout parentLinearLayout;
-
 
     //augmentation
     private Button augmentation;
@@ -100,8 +97,6 @@ public class Reglage extends AppCompatActivity {
         });
 
 
-
-
         this.context = this;
 
         //initialise le alarm manager
@@ -111,7 +106,7 @@ public class Reglage extends AppCompatActivity {
         timePicker = findViewById(R.id.timePicker);
 
         //initialise text update
-        updateText = findViewById(R.id.number_edit_text);
+        updateText = findViewById(R.id.txtheure);
 
         final Calendar calendar = Calendar.getInstance();
 
@@ -121,18 +116,11 @@ public class Reglage extends AppCompatActivity {
         //initialise button start
         ImageView valide = findViewById(R.id.valide);
 
-        final Intent intent11 = new Intent(this, Alarme.class);
-        final Intent intent12 = new Intent(this, Alarme.class);
-        final Intent intent13 = new Intent(this, Alarme.class);
-        final Intent intent14 = new Intent(this, Alarme.class);
-        final Intent intent15 = new Intent(this, Alarme.class);
-        final Intent intent16 = new Intent(this, Alarme.class);
         final Intent intent17 = new Intent(this, Alarme.class);
-        final Intent intent18 = new Intent(this, Alarme.class);
 
 
         valide.setOnClickListener(new View.OnClickListener() {
-            //@RequiresApi(api = Build.VERSION_CODES.M)
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
 
@@ -142,33 +130,13 @@ public class Reglage extends AppCompatActivity {
                 intent17.putExtra("edittext", str);
                 startActivity(intent17);
 
-
                 //heure
-                //calendar.set(Calendar.HOUR_OF_DAY, timePicker.getHour());
-                //calendar.set(Calendar.HOUR_OF_DAY, timePicker.getMinute());
+                TextView textview10 = findViewById(R.id.txtheure);
+                String str10 = textview10.getText().toString();
+                intent17.putExtra("edittext10", str10);
+                startActivity(intent17);
 
-                //string de l hour et minute
-                //int hour = timePicker.getHour();
-                //int minute = timePicker.getMinute();
-                //String hour_string = String.valueOf(hour);
-                //String minute_string = String.valueOf(minute);
 
-               // if (hour > 12) {
-                    //hour_string = String.valueOf(hour - 12);
-               // }
-
-                //if (minute < 10) {
-                  //  minute_string = "0" + minute;
-                //}
-
-                //set_alarm_text(" -> Alarme ON" + "\n          " + hour_string + ":" + minute_string);
-
-                //pending intent
-                //pending_intent = PendingIntent.getBroadcast(Reglage.this, 0, my_intent
-                      //  , PendingIntent.FLAG_UPDATE_CURRENT);
-
-                //set alarm manager
-                //alarm_manager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
 
                 //son
                 TextView textview1 = findViewById(R.id.txtson);
@@ -212,6 +180,40 @@ public class Reglage extends AppCompatActivity {
                 startActivity(intent17);
 
 
+            }
+        });
+
+        Button heure = findViewById(R.id.heure);
+        heure.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onClick(View v) {
+
+                //pending intent
+                pending_intent = PendingIntent.getBroadcast(Reglage.this, 0, my_intent
+                        , PendingIntent.FLAG_UPDATE_CURRENT);
+
+                //set alarm manager
+                alarm_manager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
+                //heure
+                calendar.set(Calendar.HOUR_OF_DAY, timePicker.getHour());
+                calendar.set(Calendar.HOUR_OF_DAY, timePicker.getMinute());
+
+                //string de l hour et minute
+                int hour = timePicker.getHour();
+                int minute = timePicker.getMinute();
+                String hour_string = String.valueOf(hour);
+                String minute_string = String.valueOf(minute);
+
+                if (hour > 12) {
+                    hour_string = String.valueOf(hour - 12);
+                }
+
+                if (minute < 10) {
+                    minute_string = "0" + minute;
+                }
+
+                set_alarm_text( hour_string + ":" + minute_string);
             }
         });
 

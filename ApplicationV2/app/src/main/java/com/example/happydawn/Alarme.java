@@ -45,6 +45,7 @@ public class Alarme extends AppCompatActivity {
             String str2 = "volume";
             String str1 = "son";
             String str = "alarme";
+            String str10 = "heure";
             if (intent17.hasExtra("edittext7")){
                 str6 = intent17.getStringExtra("edittext7");
             }
@@ -66,6 +67,9 @@ public class Alarme extends AppCompatActivity {
             if (intent17.hasExtra("edittext")){
                 str = intent17.getStringExtra("edittext");
             }
+            if (intent17.hasExtra("edittext10")){
+                str10 = intent17.getStringExtra("edittext10");
+            }
             TextView textView = findViewById(R.id.txtupdate7);
             textView.setText(str6);
             TextView textView1 = findViewById(R.id.txtupdate6);
@@ -80,6 +84,8 @@ public class Alarme extends AppCompatActivity {
             textView5.setText(str1);
             TextView textView6 = findViewById(R.id.txtupdate);
             textView6.setText(str);
+            TextView textView10 = findViewById(R.id.txtupdate1);
+            textView10.setText(str10);
         }
 
 
