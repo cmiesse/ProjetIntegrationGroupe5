@@ -29,6 +29,7 @@
   define('TXT_SDG3_P2', 'Notre réveil tente également d\'aider le réveil aux personnes aveugles, sourdes, malentendantes.');
   define('TXT_SDG7', 'Energies fiables, durables et modernes, à un coût abordable (ODD n°7)');
   define('TXT_SDG7_P', 'Nous visons à consommer au minimum et à utiliser par exemple des LEDs plutôt d\'autres sources lumineuses plus polluantes.');
+  define('TXT_CSR', 'Nos tests RSE / Green IT');
   //Purchase.php
   define('TXT_TITLE_BUY','HappyDawn - Achat');
   define('TXT_HOME_BUTTON', 'Retour à l\'accueil');

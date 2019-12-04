@@ -167,6 +167,7 @@
     <p><?php echo TXT_SDG3_P2 ?></p>
     <h4><?php echo TXT_SDG7 ?></h4>
     <p><?php echo TXT_SDG7_P ?></p>
+    <a href="rse.php"><?php echo TXT_CSR?></a>
   </div>
 </div>
 

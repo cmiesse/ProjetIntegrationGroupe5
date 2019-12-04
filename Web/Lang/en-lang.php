@@ -29,6 +29,7 @@
   define('TXT_SDG3_P2', 'Our alarm clock also tries to help the awakening for blind, deaf, hard of hearing people.');
   define('TXT_SDG7', 'Affordable and clean energy (SDG n°7)');
   define('TXT_SDG7_P', 'We aim to consume less and to use for example LEDs instead of other more polluting light sources.');
+  define('TXT_CSR', 'Our CSR / Green IT tests');
   //Purchase.php
   define('TXT_TITLE_BUY','HappyDawn - Purchase');
   define('TXT_HOME_BUTTON', 'Back to homepage');
