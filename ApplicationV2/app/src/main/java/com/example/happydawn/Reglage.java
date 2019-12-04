@@ -284,7 +284,7 @@ public class Reglage extends AppCompatActivity {
         augmentation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listItem1 = new String[]{"toutes les 5 minutes", "toutes les 10 minutes", "toutes les 15 minutes"};
+                listItem1 = new String[]{"ttes les 5 min", "ttes les 10 min", "ttes les 15 min"};
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(Reglage.this);
                 builder1.setTitle("augmentation");
                 builder1.setIcon(R.drawable.icon);

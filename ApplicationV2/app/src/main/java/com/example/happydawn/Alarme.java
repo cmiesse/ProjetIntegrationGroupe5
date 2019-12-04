@@ -38,14 +38,14 @@ public class Alarme extends AppCompatActivity {
 
         Intent intent17 = getIntent();
         if (intent17 != null){
-            String str6 = "augmentation";
-            String str5 = "durée";
-            String str4 = "couleur";
-            String str3 = "luminosite";
-            String str2 = "volume";
-            String str1 = "son";
-            String str = "alarme";
-            String str10 = "heure";
+            String str6 = "";
+            String str5 = "";
+            String str4 = "";
+            String str3 = "";
+            String str2 = "";
+            String str1 = "";
+            String str = "";
+            String str10 = "";
             if (intent17.hasExtra("edittext7")){
                 str6 = intent17.getStringExtra("edittext7");
             }

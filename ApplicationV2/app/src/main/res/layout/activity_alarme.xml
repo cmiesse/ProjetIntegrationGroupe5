@@ -52,7 +52,7 @@
                 android:layout_width="150dp"
                 android:layout_height="40dp"
                 android:inputType="text"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="20dp"
                 android:text="alarme"
                 android:textAlignment="center"
                 android:textSize="20dp" />
@@ -76,7 +76,7 @@
                 android:layout_width="150dp"
                 android:layout_height="40dp"
                 android:inputType="text"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="20dp"
                 android:text="heure"
                 android:textAlignment="center"
                 android:textSize="20dp" />
@@ -100,7 +100,7 @@
                 android:layout_width="150dp"
                 android:layout_height="40dp"
                 android:inputType="text"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="20dp"
                 android:text="alarme"
                 android:textAlignment="center"
                 android:textSize="20dp" />
@@ -124,7 +124,7 @@
                 android:layout_width="150dp"
                 android:layout_height="40dp"
                 android:inputType="text"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="20dp"
                 android:text="alarme"
                 android:textAlignment="center"
                 android:textSize="20dp" />
@@ -147,7 +147,7 @@
                 android:id="@+id/txtupdate4"
                 android:layout_width="150dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="20dp"
                 android:inputType="text"
                 android:text="alarme"
                 android:textAlignment="center"
@@ -172,7 +172,7 @@
                 android:layout_width="150dp"
                 android:layout_height="40dp"
                 android:inputType="text"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="20dp"
                 android:text="alarme"
                 android:textAlignment="center"
                 android:textSize="20dp" />
@@ -196,7 +196,7 @@
                 android:layout_width="150dp"
                 android:layout_height="40dp"
                 android:inputType="text"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="20dp"
                 android:text="alarme"
                 android:textAlignment="center"
                 android:textSize="20dp" />
@@ -219,7 +219,7 @@
                 android:id="@+id/txtupdate7"
                 android:layout_width="150dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="0dp"
                 android:inputType="text"
                 android:text="alarme"
                 android:textAlignment="center"
