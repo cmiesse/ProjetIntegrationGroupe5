@@ -16,9 +16,9 @@
       <h2><?php echo TXT_CSR?></h2>
       <h3>ecoindex.fr & ecometer.org</h3>
       <p>
-        <img src="IMG/ecoindex.jpg" title="ecoindex.fr - 26/11/2019" alt="">
-        <img src="IMG/ecometer1.jpg"title="ecometer.org - 26/11/2019"alt="">
-        <img src="IMG/ecometer2.jpg" title="ecometer.org - 27/11/2019"alt="">
+        <img src="IMG/ecoindex.JPG" title="ecoindex.fr - 26/11/2019" alt="">
+        <img src="IMG/ecometer1.JPG"title="ecometer.org - 26/11/2019"alt="">
+        <img src="IMG/ecometer2.JPG" title="ecometer.org - 27/11/2019"alt="">
       </p>
 		</div>
 </body>
