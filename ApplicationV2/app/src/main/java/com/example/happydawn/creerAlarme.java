@@ -1,8 +1,8 @@
 package com.example.happydawn;
 
+import java.util.Calendar;
+
 public class creerAlarme {
-        private int seconde;
-        private int heures;
 
 
 
@@ -10,21 +10,4 @@ public class creerAlarme {
 
 
 
-
-
-        public int getHeures() {
-        return heures;
-    }
-
-    public void setHeures(int heures) {
-        this.heures = heures;
-    }
-
-    public void setSeconde(int seconde) {
-        this.seconde = seconde;
-    }
-
-    public int getSeconde() {
-        return seconde;
-    }
 }
