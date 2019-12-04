@@ -2,6 +2,7 @@ package com.example.happydawn;
 
 public class creerAlarme {
         private int seconde;
+        private int heures;
 
 
 
@@ -10,7 +11,16 @@ public class creerAlarme {
 
 
 
-        public void setSeconde(int seconde) {
+
+        public int getHeures() {
+        return heures;
+    }
+
+    public void setHeures(int heures) {
+        this.heures = heures;
+    }
+
+    public void setSeconde(int seconde) {
         this.seconde = seconde;
     }
 
