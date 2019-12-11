@@ -32,7 +32,7 @@
     <title><?php echo TXT_TITLE_BUY ?></title>
   </head>
   <body style="background-color:gray">
-    <a class="w3-button w3-teal w3-padding-large" href="index.php"><?php echo TXT_HOME_BUTTON ?></a><br>
+    <a class="w3-button w3-theme w3-padding-large" href="index.php"><?php echo TXT_HOME_BUTTON ?></a><br>
     <h1 style="margin-left:20px;"><?php echo TXT_BUY_CLOCK ?></h1>
     <div class="w3-col m7">
       <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="" method="post" style="margin-left:20px;">

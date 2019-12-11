@@ -1,5 +1,6 @@
 <?php
   //index.php
+  define('TXT_HOME', 'Home');
   define('TXT_TEAM', 'Our Team');
   define('TXT_PROJECT', 'Our Project');
   define('TXT_PRODUCTS', 'Our Products');

@@ -49,7 +49,7 @@
 
 </script>
 <link rel="icon" href="soleil.ico" />
-<body id="myPage">
+<body id="home">
 <h1>Page principale - HappyDawn</h1>
 <!-- Sidebar on click -->
 <nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
@@ -68,7 +68,7 @@
  <div class="w3-bar w3-theme-d2 w3-left-align">
 
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-    <a href="index.php" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Happy Dawn</a>
+    <a href="index.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white"><i class="fa fa-home w3-margin-right"></i><?php echo TXT_HOME ?></a>
     <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white"><?php echo TXT_TEAM ?></a>
     <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white"><?php echo TXT_PROJECT ?></a>
     <a href="#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white"><?php echo TXT_PRODUCTS ?></a>
@@ -183,7 +183,7 @@
         </li>
           <li class="w3-padding-16"><img src="IMG/panier.png" alt="Buy" style="width:28%"> </li>
         <li class="w3-theme-l5 w3-padding-24">
-          <a class="w3-button w3-teal w3-padding-large" href="Purchase.php"><i class="fa fa-check"></i> <?php echo TXT_BUY ?></a>
+          <a class="w3-button w3-theme w3-padding-large" href="Purchase.php"><i class="fa fa-check"></i> <?php echo TXT_BUY ?></a>
         </li>
       </ul>
     </div>
@@ -196,7 +196,7 @@
         <li class="w3-padding-16"><img src="IMG/downloadIcon.png" alt="Download" style="width:28%"> </li>
 
         <li class="w3-theme-l5 w3-padding-24">
-          <a class="w3-button w3-teal w3-padding-large" href="https://github.com/cmiesse/ProjetIntegrationGroupe5/tree/master/Bluetooth_Appv2/Bluetooth_App"><i class="fa fa-check"></i> <?php echo TXT_DOWNLOAD ?></a>
+          <a class="w3-button w3-theme w3-padding-large" href="https://github.com/cmiesse/ProjetIntegrationGroupe5/tree/master/Bluetooth_Appv2/Bluetooth_App"><i class="fa fa-check"></i> <?php echo TXT_DOWNLOAD ?></a>
         </li>
       </ul>
     </div>
@@ -242,7 +242,7 @@
 <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
   <div style="position:relative;bottom:25px;z-index:1;" class="w3-tooltip w3-right">
    <span class="w3-text w3-padding w3-teal w3-hide-small">Revenir en haut</span>
-   <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
+   <a class="w3-button w3-theme" href="#home"><span class="w3-xlarge">
    <i class="fa fa-chevron-circle-up"></i></span></a>
  </div>
   <span class="w3"><?php echo TXT_FOOTER ?></span><br>

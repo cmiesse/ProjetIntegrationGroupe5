@@ -11,7 +11,7 @@
 		<link rel="icon" href="soleil.ico" />
 		</head>
 	<body class="w3-theme-l1">
-		<a class="w3-button w3-teal w3-padding-large" href="index.php"><?php echo TXT_HOME_BUTTON ?></a><br>
+		<a class="w3-button w3-theme w3-padding-large" href="index.php"><?php echo TXT_HOME_BUTTON ?></a><br>
 		<div >
       <h2><?php echo TXT_CSR?></h2>
       <h3>ecoindex.fr & ecometer.org</h3>

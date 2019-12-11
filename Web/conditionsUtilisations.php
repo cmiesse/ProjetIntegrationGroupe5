@@ -11,7 +11,7 @@
 		<link rel="icon" href="soleil.ico" />
 		</head>
 	<body>
-		<a class="w3-button w3-teal w3-padding-large" href="index.php"><?php echo TXT_HOME_BUTTON ?></a><br>
+		<a class="w3-button w3-theme w3-padding-large" href="index.php"><?php echo TXT_HOME_BUTTON ?></a><br>
 		<div>
 			<nav id="titre">
 				<h2>Conditions Générales</h2>
