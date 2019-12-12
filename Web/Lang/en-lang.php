@@ -31,6 +31,7 @@
   define('TXT_SDG7', 'Affordable and clean energy (SDG n°7)');
   define('TXT_SDG7_P', 'We aim to consume less and to use for example LEDs instead of other more polluting light sources.');
   define('TXT_CSR', 'Our CSR / Green IT tests');
+  define('TXT_BACK_TOP', 'Back to top');
   //Purchase.php
   define('TXT_TITLE_BUY','HappyDawn - Purchase');
   define('TXT_HOME_BUTTON', 'Back to homepage');

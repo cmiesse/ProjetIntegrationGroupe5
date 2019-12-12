@@ -241,7 +241,7 @@
 <!-- Pied de page -->
 <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
   <div style="position:relative;bottom:25px;z-index:1;" class="w3-tooltip w3-right">
-   <span class="w3-text w3-padding w3-teal w3-hide-small">Revenir en haut</span>
+   <span class="w3-text w3-padding w3-teal w3-hide-small"><?php echo TXT_BACK_TOP ?></span>
    <a class="w3-button w3-theme" href="#home"><span class="w3-xlarge">
    <i class="fa fa-chevron-circle-up"></i></span></a>
  </div>
