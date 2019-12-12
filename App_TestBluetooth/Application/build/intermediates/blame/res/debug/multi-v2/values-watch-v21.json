@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Gilles\\AndroidStudioProjects\\BluetoothLeGatt\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v21\\values-watch-v21.xml",
+            "outputFile": "C:\\Users\\mathi\\Documents\\GitHub\\ProjetIntegrationGroupe5\\App_TestBluetooth\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v21\\values-watch-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Gilles\\.gradle\\caches\\transforms-2\\files-2.1\\826bf6a4f560db0ec5f67d7d06e565db\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "source": "C:\\Users\\mathi\\.gradle\\caches\\transforms-2\\files-2.1\\269bd4675282a14962a2479e19892c6f\\res\\values-watch-v21\\values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",
