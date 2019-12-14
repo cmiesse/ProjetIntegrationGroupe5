@@ -32,12 +32,18 @@
             android:layout_height="match_parent"
             android:text=""
             />
-
+        <Button
+            android:id="@+id/bluetooth"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:text="Bluetooth"
+            />
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="110dp"
+            android:layout_marginLeft="40dp"
             android:id="@+id/aide"
             android:background="@drawable/help" />
 
