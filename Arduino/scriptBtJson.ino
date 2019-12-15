@@ -17,6 +17,8 @@
 #include "Adafruit_BLE.h"
 #include "Adafruit_BluefruitLE_SPI.h"
 #include "Adafruit_BluefruitLE_UART.h"
+#include <ArduinoJson.h>
+#include <Volume.h>
 
 #include "BluefruitConfig.h"
 
@@ -86,18 +88,36 @@ void error(const __FlashStringHelper*err) {
   while (1);
 }
 
-/**************************************************************************/
-/*!
-    @brief  Sets up the HW an the BLE module (this function is called
-            automatically on startup)
-*/
-/**************************************************************************/
+// Global variables
+char state = 'z';
+long alarmDelay = -1;
+ long colorHSV ;
+ int maxLights;  // Max value = 255
+const int SCHEDULE = 6; //normal value = 60
+ char* fileSound;
+int maxSound;
+
+
+  String msg ;
+ // Plug your speaker into the default pin for your board type:
+
+
 void setup(void)
 {
+
+  
+  turnOffLights();
+
+  
+//  pinMode(5, OUTPUT);//buzzer
+  state = 'z';
   strip.begin();
   strip.show();
   while (!Serial);  // required for Flora & Micro
   delay(500);
+
+
+  
 
   Serial.begin(115200);
   Serial.println(F("Adafruit Bluefruit Command Mode Example"));
@@ -148,6 +168,59 @@ void setup(void)
     ble.sendCommandCheckOK("AT+HWModeLED=" MODE_LED_BEHAVIOUR);
     Serial.println(F("******************************"));
   }
+
+
+/*
+    StaticJsonDocument<256> doc;
+  char sampleMsg[] = "{\"Key1\":30,\"Key2\":\"subKey21\":\"a\",\"subKey21\":61000}}";
+  DeserializationError errorD = deserializeJson(doc, sampleMsg);
+
+  // Test if parsing succeeds.
+  if (errorD) {
+    Serial.print(F("deserializeJson() failed: "));
+    Serial.println(errorD.c_str());
+    return;
+  }
+// JsonObject root = doc.as<JsonObject>(); 
+String key1 = doc["Key1"];
+Serial.println(key1);
+*/
+
+  
+
+}
+
+void parseJson(String json) {
+  //  Serial.begin(115200);
+
+  
+   StaticJsonDocument<400> doc;
+
+  
+  DeserializationError error = deserializeJson(doc, json);
+
+  // Test if parsing succeeds.
+  if (error) {
+    Serial.print(F("deserializeJson() failed: "));
+    Serial.println(error.c_str());
+    return;
+  }
+
+  // Fetch values.
+  //
+  // Most of the time, you can rely on the implicit casts.
+  // In other case, you can do doc["time"].as<long>();
+  colorHSV = doc["l"]["c"];
+  alarmDelay = doc["t"];
+ // Serial.print("alarmDelay");
+ // Serial.println(alarmDelay);
+  maxLights = doc["l"]["M"];
+  maxSound = doc["s"]["M"];
+  fileSound = doc["s"]["f"];
+  
+
+  
+  
 }
 
 /**************************************************************************/
@@ -157,9 +230,12 @@ void setup(void)
 /**************************************************************************/
 void loop(void)
 {
+  if(state == 'z'){
+    
   // Check for user input
+  /*
   char inputs[BUFSIZE+1];
-
+  
   if ( getUserInputs(inputs, BUFSIZE) )
   {
     // Send characters to Bluefruit
@@ -174,6 +250,7 @@ void loop(void)
       Serial.println(F("Failed to send?"));
     }
   }
+  */
 
   // Check for incoming characters from Bluefruit
   ble.println("AT+BLEUARTRX");
@@ -183,15 +260,41 @@ void loop(void)
     return;
   }
   // Some data was found, its in the buffer
-  Serial.print(F("[Recv] ")); Serial.println(ble.buffer);
-  char leds = ble.buffer;
-  Serial.println(leds);
-  if(leds == 1){
-    Serial.println("leds");
-  //  brighten();
+  String msgFromApp = ble.buffer;
+   Serial.print(F("[Recv] ")); Serial.println(ble.buffer);
+    msg = msg+msgFromApp;
+  if(msgFromApp.endsWith(".")){
+    parseJson(msg);
+    msg="";
   }
   
+  
+//Serial.print(F("[leds] "));  Serial.println(leds);
+ 
+ state = 's';
+  
   ble.waitForOK();
+  }
+
+  if(state == 's'){
+    if(alarmDelay > SCHEDULE){
+      Serial.println("sleeping ... sec");
+      delay(SCHEDULE*1000);
+      alarmDelay= alarmDelay-SCHEDULE;
+      Serial.println(alarmDelay);
+      
+      
+    }
+    if((alarmDelay<=SCHEDULE) && (alarmDelay >= 0)){
+      state = 'r';
+      alarmDelay = -1;
+    }
+  }
+  if(state == 'r'){
+    brighten();
+    turnOffLights();
+    state = 'z';
+  }
 }
 
 void brighten() { 
@@ -202,17 +305,35 @@ void brighten() {
    c= 0;
   
  // for (j = 0; j < 255; j++) {
-   for(c ; c<255; c++){
-    uint32_t rgbcolor = strip.ColorHSV(a, b, c);
+   for(c ; c<maxLights; c++){
+    uint32_t rgbcolor = strip.ColorHSV(colorHSV, b, c);
     for (i = 0; i < strip.numPixels(); i++) {
       
       strip.fill(rgbcolor);
     }
     strip.show();
-    delay(1000);
+    delay(50); // to put 1000
   }
+
+ // Serial.println("starting sound");
+  
+ //  String fileSoundStr = String(fileSound);
+ //  int singNumber = fileSoundStr.toInt();
+   
+ // sing(singNumber);
+//tone(440, 15);
+ delay(1000);
+ 
   }
   //
+  void turnOffLights(){
+    uint32_t rgbcolorOff = strip.ColorHSV(0, 0, 0);
+    for (int i = 0; i < strip.numPixels(); i++) {
+      
+      strip.fill(rgbcolorOff);
+    }
+    strip.show();
+  }
 
 
 /**************************************************************************/
