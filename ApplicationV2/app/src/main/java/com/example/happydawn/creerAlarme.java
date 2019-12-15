@@ -1,6 +1,8 @@
 package com.example.happydawn;
 
 
+import android.widget.TimePicker;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -8,47 +10,23 @@ import java.util.Date;
 public class creerAlarme {
 
 
-        // Récupère heures et les minutes du système
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat formatHeure = new SimpleDateFormat("HH:mm aa");
-        Date date1 = new Date();
-
-
-        // mettre date en string
-        // String datum = formatHeure.format(date1);
-
-        // Heures et minutes entrées par l'utilisateur
-        int heure = calendar.get(Calendar.HOUR_OF_DAY);
-        int minute = calendar.get(Calendar.MINUTE);
-        
+    // Récupère heures et les minutes du système
 
 
 
-        // Différence entre Heure système et Heure entrée
-    /*public long diffHeure(){
-            long millis = date1.getTime() - date2.getTime();
-            int hours = (int) (millis/(1000 * 60 * 60));
-            int mins = (int) (millis % (1000*60*60));
-            return millis;
-    }
+    // Différence entre Heure système et Heure entrée
+    public void calculateHour(TimePicker view, int hourOfDay, int minute){
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.HOUR_OF_DAY, hourOfDay);
+        c.set(Calendar.MINUTE, minute);
+        c.set(Calendar.SECOND, 0);
 
-    */
+        // Ajoute 1 jour à l'heure entrée si cette dernière se trouve dans le passé
+        if (c.before(Calendar.getInstance())){
+            c.add(Calendar.DATE, 1);
+        }
 
 
+        }
 
-        public int getMinute() {
-        return minute;
-    }
-
-    public void setMinute(int minutes) {
-        this.minute = minutes;
-    }
-
-    public int getHeure() {
-        return heure;
-    }
-
-    public void setHeure(int heure) {
-        this.heure = heure;
-    }
 }
