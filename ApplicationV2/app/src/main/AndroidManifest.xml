@@ -24,6 +24,7 @@
         <activity android:name=".Reglage" />
         <activity android:name=".Alarme" />
         <activity android:name=".Aide" />
+        <activity android:name = ".USBConnection"></activity>
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
