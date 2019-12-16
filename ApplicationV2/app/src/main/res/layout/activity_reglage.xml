@@ -48,33 +48,23 @@
         android:orientation="horizontal"
         >
 
-        <TimePicker
-            android:id="@+id/timePicker"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:timePickerMode="spinner"
-            android:layout_marginTop="180dp"/>
-
         <Button
-            android:id="@+id/heure"
+            android:id="@+id/button_timepicker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#6370A2"
-            android:text="Heure"
-            android:textColor="@android:color/background_dark"
-            android:textColorLink="#FFFFFF"
-            android:textSize="30dp"
-            android:layout_marginTop="420dp"/>
+            android:layout_marginTop="180dp"
+            android:text="Indiquer l'heure">
+
+        </Button>
 
         <TextView
-            android:id="@+id/txtheure"
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="480dp"
-            android:textAlignment="center"
             android:text="heure"
-            android:textSize="30dp"
-            android:inputType="text" />
+            android:textAlignment="center"
+            android:textSize="30dp" />
 
         <Button
         android:id="@+id/son"
