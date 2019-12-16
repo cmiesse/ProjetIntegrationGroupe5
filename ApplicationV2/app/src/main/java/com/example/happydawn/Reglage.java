@@ -3,6 +3,7 @@ package com.example.happydawn;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.PendingIntent;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -19,16 +20,19 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
+import java.text.DateFormat;
 import java.util.Calendar;
 
-public class Reglage extends AppCompatActivity {
+public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener {
 
     private ImageView retour;
     private Button son;
     private TextView textvolume;
     int volume;
     SeekBar seekbar;
+    public TextView mTextView;
 
 
     //augmentation
@@ -102,11 +106,7 @@ public class Reglage extends AppCompatActivity {
         //initialise le alarm manager
         alarm_manager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
-        //initialise le timePicker
-        timePicker = findViewById(R.id.timePicker);
 
-        //initialise text update
-        updateText = findViewById(R.id.txtheure);
 
         final Calendar calendar = Calendar.getInstance();
 
@@ -131,10 +131,10 @@ public class Reglage extends AppCompatActivity {
                 startActivity(intent17);
 
                 //heure
-                TextView textview10 = findViewById(R.id.txtheure);
-                String str10 = textview10.getText().toString();
-                intent17.putExtra("edittext10", str10);
-                startActivity(intent17);
+                TextView textViewHeure = findViewById(R.id.textView);
+                // String de l'heure
+                String stringHeure = textViewHeure.getText().toString();
+                intent17.putExtra("edittext10", stringHeure);
 
 
 
@@ -183,37 +183,15 @@ public class Reglage extends AppCompatActivity {
             }
         });
 
-        Button heure = findViewById(R.id.heure);
-        heure.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
+        mTextView = findViewById(R.id.textView);
+
+        Button button = (Button) findViewById(R.id.button_timepicker);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                DialogFragment timePicker = new TimePickerFragment();
+                timePicker.show(getSupportFragmentManager(), "time picker");
 
-                //pending intent
-                pending_intent = PendingIntent.getBroadcast(Reglage.this, 0, my_intent
-                        , PendingIntent.FLAG_UPDATE_CURRENT);
-
-                //set alarm manager
-                alarm_manager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
-                //heure
-                calendar.set(Calendar.HOUR_OF_DAY, timePicker.getHour());
-                calendar.set(Calendar.HOUR_OF_DAY, timePicker.getMinute());
-
-                //string de l hour et minute
-                int hour = timePicker.getHour();
-                int minute = timePicker.getMinute();
-                String hour_string = String.valueOf(hour);
-                String minute_string = String.valueOf(minute);
-
-                if (hour > 12) {
-                    hour_string = String.valueOf(hour - 12);
-                }
-
-                if (minute < 10) {
-                    minute_string = "0" + minute;
-                }
-
-                set_alarm_text( hour_string + ":" + minute_string);
             }
         });
 
@@ -408,6 +386,36 @@ public class Reglage extends AppCompatActivity {
 
 
 
+
+    }
+
+    @Override
+    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.HOUR_OF_DAY, hourOfDay);
+        c.set(Calendar.MINUTE, minute);
+        c.set(Calendar.SECOND, 0);
+
+        updateTimeText(c);
+        startAlarm(c);
+    }
+
+    public void updateTimeText(Calendar c){
+        String timeText = "";
+        timeText += DateFormat.getTimeInstance(DateFormat.SHORT).format(c.getTime());
+
+        mTextView.setText(timeText);
+    }
+    private void startAlarm(Calendar c){
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, Alarme.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0 );
+
+        if(c.before(Calendar.getInstance())){
+            c.add(Calendar.DATE, 1);
+        }
+
+        alarmManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pending_intent );
 
     }
 
