@@ -27,10 +27,11 @@
 
         <TextView
             android:id="@+id/degre"
-            android:layout_marginTop="10dp"
-            android:layout_width="79dp"
+            android:layout_marginTop="7dp"
+            android:layout_width="80dp"
+            android:textSize="50dp"
             android:layout_height="match_parent"
-            android:text=""
+            android:text="0°C"
             />
 
         <ImageView
