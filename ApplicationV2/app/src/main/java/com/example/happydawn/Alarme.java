@@ -15,6 +15,14 @@ public class Alarme extends AppCompatActivity {
 
     private ImageView retour;
     private ImageView add;
+    private static String str6 = "";
+    private static String str5 = "";
+    private static String str4 = "";
+    private static String str3 = "";
+    private static  String str2 = "";
+    private static String str1 = "";
+    private static String str = "";
+    private static String str10 = "";
 
     private LinearLayout parentLinearLayout;
 
@@ -38,14 +46,6 @@ public class Alarme extends AppCompatActivity {
 
         Intent intent17 = getIntent();
         if (intent17 != null){
-            String str6 = "";
-            String str5 = "";
-            String str4 = "";
-            String str3 = "";
-            String str2 = "";
-            String str1 = "";
-            String str = "";
-            String str10 = "";
             if (intent17.hasExtra("edittext7")){
                 str6 = intent17.getStringExtra("edittext7");
             }
