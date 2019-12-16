@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Gilles\\AndroidStudioProjects\\BluetoothLeGatt\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-eu\\values-eu.xml",
+            "outputFile": "C:\\Users\\mathi\\Documents\\GitHub\\ProjetIntegrationGroupe5\\App_TestBluetooth\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-eu\\values-eu.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Gilles\\.gradle\\caches\\transforms-2\\files-2.1\\826bf6a4f560db0ec5f67d7d06e565db\\res\\values-eu\\values-eu.xml",
+                    "source": "C:\\Users\\mathi\\.gradle\\caches\\transforms-2\\files-2.1\\269bd4675282a14962a2479e19892c6f\\res\\values-eu\\values-eu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Gilles\\.gradle\\caches\\transforms-2\\files-2.1\\c8552f2a86cc7c96b62cc8c7d3a0d62f\\res\\values-eu\\values-eu.xml",
+                    "source": "C:\\Users\\mathi\\.gradle\\caches\\transforms-2\\files-2.1\\7f72afe873e26401816b0f1c0b3b7e97\\res\\values-eu\\values-eu.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
