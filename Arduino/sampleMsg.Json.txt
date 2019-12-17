@@ -1,4 +1,4 @@
-{"t":30000,"l":{"c":15000,"M":170},"s":{"f":"birds.mp3","M":100}}.
+{"t":30000,"l":{"c":15000,"M":170},"s":{"f":6,"M":100}}.
 
 
 
@@ -8,7 +8,7 @@
 "c" couleur choisie par l'user à transformer en nombre de 0 à 65000
 "M" luminosité max choisi par l'user (0 à 255)
 "s" pour la partie son
-"f" pour le fichier son choisi par l'user
+"f" pour le numéro du fichier son choisi par l'user
 "M" pour le volume max choisi par l'user
  . pour signaler la fin de transmission
 
