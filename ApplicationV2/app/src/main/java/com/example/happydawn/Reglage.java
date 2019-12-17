@@ -32,6 +32,8 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
     private TextView textvolume;
     int volume;
     SeekBar seekbar;
+
+    // TextView heure
     public TextView mTextView;
 
 
@@ -126,7 +128,9 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
 
                 //nom
                 TextView textview0 = findViewById(R.id.nomalarme);
+                // String du nom de l'alarme
                 String str = textview0.getText().toString();
+
                 intent17.putExtra("edittext", str);
                 startActivity(intent17);
 
@@ -134,48 +138,57 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
                 TextView textViewHeure = findViewById(R.id.textView);
                 // String de l'heure
                 String stringHeure = textViewHeure.getText().toString();
+
                 intent17.putExtra("edittext10", stringHeure);
 
 
 
                 //son
                 TextView textview1 = findViewById(R.id.txtson);
+                // String du son choisi
                 String str1 = textview1.getText().toString();
+
                 intent17.putExtra("edittext2", str1);
 
 
                 //volume
                 TextView textview2 = findViewById(R.id.textvolume);
-
+                // String du volume
                 String str2 = textview2.getText().toString();
+
                 intent17.putExtra("edittext3", str2);
 
 
                 //luminosite
                 TextView textview3 = findViewById(R.id.txtluminosite);
-
+                // String de la luminosité
                 String str3 = textview3.getText().toString();
+
                 intent17.putExtra("edittext4", str3);
 
 
                 //couleur
                 TextView textview4 = findViewById(R.id.txtcouleur);
-
+                // String de la couleur choisie
                 String str4 = textview4.getText().toString();
+
                 intent17.putExtra("edittext5", str4);
 
-                //duree
+
 
 
                 //augmentation
                 TextView textview6 = findViewById(R.id.txtaugmentation);
-
+                // String de la'augmentation
                 String str6 = textview6.getText().toString();
+
                 intent17.putExtra("edittext7", str6);
 
+                // duree
                 TextView textview5 = findViewById(R.id.txtduree);
-
+                // String de la duree
                 String str5 = textview5.getText().toString();
+
                 intent17.putExtra("edittext6", str5);
                 startActivity(intent17);
 
