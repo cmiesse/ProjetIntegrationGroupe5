@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -23,7 +24,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener {
 
@@ -36,6 +40,34 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
     // TextView heure
     public TextView mTextView;
 
+    /*Travail sur l'heure
+
+    //Heure système
+    Calendar calend = Calendar.getInstance();
+    long heureActuelleMillis = calend.getTimeInMillis();
+    Date date1 = new Date(heureActuelleMillis * 1000);
+
+    // Heure de l'utilisateur
+    TextView textViewHeure = findViewById(R.id.textView);
+    String heureEntree = textViewHeure.getText().toString();
+    Date date2;
+    {
+        try {
+            date2 = new SimpleDateFormat().parse(heureEntree);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Calcul
+    long difference = date1.getTime() - date2.getTime();
+    int days = (int) (difference / (1000*60*60*24));
+    int  heuresDifferences = (int) ((difference - (1000*60*60*24*days)) / (1000*60*60));
+    int minutesDifferences = (int) (difference - (1000*60*60*24*days) - (1000*60*60*heuresDifferences)) / (1000*60);
+    long differenceEnMilli = (long) (heuresDifferences) + (minutesDifferences);
+
+    
+     */
 
     //augmentation
     private Button augmentation;
