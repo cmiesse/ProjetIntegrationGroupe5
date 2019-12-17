@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class USBConnection extends Activity {
-    public final String ACTION_USB_PERMISSION = "com.hariharan.arduinousb.USB_PERMISSION";
+    public final String ACTION_USB_PERMISSION = "com.example.happydawn.USB_PERMISSION";
     Button startButton, sendButton, clearButton, stopButton;
     TextView textView;
     EditText editText;

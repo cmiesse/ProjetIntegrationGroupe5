@@ -32,6 +32,7 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
     private TextView textvolume;
     int volume;
     SeekBar seekbar;
+    private String stringJson;
 
     // TextView heure
     public TextView mTextView;
@@ -192,6 +193,8 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
                 intent17.putExtra("edittext6", str5);
                 startActivity(intent17);
 
+                stringJson = "{\"t\":20,\"l\":{\"c\":" + setColor(str4) + ",\"M\":" + setLuminosity(str3) + "},\"s\":{\"f\":" + setSon(str1) + ",\"M\":" +
+                              setVolume(str2) + "}}.";
 
             }
         });
@@ -436,6 +439,9 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
         updateText.setText(output);
     }
 
+
+
+
     /* Fonctions pour adapter les données reçus par l'utilisateur en données
      lisibles par l'arduino */
 
@@ -443,7 +449,7 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
      * @param s String contenant la couleur : bleu, vert, rouge ou jaune
      * @return un entier correspondant a la couleur entree en parametre
      */
-    private int setColor(String s){
+    private static int setColor(String s){
         switch(s){
             case "bleu":
                 return 1;
@@ -462,7 +468,7 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
      * @param s String contenant la luminosite en pourcentage : 25 %, 50 %, 75 % ou 100 %
      * @return un entier correspondant au pourcentage applique sur la luminosite maximale 255
      */
-    private int setLuminosity(String s){
+    private static int setLuminosity(String s){
         String onlyValue = "";
         if(s.equals("100 %")){
             onlyValue = s.substring(0,3);
@@ -478,7 +484,7 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
      * @param s String contenant l'intitule du son a jouer
      * @return un entier representant le son a envoyer a l'arduino
      */
-    private int setSon(String s){
+    private static int setSon(String s){
         switch(s){
             case "Foret Matinale":
                 return 1;
@@ -498,6 +504,15 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
                 return 0;
         }
     }
+
+    /**
+     * @param s contient le volume choisi par l'utilisateur sous forme de string
+     * @return le volume choisi par l'utilisateur sous forme d'entier (int)
+     */
+    private static int setVolume(String s){
+        return Integer.parseInt(s);
+    }
+
 
 
 

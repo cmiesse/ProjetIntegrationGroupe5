@@ -21,7 +21,17 @@
         android:theme="@style/AppTheme">
         <activity android:name=".edit_text_5"></activity>
         <activity android:name=".ListeSons" />
-        <activity android:name=".Reglage" />
+        <activity
+            android:name=".Reglage">
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/device_filter"/>
+        </activity>
+
         <activity android:name=".Alarme" />
         <activity android:name=".Aide" />
         <activity android:name = ".USBConnection"></activity>
