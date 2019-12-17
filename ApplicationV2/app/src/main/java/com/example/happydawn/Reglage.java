@@ -468,6 +468,70 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
         updateText.setText(output);
     }
 
+    /* Fonctions pour adapter les données reçus par l'utilisateur en données
+     lisibles par l'arduino */
+
+    /**
+     * @param s String contenant la couleur : bleu, vert, rouge ou jaune
+     * @return un entier correspondant a la couleur entree en parametre
+     */
+    private int setColor(String s){
+        switch(s){
+            case "bleu":
+                return 1;
+            case "vert":
+                return 2;
+            case "rouge":
+                return 3;
+            case "jaune":
+                return 4;
+            default :
+                return 0;
+        }
+    }
+
+    /**
+     * @param s String contenant la luminosite en pourcentage : 25 %, 50 %, 75 % ou 100 %
+     * @return un entier correspondant au pourcentage applique sur la luminosite maximale 255
+     */
+    private int setLuminosity(String s){
+        String onlyValue = "";
+        if(s.equals("100 %")){
+            onlyValue = s.substring(0,3);
+        }
+        else {
+            onlyValue = s.substring(0,2);
+        }
+
+        return (255 * Integer.parseInt(onlyValue)) / 100;
+    }
+
+    /**
+     * @param s String contenant l'intitule du son a jouer
+     * @return un entier representant le son a envoyer a l'arduino
+     */
+    private int setSon(String s){
+        switch(s){
+            case "Foret Matinale":
+                return 1;
+            case "Oiseaux 1":
+                return 2;
+            case "Oiseaux 2":
+                return 3;
+            case "Petit Ruisseaux":
+                return 4;
+            case "Vague Ocean":
+                return 5;
+            case "Pluie/Orage":
+                return 6;
+            case "Mouettes Mer":
+                return 7;
+            default :
+                return 0;
+        }
+    }
+
+
 
 
 
