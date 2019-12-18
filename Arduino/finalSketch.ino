@@ -1,15 +1,15 @@
-
 #include <Adafruit_NeoPixel.h>
 #include <Arduino.h>
 #include <SPI.h>
+#include <SD.h>
 //#include "Adafruit_BLE.h"
 //#include "Adafruit_BluefruitLE_SPI.h"
 //#include "Adafruit_BluefruitLE_UART.h"
-#include <ArduinoJson.h>
+//#include <ArduinoJson.h>
 //#include <Volume.h>
 //#include <SimpleSDAudio.h>
-//#define SD_ChipSelectPin 10  //using digital pin 4 on arduino nano 328, can use other pins
-//#include <TMRpcm.h>           //  also need to include this library...
+#define SD_ChipSelectPin 10  //using digital pin 4 on arduino nano 328, can use other pins
+#include <TMRpcm.h>           //  also need to include this library...
 
 
 //#include "BluefruitConfig.h"
@@ -81,19 +81,21 @@ void error(const __FlashStringHelper*err) {
 }
 
 // Global variables
-//TMRpcm tmrpcm;
+TMRpcm tmrpcm;
+boolean debug = false;
 char state = 'z';
-long alarmDelay = -1;
-long colorHSV ;
-int maxLights;  // Max value = 255
+long alarmDelay = 24;
+long colorHSV = 61000;
+int maxLights = 255;  // Max value = 255
 const int SCHEDULE = 6; //normal value = 60
 
-int maxSound;
+int maxSound = 150;
 boolean startedLoop = false;
-int duree;
+int duree = 30 ;
 boolean initSdPlay = false;
 
-char* fileSound ;  //  default  "oiseaux1.wav"
+String fileSoundS;
+char fileSound[50]  ;  //  default  "oiseaux1.wav"
 
 String msg ;
 // Plug your speaker into the default pin for your board type:
@@ -103,32 +105,17 @@ void setup(void)
 
 
   Serial.begin(9600);
-  /*
+
   tmrpcm.speakerPin = 9;
   if (!SD.begin(SD_ChipSelectPin)) {  // see if the card is present and can be initialized:
-    Serial.println("SD fail");  
+    Serial.println("SD fail");
     return;   // don't do anything more if not
 
   }
-  else{   
-    Serial.println("SD ok");   
+  else {
+    Serial.println("SD ok");
   }
-  */
-  /*
-  if (!initSdPlay) {
-    Serial.println("starting init sound");
-    SdPlay.setSDCSPin(10); // sd card cs pin
 
-    if (!SdPlay.init(SSDA_MODE_FULLRATE | SSDA_MODE_MONO | SSDA_MODE_AUTOWORKER))
-    {
-      while(1); 
-      longDelay();
-    }
-
-    initSdPlay = true;
-    Serial.println("stopping init sound");
-  }
-*/
   turnOffLights();
 
 
@@ -213,51 +200,132 @@ void setup(void)
     Serial.println(key1);
   */
 
-
-
 }
 
+
 boolean parseJson(String json) {
-  //  Serial.begin(115200);
 
- /* if (!SdPlay.setFile("oiseaux1.wav")) // music name file
-
-  { // while (1);
-    longDelay();
-  }
-
-  Serial.println("starting playing sound");
-
-  SdPlay.play();
-*/
-
-  StaticJsonDocument<240> doc;
+  /*
+    StaticJsonDocument<240> doc;
 
 
-  DeserializationError error = deserializeJson(doc, json);
+    DeserializationError error = deserializeJson(doc, json);
 
-  // Test if parsing succeeds.
-  if (error) {
-    Serial.print(F("deserializeJson() failed: "));
-    Serial.println(error.c_str());
-    return false;
-  }
+    // Test if parsing succeeds.
+    if (error) {
+      Serial.print(F("deserializeJson() failed: "));
+      Serial.println(error.c_str());
+      return false;
+    }
 
-  // Fetch values.
-  //
-  // Most of the time, you can rely on the implicit casts.
-  // In other case, you can do doc["time"].as<long>();
-  colorHSV = doc["l"]["c"];
-  alarmDelay = doc["t"];
+    // Fetch values.
+    //
+    // Most of the time, you can rely on the implicit casts.
+    // In other case, you can do doc["time"].as<long>();
+    colorHSV = doc["l"]["c"];
+    alarmDelay = doc["t"];
 
-  Serial.print("alarmDelay [sec] ");
-  Serial.println(alarmDelay);
+    Serial.print("alarmDelay [sec] ");
+    Serial.println(alarmDelay);
 
-  maxLights = doc["l"]["M"];
-  maxSound = doc["s"]["M"];
-  fileSound = doc["s"]["f"];
-  duree = doc["l"]["d"];
+    maxLights = doc["l"]["M"];
+    maxSound = doc["s"]["M"];
+    fileSound = doc["s"]["f"];
+    duree = doc["l"]["d"];
+  */
+  printConsole("initial json", msg);
+  msg = msg.substring(1, msg.length() - 2);
+  printConsole("cleaned json", msg);
+
+  int indexL = 0;
+  int indexR = msg.indexOf(',');
+  alarmDelay = parseValue(getValue(msg.substring(indexL, indexR), "t", false));
+  printConsole("alarmDelay", alarmDelay);
+  indexL = indexR + 5;
+  indexR = msg.indexOf(',', indexL);
+  colorHSV = parseValue(getValue(msg.substring(indexL, indexR), "c", false));
+  printConsole("colorHSV", colorHSV);
+  indexL = indexR + 1;
+  indexR = msg.indexOf(',', indexL);
+  maxLights = parseValue(getValue(msg.substring(indexL, indexR), "M", false));
+  printConsole("maxLights", maxLights);
+  indexL = indexR + 1;
+  indexR = msg.indexOf('}', indexL);
+  duree = parseValue(getValue(msg.substring(indexL, indexR), "d", false));
+  printConsole("duree", duree);
+  indexL = indexR + 6;
+  indexR = msg.indexOf(',', indexL);
+  fileSoundS = getValue(msg.substring(indexL, indexR), "f", true);
+  printConsole("fileSoundS", fileSoundS);
+  //fileSound = fileSounds.c_str();
+  // fileSoundS = string2char(fileSoundS);
+  fileSoundS.toCharArray(fileSound, fileSoundS.length()+1);
+  //fileSound[fileSoundS.length()+1] = '\0';
+
+  printConsole("fileSound", fileSound);
+  indexL = indexR + 1;
+  indexR = msg.indexOf('}', indexL);
+  maxSound =  parseValue(getValue(msg.substring(indexL, indexR), "M", false));
+  printConsole("maxSound", maxSound);
+
+  // pas vraiment de validation JSON
   return true;
+}
+
+
+
+void printConsole(String champ, String valeur) {
+  if (debug) {
+    Serial.print(champ);
+    Serial.print(" ");
+    Serial.println(valeur);
+  }
+}
+
+
+char* string2char(String command) {
+  if (command.length() != 0) {
+    char *p = const_cast<char*>(command.c_str());
+    return p;
+  }
+}
+
+
+void printConsole(String champ, int valeur) {
+  if (debug) {
+    Serial.print(champ);
+    Serial.print(" ");
+    Serial.println(valeur);
+  }
+}
+
+void printConsole(String champ, char* valeur) {
+  if (debug) {
+    Serial.print(champ);
+    Serial.print(" ");
+    int i = 0;
+    while (valeur[i]) {
+      Serial.print(valeur[i]);
+      i++;
+    }
+    Serial.println("");
+  }
+}
+
+
+int parseValue(String value) {
+  return value.toInt();
+}
+
+String getValue(String frag, String key, boolean guillemets) {
+
+  int points2 = frag.indexOf(':');
+  if (guillemets) {
+    return frag.substring(1 + points2+1,frag.length()-1);
+  } else {
+    return frag.substring(1 + points2);
+  }
+
 }
 
 /**************************************************************************/
@@ -341,6 +409,7 @@ void loop(void)
       //Serial.println("sleeping ... sec");
       Serial.print('.');
       delay(SCHEDULE * 1000);
+
       alarmDelay = alarmDelay - SCHEDULE;
       //Serial.println(alarmDelay);
 
@@ -402,11 +471,11 @@ void brighten() {
   //tone(440, 15);
 
   Serial.print("starting sound ");
- // Serial.println(fileSound);
-// tmrpcm.play("oiseaux2.wav");
-  turnOffLights();
+  Serial.println(fileSoundS);
+  tmrpcm.play(fileSound);
+  // turnOffLights();
   /*
-  if (!initSdPlay) {
+    if (!initSdPlay) {
     Serial.println("starting init sound");
     SdPlay.setSDCSPin(10); // sd card cs pin
 
@@ -417,21 +486,21 @@ void brighten() {
 
     initSdPlay = true;
     Serial.println("stopping init sound");
-  }
+    }
 
-  if (!SdPlay.setFile(fileSound)) // music name file
-  {
+    if (!SdPlay.setFile(fileSound)) // music name file
+    {
     longDelay();
     //while (1);
 
-  }
+    }
 
-  Serial.println("starting playing sound");
+    Serial.println("starting playing sound");
 
-  SdPlay.play();
-  SdPlay.play();
+    SdPlay.play();
+    SdPlay.play();
   */
-   
+
   delay(1000);
 
 }
