@@ -3,10 +3,14 @@ package com.example.happydawn;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.PendingIntent;
-import android.app.TimePickerDialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.hardware.usb.UsbDevice;
+import android.hardware.usb.UsbDeviceConnection;
+import android.hardware.usb.UsbManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,56 +23,28 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
+
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import com.felhr.usbserial.UsbSerialDevice;
+import com.felhr.usbserial.UsbSerialInterface;
+
+
+import java.io.UnsupportedEncodingException;
 import java.util.Calendar;
-import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener {
+public class Reglage extends AppCompatActivity {
 
     private ImageView retour;
     private Button son;
     private TextView textvolume;
     int volume;
     SeekBar seekbar;
-    private String stringJson;
 
-    // TextView heure
-    public TextView mTextView;
-
-    /*Travail sur l'heure
-
-    //Heure système
-    Calendar calend = Calendar.getInstance();
-    long heureActuelleMillis = calend.getTimeInMillis();
-    Date date1 = new Date(heureActuelleMillis * 1000);
-
-    // Heure de l'utilisateur
-    TextView textViewHeure = findViewById(R.id.textView);
-    String heureEntree = textViewHeure.getText().toString();
-    Date date2;
-    {
-        try {
-            date2 = new SimpleDateFormat().parse(heureEntree);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-    }
-
-    // Calcul
-    long difference = date1.getTime() - date2.getTime();
-    int days = (int) (difference / (1000*60*60*24));
-    int  heuresDifferences = (int) ((difference - (1000*60*60*24*days)) / (1000*60*60));
-    int minutesDifferences = (int) (difference - (1000*60*60*24*days) - (1000*60*60*heuresDifferences)) / (1000*60);
-    long differenceEnMilli = (long) (heuresDifferences) + (minutesDifferences);
-
-    
-     */
 
     //augmentation
     private Button augmentation;
@@ -106,6 +82,8 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
     TextView updateText;
     PendingIntent pending_intent;
 
+    boolean isDebug = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,6 +99,8 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
                 finish();
             }
         });
+
+        initSerial();
 
         this.son = findViewById(R.id.son);
 
@@ -141,7 +121,11 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
         //initialise le alarm manager
         alarm_manager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
+        //initialise le timePicker
+        timePicker = findViewById(R.id.timePicker);
 
+        //initialise text update
+        updateText = findViewById(R.id.txtheure);
 
         final Calendar calendar = Calendar.getInstance();
 
@@ -159,86 +143,111 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
             @Override
             public void onClick(View v) {
 
+                AlarmData alarmData = getAlarmData();
+                Log.d("AlarmData", alarmData.getJSONFormat());
+
+                isDebug = alarmData.isDebug();
+                send(alarmData.getJSONFormat());
+
+                intent17.putExtra("AlarmData", alarmData);
+                /*
                 //nom
                 TextView textview0 = findViewById(R.id.nomalarme);
-                // String du nom de l'alarme
                 String str = textview0.getText().toString();
-
                 intent17.putExtra("edittext", str);
                 startActivity(intent17);
 
                 //heure
-                TextView textViewHeure = findViewById(R.id.textView);
-                // String de l'heure
-                String stringHeure = textViewHeure.getText().toString();
-
-                intent17.putExtra("edittext10", stringHeure);
+                TextView textview10 = findViewById(R.id.txtheure);
+                String str10 = textview10.getText().toString();
+                intent17.putExtra("edittext10", str10);
+                startActivity(intent17);
 
 
 
                 //son
                 TextView textview1 = findViewById(R.id.txtson);
-                // String du son choisi
                 String str1 = textview1.getText().toString();
-
                 intent17.putExtra("edittext2", str1);
 
 
                 //volume
                 TextView textview2 = findViewById(R.id.textvolume);
-                // String du volume
-                String str2 = textview2.getText().toString();
 
+                String str2 = textview2.getText().toString();
                 intent17.putExtra("edittext3", str2);
 
 
                 //luminosite
                 TextView textview3 = findViewById(R.id.txtluminosite);
-                // String de la luminosité
-                String str3 = textview3.getText().toString();
 
+                String str3 = textview3.getText().toString();
                 intent17.putExtra("edittext4", str3);
 
 
                 //couleur
                 TextView textview4 = findViewById(R.id.txtcouleur);
-                // String de la couleur choisie
-                String str4 = textview4.getText().toString();
 
+                String str4 = textview4.getText().toString();
                 intent17.putExtra("edittext5", str4);
 
-
+                //duree
 
 
                 //augmentation
                 TextView textview6 = findViewById(R.id.txtaugmentation);
-                // String de la'augmentation
-                String str6 = textview6.getText().toString();
 
+                String str6 = textview6.getText().toString();
                 intent17.putExtra("edittext7", str6);
 
-                // duree
                 TextView textview5 = findViewById(R.id.txtduree);
-                // String de la duree
-                String str5 = textview5.getText().toString();
 
+                String str5 = textview5.getText().toString();
                 intent17.putExtra("edittext6", str5);
+
+
+                 */
                 startActivity(intent17);
 
-                stringJson = "{\"t\":20,\"l\":{\"c\":" + setColor(str4) + ",\"M\":" + setLuminosity(str3) + "},\"s\":{\"f\":" + setSon(str1) + ",\"M\":" +
-                              setVolume(str2) + "}}.";
 
             }
         });
 
-        mTextView = findViewById(R.id.textView);
-
-        Button button = (Button) findViewById(R.id.button_timepicker);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button heure = findViewById(R.id.heure);
+        heure.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
-                DialogFragment timePicker = new TimePickerFragment();
-                timePicker.show(getSupportFragmentManager(), "time picker");
+
+                //pending intent
+                pending_intent = PendingIntent.getBroadcast(Reglage.this, 0, my_intent
+                        , PendingIntent.FLAG_UPDATE_CURRENT);
+
+                //set alarm manager
+                alarm_manager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
+                //heure
+
+                //TODO testSerial
+
+
+                calendar.set(Calendar.HOUR_OF_DAY, timePicker.getHour());
+                calendar.set(Calendar.HOUR_OF_DAY, timePicker.getMinute());
+
+                //string de l hour et minute
+                int hour = timePicker.getHour();
+                int minute = timePicker.getMinute();
+                String hour_string = String.valueOf(hour);
+                String minute_string = String.valueOf(minute);
+
+                if (hour > 12) {
+                    hour_string = String.valueOf(hour - 12);
+                }
+
+                if (minute < 10) {
+                    minute_string = "0" + minute;
+                }
+
+                set_alarm_text( hour_string + ":" + minute_string);
 
             }
         });
@@ -272,6 +281,8 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
             @Override
             public void onClick(View v) {
 
+
+
                 builder = new AlertDialog.Builder(Reglage.this);
 
                 layoutinflater = getLayoutInflater();
@@ -296,6 +307,8 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
                         EditTextValue = edittext.getText().toString();
 
                         nomalarme.setText(EditTextValue);
+
+                        //send(EditTextValue);
                     }
                 });
 
@@ -304,7 +317,7 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
         });
 
 
-
+        /*
         augmentation = findViewById(R.id.augmentation);
         textAugmentation = findViewById(R.id.txtaugmentation);
         augmentation.setOnClickListener(new View.OnClickListener() {
@@ -331,7 +344,7 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
                 alertdialog1.show();
             }
         });
-
+        */
 
 
         luminosite = findViewById(R.id.luminosite);
@@ -395,9 +408,9 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
         duree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listItem4 = new String[]{"15 minutes", "20 minutes", "30 minutes", "45 minutes"};
+                listItem4 = new String[]{"2 minutes","5 minutes", "10 minutes"};
                 AlertDialog.Builder builder4 = new AlertDialog.Builder(Reglage.this);
-                builder4.setTitle("couleurs");
+                builder4.setTitle("durée");
                 builder4.setIcon(R.drawable.icon);
                 builder4.setSingleChoiceItems(listItem4, -1, new DialogInterface.OnClickListener() {
                     @Override
@@ -429,41 +442,8 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
             textView.setText(strson);
         }
 
+        donneValeursDefault();
 
-
-
-
-
-
-    }
-
-    @Override
-    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        Calendar c = Calendar.getInstance();
-        c.set(Calendar.HOUR_OF_DAY, hourOfDay);
-        c.set(Calendar.MINUTE, minute);
-        c.set(Calendar.SECOND, 0);
-
-        updateTimeText(c);
-        startAlarm(c);
-    }
-
-    public void updateTimeText(Calendar c){
-        String timeText = "";
-        timeText += DateFormat.getTimeInstance(DateFormat.SHORT).format(c.getTime());
-
-        mTextView.setText(timeText);
-    }
-    private void startAlarm(Calendar c){
-        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, Alarme.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0 );
-
-        if(c.before(Calendar.getInstance())){
-            c.add(Calendar.DATE, 1);
-        }
-
-        alarmManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pending_intent );
 
     }
 
@@ -471,88 +451,205 @@ public class Reglage extends AppCompatActivity implements TimePickerDialog.OnTim
         updateText.setText(output);
     }
 
-
-
-
-    /* Fonctions pour adapter les données reçus par l'utilisateur en données
-     lisibles par l'arduino */
-
-    /**
-     * @param s String contenant la couleur : bleu, vert, rouge ou jaune
-     * @return un entier correspondant a la couleur entree en parametre
-     */
-    private static int setColor(String s){
-        switch(s){
-            case "bleu":
-                return 1;
-            case "vert":
-                return 2;
-            case "rouge":
-                return 3;
-            case "jaune":
-                return 4;
-            default :
-                return 0;
-        }
+    protected void donneValeursDefault()
+    {
+        AlarmData.createDefaultValuesFromScreen(((TextView)findViewById(R.id.nomalarme)).getText().toString(),((TextView)findViewById(R.id.txtheure)).getText().toString(),
+                ((TextView)findViewById(R.id.txtson)).getText().toString(), ((TextView)findViewById(R.id.textvolume)).getText().toString(),
+                ((TextView)findViewById(R.id.txtluminosite)).getText().toString(), ((TextView)findViewById(R.id.txtcouleur)).getText().toString(),
+                ((TextView)findViewById(R.id.txtduree)).getText().toString());
     }
 
-    /**
-     * @param s String contenant la luminosite en pourcentage : 25 %, 50 %, 75 % ou 100 %
-     * @return un entier correspondant au pourcentage applique sur la luminosite maximale 255
-     */
-    private static int setLuminosity(String s){
-        String onlyValue = "";
-        if(s.equals("100 %")){
-            onlyValue = s.substring(0,3);
-        }
-        else {
-            onlyValue = s.substring(0,2);
-        }
-
-        return (255 * Integer.parseInt(onlyValue)) / 100;
+    protected AlarmData getAlarmData()
+    {
+        return new AlarmData(((TextView)findViewById(R.id.nomalarme)).getText().toString(),((TextView)findViewById(R.id.txtheure)).getText().toString(),
+                ((TextView)findViewById(R.id.txtson)).getText().toString(), ((TextView)findViewById(R.id.textvolume)).getText().toString(),
+                ((TextView)findViewById(R.id.txtluminosite)).getText().toString(), ((TextView)findViewById(R.id.txtcouleur)).getText().toString(),
+                ((TextView)findViewById(R.id.txtduree)).getText().toString());
     }
 
-    /**
-     * @param s String contenant l'intitule du son a jouer
-     * @return un entier representant le son a envoyer a l'arduino
-     */
-    private static int setSon(String s){
-        switch(s){
-            case "Foret Matinale":
-                return 1;
-            case "Oiseaux 1":
-                return 2;
-            case "Oiseaux 2":
-                return 3;
-            case "Petit Ruisseaux":
-                return 4;
-            case "Vague Ocean":
-                return 5;
-            case "Pluie/Orage":
-                return 6;
-            case "Mouettes Mer":
-                return 7;
-            default :
-                return 0;
-        }
-    }
+    public final String ACTION_USB_PERMISSION = "com.example.happydawn.USB_PERMISSION";
 
-    /**
-     * @param s contient le volume choisi par l'utilisateur sous forme de string
-     * @return le volume choisi par l'utilisateur sous forme d'entier (int)
-     */
-    private static int setVolume(String s){
-        return Integer.parseInt(s);
+
+    UsbManager usbManager;
+    UsbDevice device;
+    UsbSerialDevice serialPort;
+    UsbDeviceConnection connection;
+
+    protected void initSerial() {
+        //TODO  Toaster debug
+        Toast.makeText(getApplicationContext(),"initSerial", Toast.LENGTH_SHORT).show();
+
+        usbManager = (UsbManager) getSystemService(this.USB_SERVICE);
+
+
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(ACTION_USB_PERMISSION);
+        filter.addAction(UsbManager.ACTION_USB_DEVICE_ATTACHED);
+        filter.addAction(UsbManager.ACTION_USB_DEVICE_DETACHED);
+        registerReceiver(broadcastReceiver, filter);
+
+        connectSerial();
+
     }
 
 
+    UsbSerialInterface.UsbReadCallback mCallback = new UsbSerialInterface.UsbReadCallback() { //Defining a Callback which triggers whenever data is read.
+        @Override
+        public void onReceivedData(byte[] arg0) {
+            String data = null;
+            try {
+                data = new String(arg0, "UTF-8");
+                data.concat("/n");
+                // tvAppend(textView, data);
+
+                Log.d("Serial", "received "+ data);
+                if (isDebug)
+                {
+                    Toast.makeText(getApplicationContext(),"recv_from_USB:"+data, Toast.LENGTH_SHORT).show();
+                }
 
 
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }
+    };
+    private final BroadcastReceiver broadcastReceiver = new BroadcastReceiver() { //Broadcast Receiver to automatically start and stop the Serial connection.
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent.getAction().equals(ACTION_USB_PERMISSION)) {
+                boolean granted = intent.getExtras().getBoolean(UsbManager.EXTRA_PERMISSION_GRANTED);
+                if (granted) {
+                    connection = usbManager.openDevice(device);
+                    serialPort = UsbSerialDevice.createUsbSerialDevice(device, connection);
+                    if (serialPort != null) {
+                        if (serialPort.open()) { //Set Serial Connection Parameters.
+//                            setUiEnabled(true);
+                            serialPort.setBaudRate(9600);
+                            serialPort.setDataBits(UsbSerialInterface.DATA_BITS_8);
+                            serialPort.setStopBits(UsbSerialInterface.STOP_BITS_1);
+                            serialPort.setParity(UsbSerialInterface.PARITY_NONE);
+                            serialPort.setFlowControl(UsbSerialInterface.FLOW_CONTROL_OFF);
+                            serialPort.read(mCallback);
+//                            tvAppend(textView,"Serial Connection Opened!\n");
+
+                        } else {
+                            Log.d("SERIAL", "PORT NOT OPEN");
+                        }
+                    } else {
+                        Log.d("SERIAL", "PORT IS NULL");
+                    }
+                } else {
+                    Log.d("SERIAL", "PERM NOT GRANTED");
+                }
+            } else if (intent.getAction().equals(UsbManager.ACTION_USB_DEVICE_ATTACHED)) {
+                // onClickStart(startButton);
+                Log.d("SERIAL", UsbManager.ACTION_USB_DEVICE_ATTACHED);
+                //TODO  what ?
+            } else if (intent.getAction().equals(UsbManager.ACTION_USB_DEVICE_DETACHED)) {
+                // onClickStop(stopButton);
+                Log.d("SERIAL", UsbManager.ACTION_USB_DEVICE_DETACHED);
+                //TODO  what ?
+
+            }
+        }
+
+        ;
+    };
+
+    /*
+    public void onClickStart(View view) {
+
+        HashMap<String, UsbDevice> usbDevices = usbManager.getDeviceList();
+        if (!usbDevices.isEmpty()) {
+            boolean keep = true;
+            for (Map.Entry<String, UsbDevice> entry : usbDevices.entrySet()) {
+                device = entry.getValue();
+                int deviceVID = device.getVendorId();
+                if (deviceVID == 0x2341)//Arduino Vendor ID
+                {
+                    PendingIntent pi = PendingIntent.getBroadcast(this, 0, new Intent(ACTION_USB_PERMISSION), 0);
+                    usbManager.requestPermission(device, pi);
+                    keep = false;
+                } else {
+                    connection = null;
+                    device = null;
+                }
+
+                if (!keep)
+                    break;
+            }
+        }
+    }
+
+     */
+
+    public void connectSerial() {
+
+        HashMap<String, UsbDevice> usbDevices = usbManager.getDeviceList();
+        if (usbDevices==null)
+        {
+            //TODO  Toaster debug
+            Toast.makeText(getApplicationContext(),"connectSerial : usbDevices is null", Toast.LENGTH_SHORT).show();
+            return ;
+        }
+        if (!usbDevices.isEmpty()) {
+            boolean keep = true;
+            for (Map.Entry<String, UsbDevice> entry : usbDevices.entrySet()) {
+                device = entry.getValue();
+                int deviceVID = device.getVendorId();
+                if (deviceVID == 0x2341)//Arduino Vendor ID
+                {
+                    PendingIntent pi = PendingIntent.getBroadcast(this, 0, new Intent(ACTION_USB_PERMISSION), 0);
+                    usbManager.requestPermission(device, pi);
+                    keep = false;
+                } else {
+                    connection = null;
+                    device = null;
+                }
+
+                if (!keep)
+                    break;
+            }
+        }
+    }
 
 
+    /*
+    public void onClickSend(View view) {
+        String string = editText.getText().toString();
+        serialPort.write(string.getBytes());
+        tvAppend(textView, "\nData Sent : " + string + "\n");
+    }
+    */
+
+    public void send(String message) {
+        Log.d("SERIAL", "sending "+message);
+        if (serialPort!=null) {
+            serialPort.write(message.getBytes());
+            Toast.makeText(getApplicationContext(),"Alarm sent", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(),"message would be sent to USB : "+message, Toast.LENGTH_SHORT).show();
+        }
+        Log.d("SERIAL", "sent "+message);
+    }
 
 
+    /*
+    public void onClickStop(View view) {
+        setUiEnabled(false);
+        serialPort.close();
+        tvAppend(textView,"\nSerial Connection Closed! \n");
 
+    }
+    */
 
+    public void stopSerial() {
+        // setUiEnabled(false);
+        serialPort.close();
+        // tvAppend(textView,"\nSerial Connection Closed! \n");
 
+    }
 }

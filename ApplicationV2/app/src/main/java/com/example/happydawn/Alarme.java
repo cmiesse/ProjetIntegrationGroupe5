@@ -15,14 +15,6 @@ public class Alarme extends AppCompatActivity {
 
     private ImageView retour;
     private ImageView add;
-    private static String str6 = "";
-    private static String str5 = "";
-    private static String str4 = "";
-    private static String str3 = "";
-    private static  String str2 = "";
-    private static String str1 = "";
-    private static String str = "";
-    private static String str10 = "";
 
     private LinearLayout parentLinearLayout;
 
@@ -45,7 +37,18 @@ public class Alarme extends AppCompatActivity {
 
 
         Intent intent17 = getIntent();
-        if (intent17 != null){
+        if (intent17 != null &&  intent17.getSerializableExtra("AlarmData")!=null){
+
+            AlarmData alarmData = (AlarmData)intent17.getSerializableExtra("AlarmData");
+            /*
+            String str6 = "";
+            String str5 = "";
+            String str4 = "";
+            String str3 = "";
+            String str2 = "";
+            String str1 = "";
+            String str = "";
+            String str10 = "";
             if (intent17.hasExtra("edittext7")){
                 str6 = intent17.getStringExtra("edittext7");
             }
@@ -70,22 +73,23 @@ public class Alarme extends AppCompatActivity {
             if (intent17.hasExtra("edittext10")){
                 str10 = intent17.getStringExtra("edittext10");
             }
-            TextView textView = findViewById(R.id.txtupdate7);
-            textView.setText(str6);
+            */
+
+
             TextView textView1 = findViewById(R.id.txtupdate6);
-            textView1.setText(str5);
+            textView1.setText(Integer.toString(alarmData.getDureeNBMinutes()));
             TextView textView2 = findViewById(R.id.txtupdate5);
-            textView2.setText(str4);
+            textView2.setText(alarmData.getCouleur());
             TextView textView3 = findViewById(R.id.txtupdate4);
-            textView3.setText(str3);
+            textView3.setText(Integer.toString(alarmData.getLuminosite()));
             TextView textView4 = findViewById(R.id.txtupdate3);
-            textView4.setText(str2);
+            textView4.setText(Integer.toString(alarmData.getVolume()));
             TextView textView5 = findViewById(R.id.txtupdate2);
-            textView5.setText(str1);
+            textView5.setText(alarmData.getSon());
             TextView textView6 = findViewById(R.id.txtupdate);
-            textView6.setText(str);
+            textView6.setText(alarmData.getLibelle());
             TextView textView10 = findViewById(R.id.txtupdate1);
-            textView10.setText(str10);
+            textView10.setText(alarmData.getTimeAsString());
         }
 
 

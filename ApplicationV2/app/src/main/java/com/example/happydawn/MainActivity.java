@@ -11,7 +11,6 @@ import android.view.WindowManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
     TextView t1_degree,t2_temps;
     private ImageView aide;
     private ImageView alarme;
-    private ImageView usb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,17 +62,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent otherActivity = new Intent(getApplicationContext(),Alarme.class);
-                startActivity(otherActivity);
-                finish();
-            }
-        });
-
-        this.usb = findViewById(R.id.usbButton);
-
-        usb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent otherActivity = new Intent(getApplicationContext(),USBConnection.class);
                 startActivity(otherActivity);
                 finish();
             }
@@ -133,18 +120,5 @@ public class MainActivity extends AppCompatActivity {
 
         RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(jor);
-    }
-
-    public void onClickStart(View view) {
-
-    }
-
-    public void onClickSend(View view) {
-    }
-
-    public void onClickStop(View view) {
-    }
-
-    public void onClickClear(View view) {
     }
 }

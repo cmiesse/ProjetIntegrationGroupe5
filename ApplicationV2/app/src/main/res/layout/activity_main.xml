@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -28,26 +27,17 @@
 
         <TextView
             android:id="@+id/degre"
-            android:layout_marginTop="7dp"
-            android:layout_width="80dp"
-            android:textSize="50dp"
-            android:layout_height="match_parent"
-            android:text="0°C"
-            />
-
-        <ImageView
-            android:id="@+id/usbButton"
-            android:layout_width="100dp"
-            android:layout_height="53dp"
             android:layout_marginTop="10dp"
-            android:text="USB"
-            app:srcCompat="@android:drawable/ic_input_get" />
+            android:layout_width="79dp"
+            android:layout_height="match_parent"
+            android:text=""
+            />
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="110dp"
             android:id="@+id/aide"
             android:background="@drawable/help" />
 

@@ -59,36 +59,36 @@ public class ListeSons extends AppCompatActivity {
         final Button valideson = findViewById(R.id.valideSon);
 
         valideson.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int radioID = radioGroup.getCheckedRadioButtonId();
+                                         @Override
+                                         public void onClick(View v) {
+                                             int radioID = radioGroup.getCheckedRadioButtonId();
 
-                radioButton = findViewById(radioID);
+                                             radioButton = findViewById(radioID);
 
-                // Récupération du texte du titre Foret Matinale
-                //TextView textForet = (TextView) findViewById(R.id.foretMatinale);
-                //String textForetus = textForet.getText().toString();
+                                             // Récupération du texte du titre Foret Matinale
+                                             //TextView textForet = (TextView) findViewById(R.id.foretMatinale);
+                                             //String textForetus = textForet.getText().toString();
 
-                //Ajoute le texte du son choisi dans le champ "son"
-                //valideson.setText(textForetus);
+                                             //Ajoute le texte du son choisi dans le champ "son"
+                                             //valideson.setText(textForetus);
 
-                String strson = radioButton.getText().toString();
+                                             String strson = radioButton.getText().toString();
 
 
-                intent22.putExtra("edittext", strson);
-                startActivity(intent22);
+                                             intent22.putExtra("edittext", strson);
+                                             startActivity(intent22);
 
-            }
-        }
+                                         }
+                                     }
         );
 
         foret = MediaPlayer.create(getApplicationContext(),R.raw.foret);
         oiseaux1 = MediaPlayer.create(getApplicationContext(),R.raw.oiseaux1);
         oiseaux2 = MediaPlayer.create(getApplicationContext(),R.raw.oiseaux2);
- //       oiseaux3 = MediaPlayer.create(getApplicationContext(),R.raw.oiseaux3);
+        //       oiseaux3 = MediaPlayer.create(getApplicationContext(),R.raw.oiseaux3);
         petitRuisseau = MediaPlayer.create(getApplicationContext(),R.raw.petit_ruisseau);
         petitesVaguesDosOcean = MediaPlayer.create(getApplicationContext(),R.raw.petites_vagues_dos_ocean);
- //       petitesVaguesFaceOcean = MediaPlayer.create(getApplicationContext(),R.raw.petites_vagues_face_ocean);
+        //       petitesVaguesFaceOcean = MediaPlayer.create(getApplicationContext(),R.raw.petites_vagues_face_ocean);
         pluieOrage = MediaPlayer.create(getApplicationContext(),R.raw.pluie_orage);
         vaguesMouettes = MediaPlayer.create(getApplicationContext(),R.raw.vagues_mouettes);
 
@@ -110,7 +110,7 @@ public class ListeSons extends AppCompatActivity {
         playforet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              foret.start();
+                foret.start();
             }
         });
         pauseforet.setOnClickListener(new View.OnClickListener() {
@@ -204,11 +204,11 @@ public class ListeSons extends AppCompatActivity {
 
 
 
-    //    String[] items = {"foret","oiseaux1","oiseaux2","oiseaux3","petitRuisseau","petitesVaguesDosOcean","petitesVaguesFaceOcean","pluieOrage","vaguesMouettes"};
-    //    ListView listv = (ListView) findViewById(R.id.list_view);
-    //    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.activity_list_item,R.id.txt,items);
-    //    listv.setAdapter(adapter);
-     //   listv.setOnItemClickListener(new ItemList());
+        //    String[] items = {"foret","oiseaux1","oiseaux2","oiseaux3","petitRuisseau","petitesVaguesDosOcean","petitesVaguesFaceOcean","pluieOrage","vaguesMouettes"};
+        //    ListView listv = (ListView) findViewById(R.id.list_view);
+        //    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.activity_list_item,R.id.txt,items);
+        //    listv.setAdapter(adapter);
+        //   listv.setOnItemClickListener(new ItemList());
 
     }
 
@@ -219,8 +219,8 @@ public class ListeSons extends AppCompatActivity {
     private class ItemList implements AdapterView.OnItemClickListener {
 
 
-       public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-           ViewGroup viewg = (ViewGroup) view;
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            ViewGroup viewg = (ViewGroup) view;
             TextView textv = (TextView) viewg.findViewById(R.id.txt);
             switch (textv.getText().toString()) {
                 case "foret":
